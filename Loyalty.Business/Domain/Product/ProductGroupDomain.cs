@@ -6,28 +6,29 @@ using Loyalty.DataAccess;
 using Anatoli.ViewModels.ProductModels;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
+using Anatoli.Common.DataAccess.Models;
 
 namespace Anatoli.Business.Domain
 {
-    public class ProductGroupDomain : BusinessDomainV2<ProductGroup, ProductGroupViewModel, ProductGroupRepository, IProductGroupRepository>, IBusinessDomainV2<ProductGroup, ProductGroupViewModel>
+    public class ProductGroupDomain : BusinessDomainV3<ProductGroup>, IBusinessDomainV3<ProductGroup>
     {
         #region Properties
         #endregion
 
         #region Ctors
-        public ProductGroupDomain(Guid applicationOwnerKey, Guid dataOwnerKey, Guid dataOwnerCenterKey)
-            : this(applicationOwnerKey, dataOwnerKey, dataOwnerCenterKey, new AnatoliDbContext())
+        public ProductGroupDomain(OwnerInfo ownerInfo)
+            : this(ownerInfo, new AnatoliDbContext())
         {
+        }
+        public ProductGroupDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
+            : base(ownerInfo, dbc)
+        {
+        }
 
-        }
-        public ProductGroupDomain(Guid applicationOwnerKey, Guid dataOwnerKey, Guid dataOwnerCenterKey, AnatoliDbContext dbc)
-            : base(applicationOwnerKey, dataOwnerKey, dataOwnerCenterKey, dbc)
-        {
-        }
         #endregion
 
         #region Methods
-        protected override void AddDataToRepository(ProductGroup currentGroup, ProductGroup item)
+        public override void AddDataToRepository(ProductGroup currentGroup, ProductGroup item)
         {
             if (currentGroup != null)
             {

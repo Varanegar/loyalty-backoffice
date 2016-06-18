@@ -8,25 +8,24 @@ using Loyalty.DataAccess;
 using Anatoli.ViewModels.CustomerModels;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
+using Anatoli.Common.DataAccess.Models;
 
 namespace Loyalty.Business.Domain
 {
-    public class CustomerShipAddressDomain : BusinessDomainV2<CustomerShipAddress, CustomerShipAddressViewModel, CustomerShipAddressRepository, ICustomerShipAddressRepository>, IBusinessDomainV2<CustomerShipAddress, CustomerShipAddressViewModel>
+    public class CustomerShipAddressDomain : BusinessDomainV3<CustomerShipAddress>, IBusinessDomainV3<CustomerShipAddress>
     {
         #region Properties
         #endregion
 
         #region Ctors
-        public CustomerShipAddressDomain(Guid applicationOwnerKey, Guid dataOwnerKey, Guid dataOwnerCenterKey)
-            : this(applicationOwnerKey, dataOwnerKey, dataOwnerCenterKey, new AnatoliDbContext())
+        public CustomerShipAddressDomain(OwnerInfo ownerInfo)
+            : this(ownerInfo, new AnatoliDbContext())
         {
-
         }
-        public CustomerShipAddressDomain(Guid applicationOwnerKey, Guid dataOwnerKey, Guid dataOwnerCenterKey, AnatoliDbContext dbc)
-            : base(applicationOwnerKey, dataOwnerKey, dataOwnerCenterKey, dbc)
+        public CustomerShipAddressDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
+            : base(ownerInfo, dbc)
         {
-        }        
-
+        }
         #endregion
 
         #region Methods
@@ -34,19 +33,19 @@ namespace Loyalty.Business.Domain
         {
             ICollection<CustomerShipAddressViewModel> customerShipAddresses = null;
             if (isDetault == null && isActive == null)
-                customerShipAddresses = await GetAllAsync(p => p.CustomerId == customerId);
+                customerShipAddresses = await GetAllAsync<CustomerShipAddressViewModel>(p => p.CustomerId == customerId);
             else if (isDetault == true)
-                customerShipAddresses = await GetAllAsync(p => p.CustomerId == customerId && p.IsDefault);
+                customerShipAddresses = await GetAllAsync<CustomerShipAddressViewModel>(p => p.CustomerId == customerId && p.IsDefault);
             else if (isActive == true)
-                customerShipAddresses = await GetAllAsync(p => p.CustomerId == customerId && p.IsActive);
+                customerShipAddresses = await GetAllAsync<CustomerShipAddressViewModel>(p => p.CustomerId == customerId && p.IsActive);
 
             return customerShipAddresses;
         }
         public async Task<ICollection<CustomerShipAddressViewModel>> GetCustomerShipAddressByLevel4(Guid customerId, Guid levelId)
         {
-            return await GetAllAsync(p => p.DataOwnerId == DataOwnerKey && p.CustomerId == customerId && p.RegionLevel4Id == levelId);
+            return await GetAllAsync<CustomerShipAddressViewModel>(p => p.CustomerId == customerId && p.RegionLevel4Id == levelId);
         }
-        protected override void AddDataToRepository(CustomerShipAddress currentCustomerShipAddress, CustomerShipAddress item)
+        public override void AddDataToRepository(CustomerShipAddress currentCustomerShipAddress, CustomerShipAddress item)
         {
             if (item.Id == null || item.Id == Guid.Empty)
                 item.Id = Guid.NewGuid();

@@ -109,6 +109,9 @@
   <ItemGroup>
     <Compile Include="Domain\Account\UserDomain.cs" />
     <Compile Include="Domain\Authorization\AuthorizationDomain.cs" />
+    <Compile Include="Domain\Base\BaseTypeDomain.cs" />
+    <Compile Include="Domain\Base\CityRegionDomain.cs" />
+    <Compile Include="Domain\Base\CurrencyTypeDomain.cs" />
     <Compile Include="Domain\Customer\CustomerDomain.cs" />
     <Compile Include="Domain\Customer\CustomerGroupDomain.cs" />
     <Compile Include="Domain\Customer\CustomerLoyaltyTierHistoryDomain.cs" />
@@ -141,7 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <Folder Include="Interface\Product\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loyalty.DataAccess\Loyalty.DataAccess.csproj">

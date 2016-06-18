@@ -1,5 +1,5 @@
-﻿using Anatoli.Cloud.WebApi.Infrastructure;
-using Anatoli.DataAccess.Models.Identity;
+﻿using Anatoli.DataAccess.Models.Identity;
+using Loyalty.WebApi.Infrastructure;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;

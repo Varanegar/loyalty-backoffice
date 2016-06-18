@@ -252,6 +252,8 @@
     <Compile Include="Classes\IFileManager.cs" />
     <Compile Include="Classes\ObjectTypes.cs" />
     <Compile Include="Classes\CompressionAttributes.cs" />
+    <Compile Include="Controllers\BaseData\BaseTypeInfoController.cs" />
+    <Compile Include="Controllers\BaseData\RegionController.cs" />
     <Compile Include="Controllers\Base\AccountsController.cs" />
     <Compile Include="Controllers\Base\ActionController.cs" />
     <Compile Include="Controllers\Base\BaseApiController.cs" />
@@ -260,6 +262,8 @@
     <Compile Include="Controllers\Base\OrdersController.cs" />
     <Compile Include="Controllers\Base\PermissionController.cs" />
     <Compile Include="Controllers\Base\RolesController.cs" />
+    <Compile Include="Controllers\Customer\CustomerController.cs" />
+    <Compile Include="Controllers\Product\ProductController.cs" />
     <Compile Include="Handler\ApiResponse.cs" />
     <Compile Include="Handler\WrappingHandler.cs" />
     <Compile Include="Handler\AutoMapper\ConfigureDefaultAutoMapper.cs" />
@@ -282,6 +286,8 @@
     <Compile Include="Services\SMSService.cs" />
     <Compile Include="Services\EmailService.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Validators\MyCustomPasswordValidator.cs" />
+    <Compile Include="Validators\MyCustomUserValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Loyalty.Business\Loyalty.Business.csproj">
