@@ -85,11 +85,74 @@
     <Compile Include="Interfaces\Account\IPrincipalRepository.cs" />
     <Compile Include="Interfaces\Account\IUserRepository.cs" />
     <Compile Include="AnatoliDbContext.cs" />
+    <Compile Include="Interfaces\Base\IBaseTypeRepository.cs" />
+    <Compile Include="Interfaces\Base\IBaseValueRepository.cs" />
+    <Compile Include="Interfaces\Base\ICityRegionRepository.cs" />
+    <Compile Include="Interfaces\Base\ICurrencyTypeRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerGroupRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerLoyaltyTierHistoryRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerShipAddressRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyActionTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyCardBatchRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyCardRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyCardSetRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyProgramRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyProgramRuleRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleActionRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleConditionRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleConditionTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyTierRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyTriggerTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyValueTypeRepository.cs" />
+    <Compile Include="Interfaces\Product\IProductGroupRepository.cs" />
+    <Compile Include="Interfaces\Product\IProductRepository.cs" />
+    <Compile Include="Interfaces\Product\IProductTypeRepository.cs" />
     <Compile Include="Migrations\201606180103277_Initial-Migration-1.cs" />
     <Compile Include="Migrations\201606180103277_Initial-Migration-1.Designer.cs">
       <DependentUpon>201606180103277_Initial-Migration-1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606180137443_Initial-Migration-2.cs" />
+    <Compile Include="Migrations\201606180137443_Initial-Migration-2.Designer.cs">
+      <DependentUpon>201606180137443_Initial-Migration-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606180158165_Initial-Migration-3.cs" />
+    <Compile Include="Migrations\201606180158165_Initial-Migration-3.Designer.cs">
+      <DependentUpon>201606180158165_Initial-Migration-3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Account\Company.cs" />
+    <Compile Include="Models\Account\CompanyCenter.cs" />
+    <Compile Include="Models\Account\CompanyOrgChart.cs" />
+    <Compile Include="Models\Account\CompanyPersonnel.cs" />
+    <Compile Include="Models\Account\Customer.cs" />
+    <Compile Include="Models\Account\CustomerGroup.cs" />
+    <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
+    <Compile Include="Models\Account\CustomerShipAddress.cs" />
+    <Compile Include="Models\AnatoliBaseModel.cs" />
+    <Compile Include="Models\BaseData\BaseType.cs" />
+    <Compile Include="Models\BaseData\BaseValue.cs" />
+    <Compile Include="Models\BaseData\CityRegion.cs" />
+    <Compile Include="Models\BaseData\CurrencyType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyActionType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyCard.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyCardBatch.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyCardSet.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyProgram.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyProgramRule.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRule.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleAction.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleCondition.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleConditionType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyTier.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyTriggerType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyValueType.cs" />
+    <Compile Include="Models\Product\Product.cs" />
+    <Compile Include="Models\Product\ProductGroup.cs" />
+    <Compile Include="Models\Product\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Account\AnatoliUserStore.cs" />
     <Compile Include="Repositories\Account\PermissionCatalogRepository.cs" />
@@ -98,6 +161,31 @@
     <Compile Include="Repositories\Account\PrincipalPermissionRepository.cs" />
     <Compile Include="Repositories\Account\PrincipalRepository.cs" />
     <Compile Include="Repositories\Account\UserRepository.cs" />
+    <Compile Include="Repositories\Base\BaseTypeRepository.cs" />
+    <Compile Include="Repositories\Base\BaseValueRepository.cs" />
+    <Compile Include="Repositories\Base\CityRegionRepository.cs" />
+    <Compile Include="Repositories\Base\CurrencyTypeRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerGroupRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerLoyaltyTierHistoryRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerShipAddressRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyActionTypeRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyCardBatchRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyCardRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyCardSetRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyProgramRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyProgramRuleRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleActionRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleConditionRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleConditionTypeRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleTypeRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyTierRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyTriggerTypeRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyValueTypeRepository.cs" />
+    <Compile Include="Repositories\Product\ProductGroupRepository.cs" />
+    <Compile Include="Repositories\Product\ProductRepository.cs" />
+    <Compile Include="Repositories\Product\ProductTypeRepository.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -127,11 +215,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Configs\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201606180103277_Initial-Migration-1.resx">
       <DependentUpon>201606180103277_Initial-Migration-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606180137443_Initial-Migration-2.resx">
+      <DependentUpon>201606180137443_Initial-Migration-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606180158165_Initial-Migration-3.resx">
+      <DependentUpon>201606180158165_Initial-Migration-3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Anatoli.DataAccess.Models.Identity;
+using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models;
 using Anatoli.DataAccess.Models;
 
 namespace Loyalty.DataAccess
@@ -8,7 +10,49 @@ namespace Loyalty.DataAccess
     public class AnatoliDbContext : IdentityDbContext<User, Role, string, IdentityUserLogin, IdentityUserRole, IdentityUserClaim>
     {
         #region Properties
-        //public DbSet<LoyaltyRulDef> LoyaltyRulDefs { get; set; }
+        #region Base data
+        public DbSet<BaseType> BaseTypes { get; set; }
+        public DbSet<BaseValue> BaseValues { get; set; }
+        public DbSet<CityRegion> CityRegions { get; set; }
+        public DbSet<CurrencyType> CurrencyTypes { get; set; }
+        #endregion
+
+        #region Product
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductGroup> ProductGroups { get; set; }
+        public DbSet<ProductType> ProductType { get; set; }
+        #endregion
+
+        #region company
+        public DbSet<CompanyOrgChart> CompanyOrgCharts { get; set; }
+        public DbSet<CompanyPersonnel> CompanyPersonnels { get; set; }
+        public DbSet<CompanyCenter> CompanyCenters { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        #endregion
+
+        #region customer
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<CustomerGroup> CustomerGroups { get; set; }
+        public DbSet<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
+        public DbSet<CustomerShipAddress> CustomerShipAddresses { get; set; }
+        #endregion
+
+        #region Loyalty
+        public DbSet<LoyaltyActionType> LoyaltyActionTypes { get; set; }
+        public DbSet<LoyaltyCard> LoyaltyCards { get; set; }
+        public DbSet<LoyaltyCardBatch> LoyaltyCardBatchs { get; set; }
+        public DbSet<LoyaltyCardSet> LoyaltyCardSets { get; set; }
+        public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
+        public DbSet<LoyaltyProgramRule> LoyaltyProgramRules { get; set; }
+        public DbSet<LoyaltyRule> LoyaltyRules { get; set; }
+        public DbSet<LoyaltyRuleAction> LoyaltyRuleActions { get; set; }
+        public DbSet<LoyaltyRuleCondition> LoyaltyRuleConditions { get; set; }
+        public DbSet<LoyaltyRuleConditionType> LoyaltyRuleConditionTypes { get; set; }
+        public DbSet<LoyaltyRuleType> LoyaltyRuleTypes { get; set; }
+        public DbSet<LoyaltyTier> LoyaltyTiers { get; set; }
+        public DbSet<LoyaltyTriggerType> LoyaltyTriggerTypes { get; set; }
+        public DbSet<LoyaltyValueType> LoyaltyValueTypes { get; set; }
+        #endregion
 
         #region Identity
         public DbSet<ApplicationOwner> ApplicationOwners { get; set; }
