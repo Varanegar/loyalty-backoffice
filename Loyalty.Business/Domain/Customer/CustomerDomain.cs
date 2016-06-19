@@ -4,7 +4,7 @@ using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
 
-namespace Loyalty.Business.Domain.Customer
+namespace Loyalty.Business.Domain
 {
     public class CustomerDomain : BusinessDomainV3<Customer>, IBusinessDomainV3<Customer>
     {

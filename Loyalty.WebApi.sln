@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.Business", "Loyalty.Business\Loyalty.Business.csproj", "{DFF1618B-521D-4DD3-9485-FBE4C41EAF42}"
 EndProject
@@ -10,8 +10,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.ViewModels", "Loyalty.ViewModels\Loyalty.ViewModels.csproj", "{113C8748-E1FB-42EF-9D33-77F5F0D0C0E1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Loyalty.WebApi", "Loyalty.WebApi\Loyalty.WebApi.csproj", "{FE46F959-09B9-4182-9AEC-E66364EFC1AC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Anatoli.ViewModels", "..\..\AnatoliaLibrary\AnatoliaLibrary\Source\Windows\Cloud\WebApi\Anatoli.ViewModels\Anatoli.ViewModels.csproj", "{41DD2CA9-EEDA-4EDB-B6F8-6F4A4ACFB259}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +33,6 @@ Global
 		{FE46F959-09B9-4182-9AEC-E66364EFC1AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE46F959-09B9-4182-9AEC-E66364EFC1AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE46F959-09B9-4182-9AEC-E66364EFC1AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41DD2CA9-EEDA-4EDB-B6F8-6F4A4ACFB259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41DD2CA9-EEDA-4EDB-B6F8-6F4A4ACFB259}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41DD2CA9-EEDA-4EDB-B6F8-6F4A4ACFB259}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41DD2CA9-EEDA-4EDB-B6F8-6F4A4ACFB259}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
