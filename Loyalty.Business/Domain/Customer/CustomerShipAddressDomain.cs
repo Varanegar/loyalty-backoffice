@@ -9,7 +9,7 @@ using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models;
 using Loyalty.DataAccess.Models.Account;
 
-namespace Loyalty.Business.Domain.Customer
+namespace Loyalty.Business.Domain
 {
     public class CustomerShipAddressDomain : BusinessDomainV3<CustomerShipAddress>, IBusinessDomainV3<CustomerShipAddress>
     {

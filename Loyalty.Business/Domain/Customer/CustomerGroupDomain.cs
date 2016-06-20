@@ -6,7 +6,7 @@ using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models;
 using Loyalty.DataAccess.Models.Account;
 
-namespace Loyalty.Business.Domain.Customer
+namespace Loyalty.Business.Domain
 {
     public class CustomerGroupDomain : BusinessDomainV3<CustomerGroup>, IBusinessDomainV3<CustomerGroup>
     {
