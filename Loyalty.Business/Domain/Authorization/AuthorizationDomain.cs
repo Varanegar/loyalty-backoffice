@@ -4,7 +4,6 @@ using Loyalty.DataAccess;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Loyalty.DataAccess.Repositories;
-using Anatoli.ViewModels.AuthorizationModels;
 using Loyalty.DataAccess.Repositories.Account;
 using NLog;
 using Anatoli.Common.DataAccess.Interfaces;

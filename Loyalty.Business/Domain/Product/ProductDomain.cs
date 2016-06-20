@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Loyalty.DataAccess;
+using System.Linq.Expressions;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
-using Anatoli.ViewModels.ProductModels;
-using Anatoli.ViewModels.StockModels;
-using Loyalty.DataAccess;
 
 namespace Loyalty.Business.Domain.Product
 {
@@ -48,33 +47,37 @@ namespace Loyalty.Business.Domain.Product
                 throw ex;
             }
         }
-        //public override Expression<Func<Product, ProductViewModel>> GetAllSelector<ProductViewModel>()
-        //{
-        //    return data => new ProductViewModel
-        //            {
-        //                ID = data.Number_ID,
-        //                CreatedDate = data.CreatedDate,
-        //                LastUpdate = data.LastUpdate,
-        //                UniqueId = data.Id,
-        //                ProductCode = data.ProductCode,
-        //                Desctription = data.Desctription,
-        //                PackVolume = data.PackVolume,
-        //                PackWeight = data.PackWeight,
-        //                Barcode = data.Barcode,
-        //                StoreProductName = data.StoreProductName,
-        //                ProductTypeId = data.ProductTypeId,
-        //                QtyPerPack = data.QtyPerPack,
-        //                IsRemoved = data.IsRemoved,
-        //                ProductGroupId = data.ProductGroupId,
-        //                IsActiveInOrder = data.IsActiveInOrder,
-        //                ProductTypeInfo = data.ProductType != null ? new ProductTypeViewModel
-        //                {
-        //                    ProductTypeName = data.ProductType.ProductTypeName,
-        //                    UniqueId = data.ProductType.Id
-        //                } : null
-        //            };
-        //}
-        public override void AddDataToRepository(DataAccess.Models.Product currentProduct, DataAccess.Models.Product item)
+
+        public override Expression<Func<Product, TResult>> GetAllSelector<TResult>()
+        {
+            Expression<Func<Product, TResult>> exp = data => new ProductViewModel
+            {
+                ID = data.Number_ID,
+                CreatedDate = data.CreatedDate,
+                LastUpdate = data.LastUpdate,
+                UniqueId = data.Id,
+                ProductCode = data.ProductCode,
+                Desctription = data.Desctription,
+                PackVolume = data.PackVolume,
+                PackWeight = data.PackWeight,
+                Barcode = data.Barcode,
+                StoreProductName = data.StoreProductName,
+                ProductTypeId = data.ProductTypeId,
+                QtyPerPack = data.QtyPerPack,
+                IsRemoved = data.IsRemoved,
+                ProductGroupId = data.ProductGroupId,
+                IsActiveInOrder = data.IsActiveInOrder,
+                ProductTypeInfo = data.ProductType != null ? new ProductTypeViewModel
+                {
+                    ProductTypeName = data.ProductType.ProductTypeName,
+                    UniqueId = data.ProductType.Id
+                } : null
+            }  as TResult;
+
+            return exp;
+        }
+
+        public override void AddDataToRepository(Product currentProduct, Product item)
         {
             if (currentProduct != null)
             {
