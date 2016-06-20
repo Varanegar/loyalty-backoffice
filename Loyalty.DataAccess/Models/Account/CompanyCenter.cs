@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Loyalty.DataAccess.Models
+namespace Loyalty.DataAccess.Models.Account
 {
-    public class CompanyCenter : AnatoliBaseModel
+    public class CompanyCenter : LoyaltyBaseModel
     {
         public int NLeft { get; set; }
         public int NRight { get; set; }

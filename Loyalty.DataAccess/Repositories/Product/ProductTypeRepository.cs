@@ -1,4 +1,5 @@
-﻿using Loyalty.DataAccess.Models;
+﻿using Loyalty.DataAccess.Interfaces.Product;
+using Loyalty.DataAccess.Models;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;
 

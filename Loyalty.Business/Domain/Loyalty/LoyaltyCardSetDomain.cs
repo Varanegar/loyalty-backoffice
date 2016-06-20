@@ -1,15 +1,12 @@
 ﻿using System;
-using Loyalty.DataAccess;
-using Loyalty.DataAccess.Models;
-using Anatoli.DataAccess.Interfaces;
-using Anatoli.ViewModels.BaseModels;
-using Loyalty.DataAccess.Repositories;
-using System.Linq.Expressions;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
-namespace Loyalty.Business.Domain
+namespace Loyalty.Business.Domain.Loyalty
 {
     public class LoyaltyCardSetDomain : BusinessDomainV3<LoyaltyCardSet>, IBusinessDomainV3<LoyaltyCardSet>
     {

@@ -1,4 +1,6 @@
 ﻿using System.Data.Entity;
+using Loyalty.DataAccess.Models.Account;
+using Loyalty.DataAccess.Models.Loyalty;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Anatoli.DataAccess.Models.Identity;
 using Loyalty.DataAccess.Models;

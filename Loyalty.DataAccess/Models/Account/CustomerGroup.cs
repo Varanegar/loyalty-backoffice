@@ -1,11 +1,11 @@
-namespace Loyalty.DataAccess.Models
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-    public class CustomerGroup : AnatoliBaseModel
+namespace Loyalty.DataAccess.Models.Account
+{
+    public class CustomerGroup : LoyaltyBaseModel
     {
         [StringLength(200)]
         public string GroupName { get; set; }

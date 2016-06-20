@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Anatoli.ViewModels.BaseModels;
 using Anatoli.ViewModels;
 using Anatoli.Common.WebApi;
+using Loyalty.Business.Domain.Base;
 using Loyalty.WebApi.Classes;
 using Loyalty.Business.Domain;
 using Loyalty.DataAccess.Models;

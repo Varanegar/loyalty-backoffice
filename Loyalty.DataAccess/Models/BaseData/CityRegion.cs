@@ -1,10 +1,12 @@
+using Loyalty.DataAccess.Models.Account;
+
 namespace Loyalty.DataAccess.Models
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class CityRegion : AnatoliBaseModel
+    public class CityRegion : LoyaltyBaseModel
     {
         public string GroupName { get; set; }
         public int NLeft { get; set; }

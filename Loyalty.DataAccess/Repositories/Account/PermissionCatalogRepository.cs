@@ -1,5 +1,6 @@
 ﻿using Anatoli.Common.DataAccess.Repositories;
 using Anatoli.DataAccess.Models.Identity;
+using Loyalty.DataAccess.Interfaces.Account;
 
 namespace Loyalty.DataAccess.Repositories.Account
 {

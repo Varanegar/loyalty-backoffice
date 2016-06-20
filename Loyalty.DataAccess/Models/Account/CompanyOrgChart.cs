@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Loyalty.DataAccess.Models
+namespace Loyalty.DataAccess.Models.Account
 {
-    public class CompanyOrgChart : AnatoliBaseModel
+    public class CompanyOrgChart : LoyaltyBaseModel
     {
 
         [StringLength(200)]

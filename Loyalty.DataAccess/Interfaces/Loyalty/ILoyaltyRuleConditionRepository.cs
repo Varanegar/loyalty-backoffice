@@ -1,10 +1,7 @@
-﻿using System;
-using System.Linq;
+﻿using Anatoli.Common.DataAccess.Interfaces;
 using Loyalty.DataAccess.Models;
-using System.Collections.Generic;
-using Anatoli.Common.DataAccess.Interfaces;
 
-namespace Anatoli.DataAccess.Interfaces
+namespace Loyalty.DataAccess.Interfaces.Loyalty
 {
     public interface ILoyaltyRuleConditionRepository : IRepository<LoyaltyRuleCondition>
     {

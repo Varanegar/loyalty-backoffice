@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Loyalty.DataAccess.Interfaces.Product;
 using Loyalty.DataAccess.Models;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;

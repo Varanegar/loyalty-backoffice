@@ -1,10 +1,9 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Anatoli.Common.DataAccess.Models;
 
-namespace Loyalty.DataAccess.Models
+namespace Loyalty.DataAccess.Models.Loyalty
 {
     public class LoyaltyCardSet : BaseModel
     {

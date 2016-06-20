@@ -6,7 +6,7 @@ namespace Loyalty.DataAccess.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class Product : AnatoliBaseModel
+    public class Product : LoyaltyBaseModel
     {
         [StringLength(20)]
         public string ProductCode { get; set; }

@@ -8,6 +8,7 @@ using Anatoli.ViewModels.StockModels;
 using Anatoli.ViewModels.StoreModels;
 using AutoMapper;
 using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Account;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;

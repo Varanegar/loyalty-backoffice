@@ -4,7 +4,7 @@ namespace Loyalty.DataAccess.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;  
       
-    public class BaseType : AnatoliBaseModel
+    public class BaseType : LoyaltyBaseModel
     {
         //public int BaseTypeId { get; set; }
         [StringLength(500)]

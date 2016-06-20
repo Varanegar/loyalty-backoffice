@@ -131,7 +131,7 @@
     <Compile Include="Models\Account\CustomerGroup.cs" />
     <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
     <Compile Include="Models\Account\CustomerShipAddress.cs" />
-    <Compile Include="Models\AnatoliBaseModel.cs" />
+    <Compile Include="Models\LoyaltyBaseModel.cs" />
     <Compile Include="Models\BaseData\BaseType.cs" />
     <Compile Include="Models\BaseData\BaseValue.cs" />
     <Compile Include="Models\BaseData\CityRegion.cs" />
