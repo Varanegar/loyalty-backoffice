@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Loyalty.DataAccess.Models
 {
-    public class AnatoliBaseModel : BaseModel
+    public class LoyaltyBaseModel : BaseModel
     {
     }
 }

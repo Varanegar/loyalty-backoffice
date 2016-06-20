@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Loyalty.DataAccess.Models;
-using System.Collections.Generic;
-using Anatoli.DataAccess.Interfaces;
-using Loyalty.DataAccess.Repositories;
-using Loyalty.DataAccess;
-using Anatoli.ViewModels.CustomerModels;
-using System.Data.Entity.Spatial;
-using AutoMapper.QueryableExtensions;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models.Account;
 
 namespace Loyalty.Business.Domain
 {

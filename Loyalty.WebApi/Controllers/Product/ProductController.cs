@@ -2,6 +2,7 @@
 using Anatoli.Common.WebApi;
 using Anatoli.ViewModels;
 using Anatoli.ViewModels.ProductModels;
+using Loyalty.Business.Domain.Product;
 using Loyalty.DataAccess.Models;
 using Loyalty.WebApi.Classes;
 using System;

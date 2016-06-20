@@ -1,13 +1,12 @@
-namespace Loyalty.DataAccess.Models
-{
-    using Anatoli.DataAccess.Models;
-    using Loyalty.DataAccess.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Anatoli.DataAccess.Models;
 
-    public class CompanyPersonnel : AnatoliBaseModel
+namespace Loyalty.DataAccess.Models.Account
+{
+    public class CompanyPersonnel : LoyaltyBaseModel
     {
         [StringLength(100)]
         public string LastName { get; set; }

@@ -46,23 +46,23 @@
   <ItemGroup>
     <Reference Include="Anatoli.Common.Business, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibraries\Anatoli.Common.Business.dll</HintPath>
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.Business.dll</HintPath>
     </Reference>
     <Reference Include="Anatoli.Common.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibraries\Anatoli.Common.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Anatoli.Common.ViewModel, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibraries\Anatoli.Common.ViewModel.dll</HintPath>
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.ViewModel.dll</HintPath>
     </Reference>
     <Reference Include="Anatoli.Common.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibraries\Anatoli.Common.WebApi.dll</HintPath>
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.WebApi.dll</HintPath>
     </Reference>
     <Reference Include="Anatoli.ViewModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SharedLibraries\Anatoli.ViewModels.dll</HintPath>
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
@@ -324,7 +324,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59822</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:59823/</IISUrl>
+          <IISUrl>http://localhost:59824/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

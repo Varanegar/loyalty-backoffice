@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Loyalty.DataAccess.Models
 {
-    public class ProductType : AnatoliBaseModel
+    public class ProductType : LoyaltyBaseModel
     {
         [StringLength(100)]
         public string ProductTypeName { get; set; }

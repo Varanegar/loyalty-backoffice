@@ -1,11 +1,8 @@
 using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Anatoli.Common.DataAccess.Models;
 
-namespace Loyalty.DataAccess.Models
+namespace Loyalty.DataAccess.Models.Account
 {
     public class CustomerLoyaltyTierHistory : BaseModel
     {

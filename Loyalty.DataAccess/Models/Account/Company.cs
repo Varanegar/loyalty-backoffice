@@ -1,16 +1,12 @@
-﻿using Anatoli.DataAccess.Models;
-using Loyalty.DataAccess.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Anatoli.DataAccess.Models;
 
-namespace Loyalty.DataAccess.Models
+namespace Loyalty.DataAccess.Models.Account
 {
-    public class Company : AnatoliBaseModel
+    public class Company : LoyaltyBaseModel
     {
         public int CompanyCode { get; set; }
         [StringLength(100)]

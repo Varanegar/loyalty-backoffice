@@ -2,6 +2,7 @@
 using Anatoli.ViewModels;
 using Anatoli.ViewModels.BaseModels;
 using Loyalty.Business.Domain;
+using Loyalty.Business.Domain.Base;
 using Loyalty.DataAccess.Models;
 using Loyalty.WebApi.Classes;
 using System;

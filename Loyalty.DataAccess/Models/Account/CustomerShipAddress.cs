@@ -1,11 +1,10 @@
-namespace Loyalty.DataAccess.Models
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Loyalty.DataAccess.Models.Account
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    
-    public class CustomerShipAddress : AnatoliBaseModel
+    public class CustomerShipAddress : LoyaltyBaseModel
     {
         [StringLength(100)]
         public string AddressName { get; set; }

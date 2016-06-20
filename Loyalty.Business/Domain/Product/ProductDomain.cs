@@ -1,20 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Loyalty.DataAccess.Models;
-using System.Collections.Generic;
 using Loyalty.DataAccess;
-using Anatoli.ViewModels.StockModels;
 using System.Linq.Expressions;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
-using Anatoli.ViewModels.ProductModels;
 
-namespace Anatoli.Business.Domain
+namespace Loyalty.Business.Domain.Product
 {
-    public class ProductDomain : BusinessDomainV3<Product>,
-                                IBusinessDomainV3<Product>
+    public class ProductDomain : BusinessDomainV3<DataAccess.Models.Product>,
+                                IBusinessDomainV3<DataAccess.Models.Product>
     {
         #region Properties
 

@@ -1,14 +1,11 @@
 ﻿using System;
-using Loyalty.DataAccess.Models;
-using Anatoli.DataAccess.Interfaces;
-using Loyalty.DataAccess.Repositories;
-using Loyalty.DataAccess;
-using Anatoli.ViewModels.ProductModels;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models;
 
-namespace Anatoli.Business.Domain
+namespace Loyalty.Business.Domain.Product
 {
     public class ProductGroupDomain : BusinessDomainV3<ProductGroup>, IBusinessDomainV3<ProductGroup>
     {

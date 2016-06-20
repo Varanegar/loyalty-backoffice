@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Loyalty.DataAccess.Models;
 using System.Collections.Generic;
-using Anatoli.DataAccess.Interfaces;
-using Loyalty.DataAccess.Repositories;
-using Loyalty.DataAccess;
-using Anatoli.ViewModels.CustomerModels;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Anatoli.ViewModels.CustomerModels;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Account;
 
 namespace Loyalty.Business.Domain
 {

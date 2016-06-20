@@ -1,10 +1,7 @@
-using System;
-using System.Linq;
-using Loyalty.DataAccess.Models;
-using System.Collections.Generic;
 using Anatoli.Common.DataAccess.Interfaces;
+using Loyalty.DataAccess.Models;
 
-namespace Anatoli.DataAccess.Interfaces
+namespace Loyalty.DataAccess.Interfaces.Base
 {
     public interface ICurrencyTypeRepository : IRepository<CurrencyType>
     {

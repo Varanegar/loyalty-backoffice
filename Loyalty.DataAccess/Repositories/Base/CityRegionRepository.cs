@@ -1,3 +1,4 @@
+using Loyalty.DataAccess.Interfaces.Base;
 using Loyalty.DataAccess.Models;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Models;

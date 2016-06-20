@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 using System.Net.Http;
+using Loyalty.DataAccess.Models.Account;
 using Microsoft.AspNet.Identity.Owin;
 using Anatoli.ViewModels;
 using Loyalty.WebApi.Classes;

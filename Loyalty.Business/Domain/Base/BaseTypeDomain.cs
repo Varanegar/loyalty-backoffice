@@ -1,18 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Loyalty.DataAccess.Models;
-using System.Collections.Generic;
-using Anatoli.DataAccess.Interfaces;
-using Loyalty.DataAccess.Repositories;
-using Loyalty.DataAccess;
-using Anatoli.ViewModels.BaseModels;
-using Anatoli.Common.DataAccess.Interfaces;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
+using Anatoli.Common.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Repositories;
 
-namespace Loyalty.Business.Domain
+namespace Loyalty.Business.Domain.Base
 {
     public class BaseTypeDomain : BusinessDomainV3<BaseType>, IBusinessDomainV3<BaseType>
     {

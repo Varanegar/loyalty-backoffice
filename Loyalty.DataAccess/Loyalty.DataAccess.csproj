@@ -131,7 +131,7 @@
     <Compile Include="Models\Account\CustomerGroup.cs" />
     <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
     <Compile Include="Models\Account\CustomerShipAddress.cs" />
-    <Compile Include="Models\AnatoliBaseModel.cs" />
+    <Compile Include="Models\LoyaltyBaseModel.cs" />
     <Compile Include="Models\BaseData\BaseType.cs" />
     <Compile Include="Models\BaseData\BaseValue.cs" />
     <Compile Include="Models\BaseData\CityRegion.cs" />
@@ -226,6 +226,12 @@
     <EmbeddedResource Include="Migrations\201606180158165_Initial-Migration-3.resx">
       <DependentUpon>201606180158165_Initial-Migration-3.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels\Anatoli.ViewModels.csproj">
+      <Project>{41dd2ca9-eeda-4edb-b6f8-6f4a4acfb259}</Project>
+      <Name>Anatoli.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

@@ -4,7 +4,7 @@ namespace Loyalty.DataAccess.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    public class CurrencyType : AnatoliBaseModel
+    public class CurrencyType : LoyaltyBaseModel
     {
         //public int CurrencyType.Id { get; set; }
         [StringLength(100)]

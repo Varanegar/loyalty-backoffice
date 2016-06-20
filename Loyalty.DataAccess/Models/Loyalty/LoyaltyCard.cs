@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess.Models.Account;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.DataAccess.Models
 {

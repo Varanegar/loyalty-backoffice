@@ -1,14 +1,13 @@
-namespace Loyalty.DataAccess.Models
-{
-    using Anatoli.DataAccess.Models;
-    using Loyalty.DataAccess.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+using Anatoli.DataAccess.Models;
 
-    public class Customer : AnatoliBaseModel
+namespace Loyalty.DataAccess.Models.Account
+{
+    public class Customer : LoyaltyBaseModel
     {
         public Nullable<long> CustomerCode { get; set; }
         [StringLength(200)]
