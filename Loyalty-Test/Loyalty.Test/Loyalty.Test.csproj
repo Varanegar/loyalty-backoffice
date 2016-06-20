@@ -70,7 +70,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels\Anatoli.ViewModels.csproj">
+    <ProjectReference Include="..\..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels\Anatoli.ViewModels.csproj">
       <Project>{41dd2ca9-eeda-4edb-b6f8-6f4a4acfb259}</Project>
       <Name>Anatoli.ViewModels</Name>
     </ProjectReference>
