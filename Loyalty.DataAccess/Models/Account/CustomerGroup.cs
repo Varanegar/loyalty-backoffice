@@ -14,12 +14,6 @@ namespace Loyalty.DataAccess.Models.Account
         public int NLevel { get; set; }
         public Nullable<int> Priority { get; set; }
         
-
-        public virtual ICollection<Customer> Customers { get; set; }
-        public virtual ICollection<CustomerGroup> CustomerGroup1 { get; set; }
-        [ForeignKey("CustomerGroup2Id")]
-        public virtual CustomerGroup CustomerGroup2 { get; set; }
-
-        public Guid? CustomerGroup2Id { get; set; }
+        public virtual ICollection<CustomerGroupCustomer> CustomerGroups { get; set; }
     }
 }

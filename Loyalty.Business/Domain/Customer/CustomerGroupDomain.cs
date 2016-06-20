@@ -29,15 +29,13 @@ namespace Loyalty.Business.Domain
                 if (currentCustomerGroup.GroupName != item.GroupName ||
                     currentCustomerGroup.NLeft != item.NLeft ||
                     currentCustomerGroup.NRight != item.NRight ||
-                    currentCustomerGroup.NLevel != item.NLevel ||
-                    currentCustomerGroup.CustomerGroup2Id != item.CustomerGroup2Id)
+                    currentCustomerGroup.NLevel != item.NLevel )
                 {
                     currentCustomerGroup.LastUpdate = DateTime.Now;
                     currentCustomerGroup.GroupName = item.GroupName;
                     currentCustomerGroup.NLeft = item.NLeft;
                     currentCustomerGroup.NRight = item.NRight;
                     currentCustomerGroup.NLevel = item.NLevel;
-                    currentCustomerGroup.CustomerGroup2Id = item.CustomerGroup2Id;
                     MainRepository.Update(currentCustomerGroup);
                 }
             }

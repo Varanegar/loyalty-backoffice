@@ -9,14 +9,21 @@ namespace Loyalty.DataAccess.Models.Account
 {
     public class Customer : LoyaltyBaseModel
     {
-        public Nullable<long> CustomerCode { get; set; }
+        public int CustomerType { get; set; }
+
         [StringLength(200)]
         public string CustomerName { get; set; }
         [StringLength(200)]
         public string FirstName { get; set; }
         [StringLength(200)]
         public string LastName { get; set; }
-        public Nullable<DateTime> BirthDay { get; set; }
+        public string PostalCode { get; set; }
+
+        public bool Gender { get; set; }
+
+        [StringLength(20)]
+        public string NationalCode { get; set; }
+
         [StringLength(20)]
         public string Phone { get; set; }
         [StringLength(20)]
@@ -27,10 +34,6 @@ namespace Loyalty.DataAccess.Models.Account
         public string MainStreet { get; set; }
         [StringLength(500)]
         public string OtherStreet { get; set; }
-        [StringLength(20)]
-        public string PostalCode { get; set; }
-        [StringLength(20)]
-        public string NationalCode { get; set; }
         public double Longitude { set; get; }
         public double Latitude { set; get; }
         [ForeignKey("RegionInfo"), Column(Order = 0)]
@@ -43,21 +46,18 @@ namespace Loyalty.DataAccess.Models.Account
         public Nullable<Guid> RegionLevel3Id { get; set; }
         [ForeignKey("RegionLevel4"), Column(Order = 4)]
         public Nullable<Guid> RegionLevel4Id { get; set; }
-        [ForeignKey("CustomerGroup")]
-        public Nullable<Guid> CustomerGroupId { get; set; }
+
+
         [ForeignKey("LoyaltyTier")]
         public Nullable<Guid> LoyaltyTierId { get; set; }
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         public virtual Company Company { get; set; }
-
-        [ForeignKey("AnatoliAccount")]
-        public Nullable<Guid> AnatoliAccountId { get; set; }
-        public virtual AnatoliAccount AnatoliAccount { get; set; }
-
-        public virtual ICollection<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
         public virtual ICollection<CustomerShipAddress> CustomerShipAddresses { get; set; }
         public virtual ICollection<LoyaltyCard> LoyaltyCards { get; set; }
+        public virtual ICollection<CustomerGroupCustomer> CustomerGroups { get; set; }
+       
+        public virtual ICollection<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
         public virtual CityRegion RegionInfo { get; set; }
         public virtual CityRegion RegionLevel1 { get; set; }
         public virtual CityRegion RegionLevel2 { get; set; }
@@ -66,7 +66,20 @@ namespace Loyalty.DataAccess.Models.Account
         public virtual CustomerGroup CustomerGroup { get; set; }
         public virtual LoyaltyTier LoyaltyTier { get; set; }
 
-        public DbGeometry CustomerPoint { get; set; }
+        public Nullable<DateTime> BirthDay { get; set; }
+        public string PBirthDay { get; set; }
+        public Nullable<DateTime> MarriageDate { get; set; }
+        public string PMarriageDate { get; set; }
+
+        public Nullable<DateTime> GraduateDate { get; set; }
+        public string PGraduateDate { get; set; }
+
+        public Guid ReagentId { get; set; }
+
+        public bool GetNews { get; set; }
+        public bool GetMessage { get; set; }
+
+        public int Status { get; set; }
 
     }
 }

@@ -28,7 +28,7 @@ namespace Loyalty.Business.Domain
         {
             if (currentCustomer != null)
             {
-                if (currentCustomer.CustomerCode != item.CustomerCode ||
+                if (
                         currentCustomer.CustomerName != item.CustomerName ||
                         currentCustomer.FirstName != item.FirstName ||
                         currentCustomer.LastName != item.LastName ||
@@ -44,9 +44,16 @@ namespace Loyalty.Business.Domain
                         currentCustomer.RegionLevel3Id != item.RegionLevel3Id ||
                         currentCustomer.RegionLevel4Id != item.RegionLevel4Id ||
                         currentCustomer.PostalCode != item.PostalCode ||
-                        currentCustomer.NationalCode != item.NationalCode)
+                        currentCustomer.NationalCode != item.NationalCode ||
+                        currentCustomer.CustomerType != item.CustomerType ||
+                        currentCustomer.CompanyId != item.CompanyId ||
+                        currentCustomer.MarriageDate != item.MarriageDate ||
+                        currentCustomer.GraduateDate != item.GraduateDate ||
+                        currentCustomer.ReagentId != item.ReagentId ||
+                        currentCustomer.GetNews != item.GetNews ||
+                        currentCustomer.GetMessage != item.GetMessage 
+                    )
                 {
-                    currentCustomer.CustomerCode = item.CustomerCode;
                     currentCustomer.CustomerName = item.CustomerName;
                     currentCustomer.FirstName = item.FirstName;
                     currentCustomer.LastName = item.LastName;
@@ -64,6 +71,14 @@ namespace Loyalty.Business.Domain
                     currentCustomer.RegionLevel2Id = item.RegionLevel2Id;
                     currentCustomer.RegionLevel3Id = item.RegionLevel3Id;
                     currentCustomer.RegionLevel4Id = item.RegionLevel4Id;
+                    currentCustomer.CustomerType = item.CustomerType;
+                    currentCustomer.CompanyId = item.CompanyId;
+                    currentCustomer.MarriageDate = item.MarriageDate;
+                    currentCustomer.GraduateDate = item.GraduateDate;
+                    currentCustomer.ReagentId = item.ReagentId;
+                    currentCustomer.GetNews = item.GetNews;
+                    currentCustomer.GetMessage = item.GetMessage; 
+
                     MainRepository.Update(currentCustomer);
                 }
             }

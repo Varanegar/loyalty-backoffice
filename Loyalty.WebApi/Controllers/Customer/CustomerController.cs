@@ -1,26 +1,23 @@
-﻿using Anatoli.Business.Domain;
-using Anatoli.DataAccess;
-using Anatoli.ViewModels.CustomerModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Net.Http;
-using Loyalty.DataAccess.Models.Account;
-using Microsoft.AspNet.Identity.Owin;
-using Anatoli.ViewModels;
-using Loyalty.WebApi.Classes;
-using Loyalty.Business.Domain;
-using Loyalty.DataAccess.Repositories;
-using Loyalty.DataAccess;
-using Loyalty.DataAccess.Models;
+using Anatoli.Business.Domain;
 using Anatoli.Common.WebApi;
+using Anatoli.ViewModels;
+using Anatoli.ViewModels.CustomerModels;
+using Loyalty.Business.Domain;
+using Loyalty.DataAccess;
+using Loyalty.DataAccess.Models.Account;
+using Loyalty.DataAccess.Repositories;
+using Loyalty.WebApi.Classes;
+using Microsoft.AspNet.Identity.Owin;
 
-namespace Anatoli.Cloud.WebApi.Controllers
+namespace Loyalty.WebApi.Controllers.Customer
 {
-    [RoutePrefix("api/customer")]
+    [RoutePrefix("api/loyalty/customer")]
     public class CustomerController : AnatoliApiController
     {
         #region Customer
@@ -84,7 +81,7 @@ namespace Anatoli.Cloud.WebApi.Controllers
                 }
 
                 data.customerData.CompanyId = DataOwnerKey;
-                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Customer>(data.customerData));
+                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Loyalty.DataAccess.Models.Account.Customer>(data.customerData));
 
                 return Ok(data.customerData);
 
@@ -108,7 +105,7 @@ namespace Anatoli.Cloud.WebApi.Controllers
                     {
                         p.CompanyId = DataOwnerKey;
                     });
-                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Customer>(data.customerListData));
+                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Loyalty.DataAccess.Models.Account.Customer>(data.customerListData));
 
                 return Ok(data.customerListData);
 

@@ -11,8 +11,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Anatoli.Cloud.WebApi</RootNamespace>
-    <AssemblyName>Anatoli.Cloud.WebApi</AssemblyName>
+    <RootNamespace>Loyalty.WebApi</RootNamespace>
+    <AssemblyName>Loyalty.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort>44300</IISExpressSSLPort>
@@ -59,10 +59,6 @@
     <Reference Include="Anatoli.Common.WebApi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.WebApi.dll</HintPath>
-    </Reference>
-    <Reference Include="Anatoli.ViewModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels.dll</HintPath>
     </Reference>
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
@@ -291,6 +287,10 @@
     <Compile Include="Validators\MyCustomUserValidator.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels\Anatoli.ViewModels.csproj">
+      <Project>{41dd2ca9-eeda-4edb-b6f8-6f4a4acfb259}</Project>
+      <Name>Anatoli.ViewModels</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Loyalty.Business\Loyalty.Business.csproj">
       <Project>{dff1618b-521d-4dd3-9485-fbe4c41eaf42}</Project>
       <Name>Anatoli.Business</Name>

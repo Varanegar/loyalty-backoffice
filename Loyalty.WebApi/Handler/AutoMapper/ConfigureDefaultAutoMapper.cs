@@ -33,7 +33,8 @@ namespace Loyalty.WebApi.Handler
 
             Mapper.CreateMap<CustomerShipAddress, CustomerShipAddressViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<Customer, CustomerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
-            Mapper.CreateMap<CustomerGroup, CustomerGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.CustomerGroup2Id.ToString())).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<CustomerGroup, CustomerGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(p => p.ID, opt => opt.Ignore());
 
         }
 
@@ -46,7 +47,7 @@ namespace Loyalty.WebApi.Handler
 
             Mapper.CreateMap<CustomerShipAddressViewModel, CustomerShipAddress>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<CustomerViewModel, Customer>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
-            Mapper.CreateMap<CustomerGroupViewModel, CustomerGroup>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.CustomerGroup2Id, opt => opt.ResolveUsing(src => ConvertNullableStringToGuid(src.ParentUniqueIdString))).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<CustomerGroupViewModel, CustomerGroup>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
 
         }
         private static Guid? ConvertNullableStringToGuid(string data)
