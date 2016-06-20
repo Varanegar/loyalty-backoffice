@@ -5,7 +5,7 @@ using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models;
 
-namespace Loyalty.Business.Domain.Product
+namespace Loyalty.Business.Domain
 {
     public class ProductTypeDomain : BusinessDomainV3<ProductType>, IBusinessDomainV3<ProductType>
     {
