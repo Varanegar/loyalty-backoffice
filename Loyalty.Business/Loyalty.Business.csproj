@@ -41,6 +41,9 @@
     <Reference Include="Anatoli.Common.ViewModel">
       <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.Common.ViewModel.dll</HintPath>
     </Reference>
+    <Reference Include="Anatoli.ViewModels">
+      <HintPath>..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
       <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
@@ -140,10 +143,6 @@
     <Folder Include="Interface\Product\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Anatoli\Anatoli-SharedLibrary\Anatoli.ViewModels\Anatoli.ViewModels.csproj">
-      <Project>{41dd2ca9-eeda-4edb-b6f8-6f4a4acfb259}</Project>
-      <Name>Anatoli.ViewModels</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Loyalty.DataAccess\Loyalty.DataAccess.csproj">
       <Project>{507db6c2-a55a-4557-8dd6-7187c868aca9}</Project>
       <Name>Loyalty.DataAccess</Name>

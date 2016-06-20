@@ -8,6 +8,7 @@ using Loyalty.DataAccess.Repositories.Account;
 using NLog;
 using Anatoli.Common.DataAccess.Interfaces;
 using Anatoli.DataAccess.Models.Identity;
+using Anatoli.ViewModels.AuthorizationModels;
 
 namespace Anatoli.Business.Domain.Authorization
 {
