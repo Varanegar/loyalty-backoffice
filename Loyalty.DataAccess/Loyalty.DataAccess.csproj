@@ -130,6 +130,14 @@
     <Compile Include="Migrations\201606200314582_customergroupcascate.Designer.cs">
       <DependentUpon>201606200314582_customergroupcascate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606210637579_CustomerReagenNullable.cs" />
+    <Compile Include="Migrations\201606210637579_CustomerReagenNullable.Designer.cs">
+      <DependentUpon>201606210637579_CustomerReagenNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606210650402_CustomerGroupRemove.cs" />
+    <Compile Include="Migrations\201606210650402_CustomerGroupRemove.Designer.cs">
+      <DependentUpon>201606210650402_CustomerGroupRemove.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -240,6 +248,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606200314582_customergroupcascate.resx">
       <DependentUpon>201606200314582_customergroupcascate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606210637579_CustomerReagenNullable.resx">
+      <DependentUpon>201606210637579_CustomerReagenNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606210650402_CustomerGroupRemove.resx">
+      <DependentUpon>201606210650402_CustomerGroupRemove.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

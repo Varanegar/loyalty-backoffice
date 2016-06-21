@@ -63,7 +63,6 @@ namespace Loyalty.DataAccess.Models.Account
         public virtual CityRegion RegionLevel2 { get; set; }
         public virtual CityRegion RegionLevel3 { get; set; }
         public virtual CityRegion RegionLevel4 { get; set; }
-        public virtual CustomerGroup CustomerGroup { get; set; }
         public virtual LoyaltyTier LoyaltyTier { get; set; }
 
         public Nullable<DateTime> BirthDay { get; set; }
@@ -74,7 +73,7 @@ namespace Loyalty.DataAccess.Models.Account
         public Nullable<DateTime> GraduateDate { get; set; }
         public string PGraduateDate { get; set; }
 
-        public Guid ReagentId { get; set; }
+        public Nullable<Guid> ReagentId { get; set; }
 
         public bool GetNews { get; set; }
         public bool GetMessage { get; set; }

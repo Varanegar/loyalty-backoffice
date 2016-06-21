@@ -77,7 +77,9 @@ namespace Loyalty.Business.Domain
                     currentCustomer.GraduateDate = item.GraduateDate;
                     currentCustomer.ReagentId = item.ReagentId;
                     currentCustomer.GetNews = item.GetNews;
-                    currentCustomer.GetMessage = item.GetMessage; 
+                    currentCustomer.GetMessage = item.GetMessage;
+                    currentCustomer.CompanyId = item.CompanyId;
+                    currentCustomer.LastUpdate = DateTime.Now;
 
                     MainRepository.Update(currentCustomer);
                 }

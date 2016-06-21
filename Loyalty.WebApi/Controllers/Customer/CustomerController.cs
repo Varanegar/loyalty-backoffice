@@ -80,7 +80,6 @@ namespace Loyalty.WebApi.Controllers.Customer
 
                 }
 
-                data.customerData.CompanyId = DataOwnerKey;
                 await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Loyalty.DataAccess.Models.Account.Customer>(data.customerData));
 
                 return Ok(data.customerData);
