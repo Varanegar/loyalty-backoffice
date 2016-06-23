@@ -17,7 +17,7 @@ namespace Loyalty.Test
                 //JiraLogin();
 
 
-                string servserURI = "http://localhost:59824/";
+                string servserURI = "http://217.218.53.71:4444/";
 
                 var oauthClient = new OAuth2Client(new Uri(servserURI + "/oauth/token"));
                 var client = new HttpClient();

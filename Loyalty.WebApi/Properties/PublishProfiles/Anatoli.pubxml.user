@@ -6,7 +6,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
-    <_PublishTargetUrl>C:\anatoli\cloud</_PublishTargetUrl>
+    <_PublishTargetUrl>C:\loyalty\cloud</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/Aantoli.Common.Entity.dll">
@@ -33,11 +33,23 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/Anatoli.Cloud.WebApi.pdb">
       <publishTime>05/30/2016 11:13:08</publishTime>
     </File>
+    <File Include="bin/Anatoli.Common.Business.dll">
+      <publishTime>06/20/2016 19:23:17</publishTime>
+    </File>
+    <File Include="bin/Anatoli.Common.DataAccess.dll">
+      <publishTime>06/20/2016 19:23:17</publishTime>
+    </File>
     <File Include="bin/Anatoli.Common.Gateway.dll">
       <publishTime>12/26/2015 15:27:08</publishTime>
     </File>
     <File Include="bin/Anatoli.Common.Gateway.pdb">
       <publishTime>12/26/2015 15:27:08</publishTime>
+    </File>
+    <File Include="bin/Anatoli.Common.ViewModel.dll">
+      <publishTime>06/20/2016 19:23:17</publishTime>
+    </File>
+    <File Include="bin/Anatoli.Common.WebApi.dll">
+      <publishTime>06/20/2016 19:23:18</publishTime>
     </File>
     <File Include="bin/Anatoli.DataAccess.dll">
       <publishTime>05/28/2016 09:58:39</publishTime>
@@ -124,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/27/2016 21:02:01</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.dll">
-      <publishTime>05/29/2016 11:04:29</publishTime>
+      <publishTime>06/20/2016 13:13:16</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.pdb">
       <publishTime>05/29/2016 11:04:29</publishTime>
@@ -141,6 +153,18 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/EntityFramework.SqlServer.dll">
       <publishTime>01/06/2016 08:29:07</publishTime>
     </File>
+    <File Include="bin/IdentityModel.dll">
+      <publishTime>06/11/2016 10:08:48</publishTime>
+    </File>
+    <File Include="bin/IdentityModel.pdb">
+      <publishTime>06/19/2016 16:04:54</publishTime>
+    </File>
+    <File Include="bin/IdentityServer3.AccessTokenValidation.dll">
+      <publishTime>06/11/2016 10:08:48</publishTime>
+    </File>
+    <File Include="bin/IdentityServer3.AccessTokenValidation.pdb">
+      <publishTime>06/19/2016 16:04:54</publishTime>
+    </File>
     <File Include="bin/Ionic.Zip.dll">
       <publishTime>03/15/2016 09:29:35</publishTime>
     </File>
@@ -148,13 +172,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>04/29/2016 18:15:04</publishTime>
     </File>
     <File Include="bin/LinqKit.pdb">
-      <publishTime>04/12/2016 20:07:29</publishTime>
+      <publishTime>06/19/2016 16:04:54</publishTime>
     </File>
     <File Include="bin/Log4Net.Async.dll">
       <publishTime>12/29/2015 17:46:32</publishTime>
     </File>
     <File Include="bin/log4net.dll">
       <publishTime>12/29/2015 17:36:54</publishTime>
+    </File>
+    <File Include="bin/Loyalty.Business.dll">
+      <publishTime>06/21/2016 10:14:38</publishTime>
+    </File>
+    <File Include="bin/Loyalty.Business.pdb">
+      <publishTime>06/21/2016 10:14:38</publishTime>
+    </File>
+    <File Include="bin/Loyalty.DataAccess.dll">
+      <publishTime>06/21/2016 10:14:36</publishTime>
+    </File>
+    <File Include="bin/Loyalty.DataAccess.pdb">
+      <publishTime>06/21/2016 10:14:36</publishTime>
+    </File>
+    <File Include="bin/Loyalty.WebApi.dll">
+      <publishTime>06/21/2016 12:12:45</publishTime>
+    </File>
+    <File Include="bin/Loyalty.WebApi.pdb">
+      <publishTime>06/21/2016 12:12:45</publishTime>
     </File>
     <File Include="bin/Magick.NET-Q16-AnyCPU.dll">
       <publishTime>05/05/2016 22:07:40</publishTime>
@@ -176,6 +218,12 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
       <publishTime>01/06/2016 08:19:17</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Protocol.Extensions.dll">
+      <publishTime>06/11/2016 10:08:48</publishTime>
+    </File>
+    <File Include="bin/Microsoft.IdentityModel.Protocol.Extensions.pdb">
+      <publishTime>06/19/2016 16:04:54</publishTime>
     </File>
     <File Include="bin/Microsoft.Owin.Cors.dll">
       <publishTime>01/06/2016 08:19:28</publishTime>
@@ -199,7 +247,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/06/2016 08:19:04</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
-      <publishTime>01/06/2016 08:29:54</publishTime>
+      <publishTime>06/11/2016 10:08:48</publishTime>
     </File>
     <File Include="bin/NLog.dll">
       <publishTime>05/16/2016 23:26:48</publishTime>
@@ -220,7 +268,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>02/20/2016 18:33:46</publishTime>
     </File>
     <File Include="bin/protobuf-net.dll">
-      <publishTime>05/15/2016 08:39:56</publishTime>
+      <publishTime>09/30/2013 09:20:50</publishTime>
+    </File>
+    <File Include="bin/protobuf-net.pdb">
+      <publishTime>09/30/2013 09:20:50</publishTime>
     </File>
     <File Include="bin/SendGrid.dll">
       <publishTime>01/06/2016 08:18:16</publishTime>
@@ -289,10 +340,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2016 00:06:25</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>05/20/2016 16:22:49</publishTime>
+      <publishTime>06/20/2016 13:27:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/25/2016 21:22:42</publishTime>
+      <publishTime>06/22/2016 08:39:00</publishTime>
     </File>
   </ItemGroup>
 </Project>
