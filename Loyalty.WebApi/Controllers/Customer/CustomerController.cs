@@ -15,20 +15,37 @@ using Loyalty.DataAccess.Repositories;
 using Loyalty.WebApi.Classes;
 using Microsoft.AspNet.Identity.Owin;
 
-namespace Loyalty.WebApi.Controllers.Customer
+namespace Loyalty.WebApi.Controllers
 {
     [RoutePrefix("api/loyalty/customer")]
     public class CustomerController : AnatoliApiController
     {
         #region Customer
         [Authorize(Roles = "AuthorizedApp, User")]
-        [Route("customers")]
+        [Route("customers/byid")]
         [HttpPost]
         public async Task<IHttpActionResult> GetCustomerById([FromBody]CustomerRequestModel data)
         {
             try
             {
                 var result = await new CustomerDomain(OwnerInfo).GetByIdAsync<CustomerViewModel>(data.customerId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customers/compress")]
+        [HttpPost, GzipCompression]
+        public async Task<IHttpActionResult> GetCustomersCompress()
+        {
+            try
+            {
+                var result = await new CustomerDomain(OwnerInfo).GetAllAsync<CustomerViewModel>();
                 return Ok(result);
             }
             catch (Exception ex)
@@ -104,7 +121,7 @@ namespace Loyalty.WebApi.Controllers.Customer
                     {
                         p.CompanyId = DataOwnerKey;
                     });
-                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Loyalty.DataAccess.Models.Account.Customer>(data.customerListData));
+                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<IEnumerable<Customer>>(data.customerListData).ToList());
 
                 return Ok(data.customerListData);
 
@@ -271,7 +288,7 @@ namespace Loyalty.WebApi.Controllers.Customer
             try
             {
                 var customerGroupDomain = new CustomerGroupDomain(OwnerInfo);
-                await customerGroupDomain.PublishAsync(AutoMapper.Mapper.Map<CustomerGroup>(data.customerGroupData));
+                await customerGroupDomain.PublishAsync(AutoMapper.Mapper.Map<IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
                 return Ok(data.customerGroupData);
             }
             catch (Exception ex)
@@ -281,6 +298,23 @@ namespace Loyalty.WebApi.Controllers.Customer
             }
         }
 
+        [Authorize(Roles = "DataSync, BaseDataAdmin")]
+        [Route("customergroups/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteCustomerGroups([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerGroupDomain = new CustomerGroupDomain(OwnerInfo);
+                await customerGroupDomain.DeleteAsync(AutoMapper.Mapper.Map< IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
+                return Ok(data.customerGroupData);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
         [Authorize(Roles = "DataSync, BaseDataAdmin")]
         [Route("customergroups/checkdeleted")]
         [HttpPost]

@@ -32,7 +32,7 @@ namespace Loyalty.Test
                 PostalCode = "987464",
                 NationalCode = "" ,
                 //CustomerType = 0,
-                CompanyId = Guid.Parse("c7fa54cc-75ec-4c02-b31c-1c81cbca4ca4"),
+                CompanyId = Guid.Parse("cf7c4810-9da0-433c-8639-21bdbd889c85"),
                 
                 //MarriageDate = DateTime.Now,
                 //GraduateDate = DateTime.Now,
@@ -47,7 +47,12 @@ namespace Loyalty.Test
 
         }
 
+        public static void GetCustomerList(HttpClient client, string servserURI)
+        {
+            var req = new CustomerRequestModel();
 
+            Call(client, servserURI + "api/loyalty/customer/customers/compress", req);
+        }
 
     }
 }

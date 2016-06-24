@@ -37,6 +37,24 @@ namespace Loyalty.WebApi.Controllers
         }
 
         [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("cityregions/byparentid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetCityRegionByParentId([FromBody]BaseRequestModel data)
+        {
+            try
+            {
+                var result = await new CityRegionDomain(OwnerInfo).GetAllAsync<CityRegionViewModel>(p => p.CityRegion2Id == data.parentUniqueId);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
         [Route("cityregions/compress")]
         [GzipCompression]
         [HttpPost]
