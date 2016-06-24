@@ -34,7 +34,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/30/2016 11:13:08</publishTime>
     </File>
     <File Include="bin/Anatoli.Common.Business.dll">
-      <publishTime>06/24/2016 12:34:08</publishTime>
+      <publishTime>06/24/2016 16:04:03</publishTime>
     </File>
     <File Include="bin/Anatoli.Common.DataAccess.dll">
       <publishTime>06/20/2016 19:23:17</publishTime>
@@ -49,7 +49,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/20/2016 19:23:17</publishTime>
     </File>
     <File Include="bin/Anatoli.Common.WebApi.dll">
-      <publishTime>06/24/2016 12:34:08</publishTime>
+      <publishTime>06/24/2016 16:04:04</publishTime>
     </File>
     <File Include="bin/Anatoli.DataAccess.dll">
       <publishTime>05/28/2016 09:58:39</publishTime>
@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/27/2016 21:02:01</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.dll">
-      <publishTime>06/24/2016 13:17:33</publishTime>
+      <publishTime>06/24/2016 17:08:45</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.pdb">
       <publishTime>05/29/2016 11:04:29</publishTime>
@@ -181,22 +181,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/29/2015 17:36:54</publishTime>
     </File>
     <File Include="bin/Loyalty.Business.dll">
-      <publishTime>06/24/2016 14:46:48</publishTime>
+      <publishTime>06/24/2016 17:08:55</publishTime>
     </File>
     <File Include="bin/Loyalty.Business.pdb">
-      <publishTime>06/24/2016 14:46:48</publishTime>
+      <publishTime>06/24/2016 17:08:55</publishTime>
     </File>
     <File Include="bin/Loyalty.DataAccess.dll">
-      <publishTime>06/24/2016 14:34:51</publishTime>
+      <publishTime>06/24/2016 17:07:14</publishTime>
     </File>
     <File Include="bin/Loyalty.DataAccess.pdb">
-      <publishTime>06/24/2016 14:34:51</publishTime>
+      <publishTime>06/24/2016 17:07:14</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.dll">
-      <publishTime>06/24/2016 14:46:59</publishTime>
+      <publishTime>06/24/2016 17:14:00</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.pdb">
-      <publishTime>06/24/2016 14:46:59</publishTime>
+      <publishTime>06/24/2016 17:14:00</publishTime>
     </File>
     <File Include="bin/Magick.NET-Q16-AnyCPU.dll">
       <publishTime>05/05/2016 22:07:40</publishTime>
@@ -340,10 +340,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/21/2016 00:06:25</publishTime>
     </File>
     <File Include="packages.config">
-      <publishTime>06/20/2016 13:27:56</publishTime>
+      <publishTime>06/24/2016 16:10:58</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/22/2016 08:39:00</publishTime>
+      <publishTime>06/24/2016 17:14:01</publishTime>
     </File>
   </ItemGroup>
 </Project>

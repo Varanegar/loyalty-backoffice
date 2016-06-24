@@ -12,9 +12,9 @@ namespace Loyalty.DataAccess.Models
     public class LoyaltyCard : BaseModel
     {
         public string CardNo { get; set; }
-        public DateTime ExpireDate { get; set; }
+        public DateTime? ExpireDate { get; set; }
         public DateTime GenerateDate { get; set; }
-        public DateTime AssignDate { get; set; }
+        public DateTime? AssignDate { get; set; }
         public bool IsActive { get; set; }
         public Nullable<Guid> CancelReason { get; set; }
         [ForeignKey("LoyaltyCardSet")]

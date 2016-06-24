@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;
 using Loyalty.DataAccess.Models.Loyalty;
+using Anatoli.Common.DataAccess.Models;
 
 namespace Loyalty.DataAccess.Repositories
 {
@@ -16,6 +17,10 @@ namespace Loyalty.DataAccess.Repositories
         public LoyaltyCardSetRepository() : this(new AnatoliDbContext()) { }
         public LoyaltyCardSetRepository(AnatoliDbContext context)
             : base(context)
+        {
+        }
+        public LoyaltyCardSetRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
+            : base(context, OwnerInfo)
         {
         }
         #endregion

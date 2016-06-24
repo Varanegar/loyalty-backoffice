@@ -171,6 +171,10 @@
     <Compile Include="Migrations\201606240952093_Card-Migration-1.Designer.cs">
       <DependentUpon>201606240952093_Card-Migration-1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606241237006_Card-Migration-2.cs" />
+    <Compile Include="Migrations\201606241237006_Card-Migration-2.Designer.cs">
+      <DependentUpon>201606241237006_Card-Migration-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -316,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606240952093_Card-Migration-1.resx">
       <DependentUpon>201606240952093_Card-Migration-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606241237006_Card-Migration-2.resx">
+      <DependentUpon>201606241237006_Card-Migration-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
