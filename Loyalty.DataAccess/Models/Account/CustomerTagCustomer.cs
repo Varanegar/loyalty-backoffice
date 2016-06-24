@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Loyalty.DataAccess.Models.Account
 {
-    public class CustomerGroupCustomer : LoyaltyBaseModel
+    public class CustomerTagCustomer : LoyaltyBaseModel
     {
         [ForeignKey("Customer")]
         public Guid CustomerId { get; set; }
         public virtual Customer Customer { get; set; }
 
-        [ForeignKey("CustomerGroup")]
-        public Guid CustomerGroupId { get; set; }
-        public virtual CustomerGroup CustomerGroup { get; set; }
+        [ForeignKey("CustomerTag")]
+        public Guid CustomerTagId { get; set; }
+        public virtual CustomerTag CustomerTag { get; set; }
     }
 }

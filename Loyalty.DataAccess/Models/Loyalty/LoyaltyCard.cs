@@ -23,9 +23,12 @@ namespace Loyalty.DataAccess.Models
         public Nullable<Guid> LoyaltyCardBatchId { get; set; }
         [ForeignKey("Customer")]
         public Nullable<Guid> CustomerId { get; set; }
+        [ForeignKey("LoyaltyCardStatus")]
+        public Guid LoyaltyCardStatusId { get; set; }
         public virtual LoyaltyCardSet LoyaltyCardSet { get; set; }
         public virtual LoyaltyCardBatch LoyaltyCardBatch { get; set; }
         public virtual Customer Customer { get; set; }
+        public virtual LoyaltyCardStatus LoyaltyCardStatus { get; set; }
 
     }
 }

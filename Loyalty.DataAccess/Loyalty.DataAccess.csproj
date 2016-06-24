@@ -89,6 +89,7 @@
     <Compile Include="Interfaces\Base\IBaseValueRepository.cs" />
     <Compile Include="Interfaces\Base\ICityRegionRepository.cs" />
     <Compile Include="Interfaces\Base\ICurrencyTypeRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerTagRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerGroupRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerLoyaltyTierHistoryRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerRepository.cs" />
@@ -138,6 +139,30 @@
     <Compile Include="Migrations\201606210650402_CustomerGroupRemove.Designer.cs">
       <DependentUpon>201606210650402_CustomerGroupRemove.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606240554304_Customer-Code-Migration-1.cs" />
+    <Compile Include="Migrations\201606240554304_Customer-Code-Migration-1.Designer.cs">
+      <DependentUpon>201606240554304_Customer-Code-Migration-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240609316_Customer-Tag-Migration-1.cs" />
+    <Compile Include="Migrations\201606240609316_Customer-Tag-Migration-1.Designer.cs">
+      <DependentUpon>201606240609316_Customer-Tag-Migration-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240611441_Customer-Tag-Migration-2.cs" />
+    <Compile Include="Migrations\201606240611441_Customer-Tag-Migration-2.Designer.cs">
+      <DependentUpon>201606240611441_Customer-Tag-Migration-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240624504_Customer-Tag-Migration-3.cs" />
+    <Compile Include="Migrations\201606240624504_Customer-Tag-Migration-3.Designer.cs">
+      <DependentUpon>201606240624504_Customer-Tag-Migration-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240642374_Customer-Tag-Migration-4.cs" />
+    <Compile Include="Migrations\201606240642374_Customer-Tag-Migration-4.Designer.cs">
+      <DependentUpon>201606240642374_Customer-Tag-Migration-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240732197_Card-Status-Migration-4.cs" />
+    <Compile Include="Migrations\201606240732197_Card-Status-Migration-4.Designer.cs">
+      <DependentUpon>201606240732197_Card-Status-Migration-4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -145,9 +170,11 @@
     <Compile Include="Models\Account\CompanyPersonnel.cs" />
     <Compile Include="Models\Account\Customer.cs" />
     <Compile Include="Models\Account\CustomerGroup.cs" />
-    <Compile Include="Models\Account\CustomerGroupCustomer.cs" />
+    <Compile Include="Models\Account\CustomerTag.cs" />
+    <Compile Include="Models\Account\CustomerTagCustomer.cs" />
     <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
     <Compile Include="Models\Account\CustomerShipAddress.cs" />
+    <Compile Include="Models\Account\CustomerType.cs" />
     <Compile Include="Models\LoyaltyBaseModel.cs" />
     <Compile Include="Models\BaseData\BaseType.cs" />
     <Compile Include="Models\BaseData\BaseValue.cs" />
@@ -159,6 +186,7 @@
     <Compile Include="Models\Loyalty\LoyaltyCardSet.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgram.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgramRule.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyCardStatus.cs" />
     <Compile Include="Models\Loyalty\LoyaltyRule.cs" />
     <Compile Include="Models\Loyalty\LoyaltyRuleAction.cs" />
     <Compile Include="Models\Loyalty\LoyaltyRuleCondition.cs" />
@@ -182,6 +210,7 @@
     <Compile Include="Repositories\Base\BaseValueRepository.cs" />
     <Compile Include="Repositories\Base\CityRegionRepository.cs" />
     <Compile Include="Repositories\Base\CurrencyTypeRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerTagRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerGroupRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerLoyaltyTierHistoryRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerRepository.cs" />
@@ -254,6 +283,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606210650402_CustomerGroupRemove.resx">
       <DependentUpon>201606210650402_CustomerGroupRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240554304_Customer-Code-Migration-1.resx">
+      <DependentUpon>201606240554304_Customer-Code-Migration-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240609316_Customer-Tag-Migration-1.resx">
+      <DependentUpon>201606240609316_Customer-Tag-Migration-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240611441_Customer-Tag-Migration-2.resx">
+      <DependentUpon>201606240611441_Customer-Tag-Migration-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240624504_Customer-Tag-Migration-3.resx">
+      <DependentUpon>201606240624504_Customer-Tag-Migration-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240642374_Customer-Tag-Migration-4.resx">
+      <DependentUpon>201606240642374_Customer-Tag-Migration-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240732197_Card-Status-Migration-4.resx">
+      <DependentUpon>201606240732197_Card-Status-Migration-4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -20,14 +20,14 @@ using Anatoli.Common.WebApi;
 
 namespace Anatoli.Cloud.WebApi.Controllers
 {
-    [RoutePrefix("api/customer")]
-    public class LoyaltyController : AnatoliApiController
+    [RoutePrefix("api/loyalty")]
+    public class LoyaltyCardController : AnatoliApiController
     {
         #region Customer
         [Authorize(Roles = "AuthorizedApp, User")]
-        [Route("customers")]
+        [Route("cardsets")]
         [HttpPost]
-        public async Task<IHttpActionResult> GetCustomerById([FromBody]CustomerRequestModel data)
+        public async Task<IHttpActionResult> GetLoyaltyCards([FromBody]CustomerRequestModel data)
         {
             try
             {
@@ -41,65 +41,10 @@ namespace Anatoli.Cloud.WebApi.Controllers
             }
         }
 
-        [Authorize(Roles = "AuthorizedApp, User")]
-        [Route("savesingle")]
-        [HttpPost]
-        public async Task<IHttpActionResult> SaveSingleCustomer([FromBody]CustomerRequestModel data)
-        {
-            try
-            {
-                var customerDomain = new CustomerDomain(OwnerInfo);
-                var userDomain = new UserDomain(OwnerKey, DataOwnerKey);
-                if (data.customerData.Email != null)
-                {
-                    var emailUser = await userDomain.GetByEmailAsync(data.customerData.Email);
-                    if (emailUser != null && data.customerData.UniqueId.ToString() != emailUser.Id)
-                        return GetErrorResult("ايميل شما قبلا استفاده شده است");
-                }
-
-                if (data.customerData.Phone != null)
-                {
-                    var pheonUser = await userDomain.GetByEmailAsync(data.customerData.Phone);
-                    if (pheonUser != null && data.customerData.UniqueId.ToString() != pheonUser.Id)
-                        return GetErrorResult("موبايل شما قبلا استفاده شده است");
-                }
-                var userStore = new AnatoliUserStore(Request.GetOwinContext().Get<AnatoliDbContext>());
-                var userStoreData = await userStore.FindByIdAsync(data.customerData.UniqueId.ToString());
-                if (userStoreData != null)
-                {
-                    //userDomain..sa
-                    if (userStoreData.Email != data.customerData.Email)
-                    {
-                        userStoreData.Email = data.customerData.Email;
-                        await userStore.ChangeEmailAddress(userStoreData, data.customerData.Email);
-                    }
-                    userStoreData.FullName = data.customerData.FirstName + " " + data.customerData.LastName;
-                    await userStore.UpdateAsync(userStoreData);
-
-                }
-
-                if(data.customerData.Mobile != null)
-                {
-
-                }
-
-                data.customerData.CompanyId = DataOwnerKey;
-                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Customer>(data.customerData));
-
-                return Ok(data.customerData);
-
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex, "Web API Call Error");
-                return GetErrorResult(ex);
-            }
-        }
-        
         [Authorize(Roles = "DataSync")]
-        [Route("savebatch")]
+        [Route("cardsets/save")]
         [HttpPost]
-        public async Task<IHttpActionResult> SaveBatchCustomer([FromBody]CustomerRequestModel data)
+        public async Task<IHttpActionResult> SaveLoyaltyCards([FromBody]CustomerRequestModel data)
         {
             try
             {

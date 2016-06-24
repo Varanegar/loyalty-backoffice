@@ -54,5 +54,13 @@ namespace Loyalty.Test
             Call(client, servserURI + "api/loyalty/customer/customers/compress", req);
         }
 
+        public static void GetCustomerById(HttpClient client, string servserURI)
+        {
+            var req = new CustomerRequestModel();
+            req.customerId = Guid.Parse("6F89DD6D-5271-4C7A-BC9F-5CE342219914");
+
+            Call(client, servserURI + "api/loyalty/customer/customers/byid", req);
+        }
+
     }
 }

@@ -4,6 +4,8 @@ using Anatoli.DataAccess.Models.Identity;
 namespace Loyalty.DataAccess.Migrations
 {
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Models;
+    using Models.Account;
     using System;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -425,6 +427,20 @@ namespace Loyalty.DataAccess.Migrations
                     );
                 }
                 #endregion
+
+                #endregion
+
+                #region Base Data
+                context.CustomerTypes.AddOrUpdate(item => item.Id,
+                    new CustomerType { Id = Guid.Parse("F8A0E103-CBB0-40EA-BF80-E2DBC552EE3C"), CustomerTypeName = "حقیقی", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new CustomerType { Id = Guid.Parse("770803A2-3F46-48D1-98D2-2D656F6297DD"), CustomerTypeName = "حقوقی", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, }
+                    );
+
+                context.LoyaltyCardStatuses.AddOrUpdate(item => item.Id,
+                    new LoyaltyCardStatus { Id = Guid.Parse("6874BA5B-7DC5-4AD7-B946-3756AFBC4831"), LoyaltyCardStatusName = "فعال", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyCardStatus { Id = Guid.Parse("5726C3AE-9607-4068-9566-40C1D6C2338F"), LoyaltyCardStatusName = "غیرفعال", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyCardStatus { Id = Guid.Parse("3A6CB9BF-8394-4781-9BB7-002F09885C66"), LoyaltyCardStatusName = "باطل شده", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, }
+                    );
 
                 #endregion
             }

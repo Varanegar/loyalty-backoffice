@@ -62,8 +62,11 @@ namespace Loyalty.WebApi.Controllers
         {
             try
             {
-                var customerDomain = new CustomerDomain(OwnerInfo);
-                var userDomain = new UserDomain(OwnerKey, DataOwnerKey);
+
+                var context = Request.GetOwinContext().Get<AnatoliDbContext>();
+
+                var customerDomain = new CustomerDomain(OwnerInfo, context);
+                var userDomain = new UserDomain(OwnerKey, DataOwnerKey, context);
                 if (data.customerData.Email != null)
                 {
                     var emailUser = await userDomain.GetByEmailAsync(data.customerData.Email);
@@ -77,7 +80,7 @@ namespace Loyalty.WebApi.Controllers
                     if (pheonUser != null && data.customerData.UniqueId.ToString() != pheonUser.Id)
                         return GetErrorResult("موبايل شما قبلا استفاده شده است");
                 }
-                var userStore = new AnatoliUserStore(Request.GetOwinContext().Get<AnatoliDbContext>());
+                var userStore = new AnatoliUserStore(context);
                 var userStoreData = await userStore.FindByIdAsync(data.customerData.UniqueId.ToString());
                 if (userStoreData != null)
                 {
@@ -97,7 +100,7 @@ namespace Loyalty.WebApi.Controllers
 
                 }
 
-                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Loyalty.DataAccess.Models.Account.Customer>(data.customerData));
+                await customerDomain.PublishAsync(AutoMapper.Mapper.Map<Customer>(data.customerData));
 
                 return Ok(data.customerData);
 
@@ -108,7 +111,15 @@ namespace Loyalty.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
-        
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("savesinglequick")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveSingleCustomerQuick([FromBody]CustomerRequestModel data)
+        {
+            return await SaveSingleCustomer(data);
+        }
+
         [Authorize(Roles = "DataSync")]
         [Route("savebatch")]
         [HttpPost]
@@ -224,6 +235,116 @@ namespace Loyalty.WebApi.Controllers
         }
         #endregion
 
+        #region Customer Tag
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customertags")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetCustomerTags()
+        {
+            try
+            {
+                var customerTagDomain = new CustomerTagDomain(OwnerInfo);
+                var result = await customerTagDomain.GetAllAsync<CustomerTagViewModel>();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customertags/compress")]
+        [HttpPost]
+        [GzipCompression]
+        public async Task<IHttpActionResult> GetCustomerTagsCompress()
+        {
+            return await GetCustomerTags();
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customertags/after")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetCustomerTags([FromBody]BaseRequestModel model)
+        {
+            try
+            {
+                var customerTagDomain = new CustomerTagDomain(OwnerInfo);
+                var validDate = GetDateFromString(model.dateAfter);
+                var result = await customerTagDomain.GetAllChangedAfterAsync<CustomerTagViewModel>(validDate);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customertags/compress/after")]
+        [HttpPost]
+        [GzipCompression]
+        public async Task<IHttpActionResult> GetCustomerTagsCompress([FromBody]BaseRequestModel model)
+        {
+            return await GetCustomerTags(model);
+        }
+
+        [Authorize(Roles = "DataSync, BaseDataAdmin")]
+        [Route("customertags/save")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveCustomerTags([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerTagDomain = new CustomerTagDomain(OwnerInfo);
+                await customerTagDomain.PublishAsync(AutoMapper.Mapper.Map<IEnumerable<CustomerTag>>(data.customerTagData).ToList());
+                return Ok(data.customerTagData);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "DataSync, BaseDataAdmin")]
+        [Route("customertags/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteCustomerTags([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerTagDomain = new CustomerTagDomain(OwnerInfo);
+                await customerTagDomain.DeleteAsync(AutoMapper.Mapper.Map< IEnumerable<CustomerTag>>(data.customerTagData).ToList());
+                return Ok(data.customerTagData);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        [Authorize(Roles = "DataSync, BaseDataAdmin")]
+        [Route("customertags/checkdeleted")]
+        [HttpPost]
+        public async Task<IHttpActionResult> CheckDeletedCustomerTags([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerTagDomain = new CustomerTagDomain(OwnerInfo);
+                await customerTagDomain.CheckDeletedAsync(data.customerTagData);
+                return Ok(data.customerTagData);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        #endregion
+
         #region Customer Groups
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("customergroups")]
@@ -306,7 +427,7 @@ namespace Loyalty.WebApi.Controllers
             try
             {
                 var customerGroupDomain = new CustomerGroupDomain(OwnerInfo);
-                await customerGroupDomain.DeleteAsync(AutoMapper.Mapper.Map< IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
+                await customerGroupDomain.DeleteAsync(AutoMapper.Mapper.Map<IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
                 return Ok(data.customerGroupData);
             }
             catch (Exception ex)
@@ -333,6 +454,5 @@ namespace Loyalty.WebApi.Controllers
             }
         }
         #endregion
-
     }
 }

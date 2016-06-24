@@ -9,8 +9,8 @@ namespace Loyalty.DataAccess.Models.Account
 {
     public class Customer : LoyaltyBaseModel
     {
-        public int CustomerType { get; set; }
-
+        [StringLength(50)]
+        public string CustomerCode { get; set; }
         [StringLength(200)]
         public string CustomerName { get; set; }
         [StringLength(200)]
@@ -48,14 +48,18 @@ namespace Loyalty.DataAccess.Models.Account
         public Nullable<Guid> RegionLevel4Id { get; set; }
 
 
+        [ForeignKey("CustomerType")]
+        public Nullable<Guid> CustomerTypeId { get; set; }
         [ForeignKey("LoyaltyTier")]
         public Nullable<Guid> LoyaltyTierId { get; set; }
+        [ForeignKey("CustomerGroup")]
+        public Nullable<Guid> CustomerGroupId { get; set; }
         [ForeignKey("Company")]
         public Guid CompanyId { get; set; }
         public virtual Company Company { get; set; }
         public virtual ICollection<CustomerShipAddress> CustomerShipAddresses { get; set; }
         public virtual ICollection<LoyaltyCard> LoyaltyCards { get; set; }
-        public virtual ICollection<CustomerGroupCustomer> CustomerGroups { get; set; }
+        public virtual ICollection<CustomerTagCustomer> CustomerTags { get; set; }
        
         public virtual ICollection<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
         public virtual CityRegion RegionInfo { get; set; }
@@ -64,6 +68,8 @@ namespace Loyalty.DataAccess.Models.Account
         public virtual CityRegion RegionLevel3 { get; set; }
         public virtual CityRegion RegionLevel4 { get; set; }
         public virtual LoyaltyTier LoyaltyTier { get; set; }
+        public virtual CustomerGroup CustomerGroup { get; set; }
+        public virtual CustomerType CustomerType { get; set; }
 
         public Nullable<DateTime> BirthDay { get; set; }
         public string PBirthDay { get; set; }

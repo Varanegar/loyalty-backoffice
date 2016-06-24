@@ -34,6 +34,8 @@ namespace Loyalty.DataAccess
 
         #region customer
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CustomerType> CustomerTypes { get; set; }
+        public DbSet<CustomerTag> CustomerTags { get; set; }
         public DbSet<CustomerGroup> CustomerGroups { get; set; }
         public DbSet<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
         public DbSet<CustomerShipAddress> CustomerShipAddresses { get; set; }
@@ -42,6 +44,7 @@ namespace Loyalty.DataAccess
         #region Loyalty
         public DbSet<LoyaltyActionType> LoyaltyActionTypes { get; set; }
         public DbSet<LoyaltyCard> LoyaltyCards { get; set; }
+        public DbSet<LoyaltyCardStatus> LoyaltyCardStatuses { get; set; }
         public DbSet<LoyaltyCardBatch> LoyaltyCardBatchs { get; set; }
         public DbSet<LoyaltyCardSet> LoyaltyCardSets { get; set; }
         public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
