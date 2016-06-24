@@ -13,6 +13,24 @@ namespace Loyalty.Test
     public class CardManagement : BaseTestManagment
     {
         #region Card Set
+        public static void GetTiers(HttpClient client, string servserURI)
+        {
+            var req = new BaseRequestModel();
+            Call(client, servserURI + "api/loyalty/tiers", req);
+        }
+
+        public static void SaveTiers(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRequestModel();
+            List<LoyaltyTierViewModel> tierData = new List<LoyaltyTierViewModel>();
+            tierData.Add(new LoyaltyTierViewModel() { TierName = "لطایی", TierCode = "1--1" });
+            req.loyaltyTierListData = tierData;
+            Call(client, servserURI + "api/loyalty/tiers/save", req);
+        }
+        #endregion
+
+
+        #region Card Set
         public static void GetCardSets(HttpClient client, string servserURI)
         {
             var req = new BaseRequestModel();

@@ -29,21 +29,40 @@ namespace Loyalty.Test
                 if (oauthresult.AccessToken != null)
                 {
                     client.SetBearerToken(oauthresult.AccessToken);
+                    #region City Region
                     //CityRegionManagement.GetCityregionByParentId(client, servserURI, null);
                     //CityRegionManagement.GetCityregionByParentId(client, servserURI, Guid.Parse("f9cab010-1978-4144-a83d-bc4c057f45c5"));
-                    //CustomerManagement.CreateCustomer(client, servserURI);
-                    CardManagement.GetCardSets(client, servserURI);
-                    CardManagement.SaveCardSets(client, servserURI);
-                    CardManagement.SaveCards(client, servserURI);
-                    CardManagement.GetCardByCardNo(client, servserURI);
-                    CardManagement.GetCardByCardsSets(client, servserURI);
-                    CardManagement.GetCardByCardsSetsByStatus(client, servserURI);
-                    CardManagement.GetCardByCustomers(client, servserURI);
+                    #endregion
+
+                    #region Card Set
+                    //CardManagement.SaveCardSets(client, servserURI);
+                    //CardManagement.GetCardSets(client, servserURI);
+                    #endregion
+
+                    #region Tier
+                    CardManagement.SaveTiers(client, servserURI);
+                    CardManagement.GetTiers(client, servserURI);
+                    #endregion
+
+                    #region Card
+                    //CardManagement.SaveCards(client, servserURI);
+                    //CardManagement.GetCardByCardNo(client, servserURI);
+                    //CardManagement.GetCardByCardsSets(client, servserURI);
+                    //CardManagement.GetCardByCardsSetsByStatus(client, servserURI);
+                    //CardManagement.GetCardByCustomers(client, servserURI);
+                    #endregion
+
+                    #region Customer Group
                     //CustomerManagement.CreateCustomerGroup(client, servserURI);
                     //CustomerManagement.GetCustomerGroupList(client, servserURI);
+                    #endregion
+
+                    #region Customer
+                    //CustomerManagement.CreateCustomer(client, servserURI);
                     //CustomerManagement.GetCustomerById(client, servserURI);
                     //CustomerManagement.GetCustomerList(client, servserURI);
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);
+                    #endregion
                 }
 
             }//
