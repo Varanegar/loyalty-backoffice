@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Anatoli.Common.DataAccess.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Loyalty.DataAccess.Models.Loyalty
 {
@@ -12,7 +13,9 @@ namespace Loyalty.DataAccess.Models.Loyalty
         public int Seed { get; set; }
         public long CurrentNo { get; set; }
         public string Initialtext { get; set; }
-        public Guid GenerateNoType { get; set; }
+        [ForeignKey("LoyaltyCardSetGenerateType")]
+        public Guid LoyaltyCardSetGenerateTypeId { get; set; }
+        public LoyaltyCardSetGenerateType LoyaltyCardSetGenerateType { get; set; }
         public virtual ICollection<LoyaltyCardBatch> LoyaltyCardBatchs { get; set; }
         public virtual ICollection<LoyaltyCard> LoyaltyCards { get; set; }
     }

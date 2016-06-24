@@ -41,6 +41,7 @@ namespace Loyalty.Business.Domain
             }
             else
             {
+                item.Id = Guid.NewGuid();
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

@@ -266,7 +266,7 @@
     <Compile Include="Controllers\Base\PermissionController.cs" />
     <Compile Include="Controllers\Base\RolesController.cs" />
     <Compile Include="Controllers\Customer\CustomerController.cs" />
-    <Compile Include="Controllers\Loyalty\LoyaltyController.cs" />
+    <Compile Include="Controllers\Loyalty\LoyaltyCardController.cs" />
     <Compile Include="Controllers\Product\ProductController.cs" />
     <Compile Include="Handler\ApiResponse.cs" />
     <Compile Include="Handler\WrappingHandler.cs" />

@@ -46,6 +46,7 @@ namespace Loyalty.DataAccess
         public DbSet<LoyaltyCard> LoyaltyCards { get; set; }
         public DbSet<LoyaltyCardStatus> LoyaltyCardStatuses { get; set; }
         public DbSet<LoyaltyCardBatch> LoyaltyCardBatchs { get; set; }
+        public DbSet<LoyaltyCardSetGenerateType> LoyaltyCardSetGenerateTypes { get; set; }
         public DbSet<LoyaltyCardSet> LoyaltyCardSets { get; set; }
         public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
         public DbSet<LoyaltyProgramRule> LoyaltyProgramRules { get; set; }

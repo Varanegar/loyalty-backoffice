@@ -163,6 +163,14 @@
     <Compile Include="Migrations\201606240732197_Card-Status-Migration-4.Designer.cs">
       <DependentUpon>201606240732197_Card-Status-Migration-4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606240856215_Card-Status-Migration-5.cs" />
+    <Compile Include="Migrations\201606240856215_Card-Status-Migration-5.Designer.cs">
+      <DependentUpon>201606240856215_Card-Status-Migration-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606240952093_Card-Migration-1.cs" />
+    <Compile Include="Migrations\201606240952093_Card-Migration-1.Designer.cs">
+      <DependentUpon>201606240952093_Card-Migration-1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -184,6 +192,7 @@
     <Compile Include="Models\Loyalty\LoyaltyCard.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardBatch.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardSet.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyCardSetGenerateType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgram.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgramRule.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardStatus.cs" />
@@ -301,6 +310,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606240732197_Card-Status-Migration-4.resx">
       <DependentUpon>201606240732197_Card-Status-Migration-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240856215_Card-Status-Migration-5.resx">
+      <DependentUpon>201606240856215_Card-Status-Migration-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606240952093_Card-Migration-1.resx">
+      <DependentUpon>201606240952093_Card-Migration-1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -39,6 +39,22 @@ namespace Loyalty.WebApi.Controllers
         }
 
         [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customers/search/bycodeorcard")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetCustomerToFindReagent([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var result = await new CustomerDomain(OwnerInfo).GetAllAsync<CustomerViewModel>(p => p.CustomerCode.Contains(data.searchTerm) || p.Mobile.Contains(data.searchTerm));
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        [Authorize(Roles = "AuthorizedApp, User")]
         [Route("customers/compress")]
         [HttpPost, GzipCompression]
         public async Task<IHttpActionResult> GetCustomersCompress()

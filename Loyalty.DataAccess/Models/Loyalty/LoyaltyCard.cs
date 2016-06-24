@@ -14,8 +14,8 @@ namespace Loyalty.DataAccess.Models
         public string CardNo { get; set; }
         public DateTime ExpireDate { get; set; }
         public DateTime GenerateDate { get; set; }
+        public DateTime AssignDate { get; set; }
         public bool IsActive { get; set; }
-        public bool AssignDate { get; set; }
         public Nullable<Guid> CancelReason { get; set; }
         [ForeignKey("LoyaltyCardSet")]
         public Guid LoyaltyCardSetId { get; set; }
