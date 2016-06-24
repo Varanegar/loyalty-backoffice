@@ -40,8 +40,8 @@ namespace Loyalty.Test
                     #endregion
 
                     #region Tier
-                    CardManagement.SaveTiers(client, servserURI);
-                    CardManagement.GetTiers(client, servserURI);
+                    //CardManagement.SaveTiers(client, servserURI);
+                    //CardManagement.GetTiers(client, servserURI);
                     #endregion
 
                     #region Card

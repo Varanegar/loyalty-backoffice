@@ -193,10 +193,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/24/2016 17:30:54</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.dll">
-      <publishTime>06/24/2016 17:35:57</publishTime>
+      <publishTime>06/24/2016 17:39:46</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.pdb">
-      <publishTime>06/24/2016 17:35:57</publishTime>
+      <publishTime>06/24/2016 17:39:46</publishTime>
     </File>
     <File Include="bin/Magick.NET-Q16-AnyCPU.dll">
       <publishTime>05/05/2016 22:07:40</publishTime>
