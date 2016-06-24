@@ -51,6 +51,7 @@ namespace Loyalty.Test
         {
             var sampleGroup = new CustomerGroupViewModel()
             {
+                UniqueIdString = null,
                 GroupName = "گروه اصلی"
             };
             var req = new CustomerRequestModel();

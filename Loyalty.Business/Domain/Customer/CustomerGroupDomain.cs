@@ -41,6 +41,7 @@ namespace Loyalty.Business.Domain
             }
             else
             {
+                if (item.ParentId == Guid.Empty) item.ParentId = null;
                 item.Id = Guid.NewGuid();
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
