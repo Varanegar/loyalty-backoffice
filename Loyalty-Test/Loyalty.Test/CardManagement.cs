@@ -23,7 +23,7 @@ namespace Loyalty.Test
         {
             var req = new LoyaltyRequestModel();
             List<LoyaltyCardSetViewModel> loyaltyCardSetListData = new List<LoyaltyCardSetViewModel>();
-            loyaltyCardSetListData.Add(new LoyaltyCardSetViewModel() { UniqueId = Guid.Parse("7FBA8876-E1D6-419B-AF4A-9308FD7E654D"), LoyaltyCardSetGenerateTypeId= Guid.Parse("AEBC1016 -A309-440D-A9AE-DADA3D33D8D8"), LoyaltyCardSetCode = "1-1", LoyaltyCardSetName = "گروه مادران", Seed = 1, CurrentNo = 0, Initialtext = "mother-" });
+            loyaltyCardSetListData.Add(new LoyaltyCardSetViewModel() { UniqueId = Guid.Parse("7FBA8876-E1D6-419B-AF4A-9308FD7E654D"), LoyaltyCardSetGenerateTypeId= Guid.Parse("AEBC1016-A309-440D-A9AE-DADA3D33D8D8"), LoyaltyCardSetCode = "1-1", LoyaltyCardSetName = "گروه مادران", Seed = 1, CurrentNo = 0, Initialtext = "mother-" });
             req.loyaltyCardSetListData = loyaltyCardSetListData;
             Call(client, servserURI + "api/loyalty/cardsets/save", req);
         }
@@ -48,7 +48,7 @@ namespace Loyalty.Test
         public static void GetCardByCardsSets(HttpClient client, string servserURI)
         {
             var req = new LoyaltyRequestModel();
-            req.loyaltyCardSetId = Guid.Parse("");
+            req.loyaltyCardSetId = Guid.Parse("7FBA8876-E1D6-419B-AF4A-9308FD7E654D");
             Call(client, servserURI + "api/loyalty/cards/bycardsetid/compress", req);
 
         }
@@ -56,7 +56,7 @@ namespace Loyalty.Test
         public static void GetCardByCardsSetsByStatus(HttpClient client, string servserURI)
         {
             var req = new LoyaltyRequestModel();
-            req.loyaltyCardSetId = Guid.Parse("");
+            req.loyaltyCardSetId = Guid.Parse("7FBA8876-E1D6-419B-AF4A-9308FD7E654D");
             req.loyaltyCardStatusId = Guid.Parse("F63E00F3-F351-4EE7-8A58-83BE758F0C62");
             Call(client, servserURI + "api/loyalty/cards/bycardsetid/compress", req);
         }
@@ -64,7 +64,7 @@ namespace Loyalty.Test
         public static void GetCardByCustomers(HttpClient client, string servserURI)
         {
             var req = new LoyaltyRequestModel();
-            req.customerId = Guid.Parse("");
+            req.customerId = Guid.Parse("6F89DD6D-5271-4C7A-BC9F-5CE342219914");
             Call(client, servserURI + "api/loyalty/cards/bycustomerid", req);
 
         }
