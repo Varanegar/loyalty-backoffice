@@ -39,6 +39,11 @@ namespace Loyalty.DataAccess
         public DbSet<CustomerGroup> CustomerGroups { get; set; }
         public DbSet<CustomerLoyaltyTierHistory> CustomerLoyaltyTierHistories { get; set; }
         public DbSet<CustomerShipAddress> CustomerShipAddresses { get; set; }
+
+        public DbSet<CustomerMonetaryHistory> CustomerMonetaryHistories { get; set; }
+        public DbSet<CustomerNonMonetaryHistory> CustomerNonMonetaryHistories { get; set; }
+            
+
         #endregion
 
         #region Loyalty

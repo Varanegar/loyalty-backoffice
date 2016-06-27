@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Anatoli.ViewModels;
 using Anatoli.ViewModels.CustomerModels;
+using Anatoli.ViewModels.RequestModel;
 
 namespace Loyalty.Test
 {
@@ -91,5 +92,20 @@ namespace Loyalty.Test
             Call(client, servserURI + "api/loyalty/customer/customers/search/bycodeorcard", req);
         }
 
+        public static void GetCustomerMonetaryHistory(HttpClient client, string servserURI)
+        {
+            var req = new CustomerHistoryRequestModel();
+            req.customerMonetaryHistoryData = new CustomerMonetaryHistoryViewModel() { CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594") };
+
+            Call(client, servserURI + "api/loyalty/customerhistory/loadmonetary", req);
+        }
+
+        public static void GetCustomerNonMonetaryHistory(HttpClient client, string servserURI)
+        {
+            var req = new CustomerHistoryRequestModel();
+            req.customerNonMonetaryHistoryData = new CustomerNonMonetaryHistoryViewModel() { CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594") };
+
+            Call(client, servserURI + "api/loyalty/customerhistory/loadnonmonetary", req);
+        }
     }
 }

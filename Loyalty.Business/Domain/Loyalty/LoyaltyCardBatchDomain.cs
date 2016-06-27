@@ -27,6 +27,13 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyCardBatch != null)
             {
+                    currentLoyaltyCardBatch.LastUpdate = DateTime.Now;
+                    currentLoyaltyCardBatch.BatchGenerateDate = item.BatchGenerateDate;
+                    currentLoyaltyCardBatch.BatchGeneratePDate = item.BatchGeneratePDate;
+                    MainRepository.Update(currentLoyaltyCardBatch);
+            }
+            else
+            {
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

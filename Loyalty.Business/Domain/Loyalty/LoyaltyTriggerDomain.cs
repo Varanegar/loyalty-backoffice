@@ -27,6 +27,13 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyTrigger != null)
             {
+                currentLoyaltyTrigger.LastUpdate = item.LastUpdate;
+                currentLoyaltyTrigger.LoyaltyTriggerCode = item.LoyaltyTriggerCode;
+                currentLoyaltyTrigger.LoyaltyTriggerName = item.LoyaltyTriggerName;
+                currentLoyaltyTrigger.LoyaltyTriggerTypeId = item.LoyaltyTriggerTypeId;
+                MainRepository.Update(currentLoyaltyTrigger);
+            }
+            else{
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

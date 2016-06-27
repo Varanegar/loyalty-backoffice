@@ -31,6 +31,10 @@ namespace Loyalty.Business.Domain.Loyalty
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
+            else{
+                item.CreatedDate = item.LastUpdate = DateTime.Now;
+                MainRepository.Add(item);
+            }
         }
 
         public async Task DeleteLoyaltyCards(List<LoyaltyCard> datas)

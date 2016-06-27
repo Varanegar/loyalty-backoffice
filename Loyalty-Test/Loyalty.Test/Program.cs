@@ -35,7 +35,7 @@ namespace Loyalty.Test
                     #endregion
 
                     #region Card Set
-                    CardManagement.SaveCardSets(client, servserURI);
+                    //CardManagement.SaveCardSets(client, servserURI);
                     //CardManagement.GetCardSets(client, servserURI);
                     #endregion
 
@@ -62,6 +62,8 @@ namespace Loyalty.Test
                     //CustomerManagement.GetCustomerById(client, servserURI);
                     //CustomerManagement.GetCustomerList(client, servserURI);
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);
+                    CustomerManagement.GetCustomerMonetaryHistory(client, servserURI);
+                    //CustomerManagement.GetCustomerNonMonetaryHistory(client, servserURI);
                     #endregion
 
                     #region userGroup

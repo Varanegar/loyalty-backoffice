@@ -91,6 +91,8 @@
     <Compile Include="Interfaces\Base\IBaseValueRepository.cs" />
     <Compile Include="Interfaces\Base\ICityRegionRepository.cs" />
     <Compile Include="Interfaces\Base\ICurrencyTypeRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerMonetaryHistoryRepository.cs" />
+    <Compile Include="Interfaces\Customer\ICustomerNonMonetaryHistoryRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerTagRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerGroupRepository.cs" />
     <Compile Include="Interfaces\Customer\ICustomerLoyaltyTierHistoryRepository.cs" />
@@ -190,6 +192,10 @@
     <Compile Include="Migrations\201606270736413_Trigger.Designer.cs">
       <DependentUpon>201606270736413_Trigger.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606271031165_CustomerHistory.cs" />
+    <Compile Include="Migrations\201606271031165_CustomerHistory.Designer.cs">
+      <DependentUpon>201606271031165_CustomerHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -197,11 +203,13 @@
     <Compile Include="Models\Account\CompanyPersonnel.cs" />
     <Compile Include="Models\Account\Customer.cs" />
     <Compile Include="Models\Account\CustomerGroup.cs" />
+    <Compile Include="Models\Account\CustomerMonetaryHistory.cs" />
     <Compile Include="Models\Account\CustomerTag.cs" />
     <Compile Include="Models\Account\CustomerTagCustomer.cs" />
     <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
     <Compile Include="Models\Account\CustomerShipAddress.cs" />
     <Compile Include="Models\Account\CustomerType.cs" />
+    <Compile Include="Models\Account\CustomerNonMonetaryHistory.cs" />
     <Compile Include="Models\Account\UserGroup.cs" />
     <Compile Include="Models\Account\UserGroupUser.cs" />
     <Compile Include="Models\LoyaltyBaseModel.cs" />
@@ -243,6 +251,8 @@
     <Compile Include="Repositories\Base\BaseValueRepository.cs" />
     <Compile Include="Repositories\Base\CityRegionRepository.cs" />
     <Compile Include="Repositories\Base\CurrencyTypeRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerNonMonetaryHistoryRepository.cs" />
+    <Compile Include="Repositories\Customer\CustomerMonetaryHistoryRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerTagRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerGroupRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerLoyaltyTierHistoryRepository.cs" />
@@ -353,6 +363,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606270736413_Trigger.resx">
       <DependentUpon>201606270736413_Trigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606271031165_CustomerHistory.resx">
+      <DependentUpon>201606271031165_CustomerHistory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

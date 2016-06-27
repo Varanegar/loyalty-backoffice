@@ -42,7 +42,7 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             try
             {
                 var domain = new LoyaltyTriggerDomain(OwnerInfo);
-                await domain.PublishAsync(AutoMapper.Mapper.Map<IEnumerable<LoyaltyTrigger>>(data.loyaltyTriggerData).ToList());
+                await domain.PublishAsync(AutoMapper.Mapper.Map<LoyaltyTrigger>(data.loyaltyTriggerData));
 
                 return Ok(data.loyaltyTriggerData);
 
@@ -62,7 +62,8 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             try
             {
                 var domain = new LoyaltyTriggerDomain(OwnerInfo);
-                await domain.DeleteLoyaltyTrigger(AutoMapper.Mapper.Map<IEnumerable<LoyaltyTrigger>>(data.loyaltyTriggerData).ToList());
+                var list = new List<LoyaltyTrigger>() { AutoMapper.Mapper.Map<LoyaltyTrigger>(data.loyaltyTriggerData) };
+                await domain.DeleteLoyaltyTrigger(list);
 
                 return Ok(data.loyaltyTriggerData);
 
@@ -101,7 +102,7 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             try
             {
                 var domain = new LoyaltyTriggerTypeDomain(OwnerInfo);
-                await domain.PublishAsync(AutoMapper.Mapper.Map<IEnumerable<LoyaltyTriggerType>>(data.loyaltyTriggerTypeData).ToList());
+                await domain.PublishAsync(AutoMapper.Mapper.Map<LoyaltyTriggerType>(data.loyaltyTriggerTypeData));
 
                 return Ok(data.loyaltyTriggerTypeData);
 
@@ -121,7 +122,8 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             try
             {
                 var domain = new LoyaltyTriggerTypeDomain(OwnerInfo);
-                await domain.DeleteLoyaltyTriggerType(AutoMapper.Mapper.Map<IEnumerable<LoyaltyTriggerType>>(data.loyaltyTriggerTypeData).ToList());
+                var list = new List<LoyaltyTriggerType>() { AutoMapper.Mapper.Map<LoyaltyTriggerType>(data.loyaltyTriggerTypeData) };
+                await domain.DeleteLoyaltyTriggerType(list);
 
                 return Ok(data.loyaltyTriggerTypeData);
 
