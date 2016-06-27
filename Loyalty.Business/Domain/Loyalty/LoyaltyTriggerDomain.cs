@@ -9,30 +9,30 @@ using Loyalty.DataAccess.Models;
 
 namespace Loyalty.Business.Domain.Loyalty
 {
-    public class LoyaltyTriggerTypeDomain : BusinessDomainV3<LoyaltyTriggerType>, IBusinessDomainV3<LoyaltyTriggerType>
+    public class LoyaltyTriggerDomain : BusinessDomainV3<LoyaltyTrigger>, IBusinessDomainV3<LoyaltyTrigger>
     {
         #region Ctors
-        public LoyaltyTriggerTypeDomain(OwnerInfo ownerInfo)
+        public LoyaltyTriggerDomain(OwnerInfo ownerInfo)
             : this(ownerInfo, new AnatoliDbContext())
         {
         }
-        public LoyaltyTriggerTypeDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
+        public LoyaltyTriggerDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
             : base(ownerInfo, dbc)
         {
         }
         #endregion
 
         #region Methods
-        public override void AddDataToRepository(LoyaltyTriggerType currentLoyaltyTriggerType, LoyaltyTriggerType item)
+        public override void AddDataToRepository(LoyaltyTrigger currentLoyaltyTrigger, LoyaltyTrigger item)
         {
-            if (currentLoyaltyTriggerType != null)
+            if (currentLoyaltyTrigger != null)
             {
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
         }
 
-        public async Task DeleteLoyaltyTriggerType(List<LoyaltyTriggerType> datas)
+        public async Task DeleteLoyaltyTrigger(List<LoyaltyTrigger> datas)
         {
             //Validate
 

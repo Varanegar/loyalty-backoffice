@@ -60,6 +60,7 @@ namespace Loyalty.DataAccess
         public DbSet<LoyaltyRuleType> LoyaltyRuleTypes { get; set; }
         public DbSet<LoyaltyTier> LoyaltyTiers { get; set; }
         public DbSet<LoyaltyTriggerType> LoyaltyTriggerTypes { get; set; }
+        public DbSet<LoyaltyTrigger> LoyaltyTriggers { get; set; }
         public DbSet<LoyaltyValueType> LoyaltyValueTypes { get; set; }
         #endregion
 

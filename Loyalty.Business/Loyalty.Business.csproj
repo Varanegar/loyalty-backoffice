@@ -127,6 +127,7 @@
     <Compile Include="Domain\Loyalty\LoyaltyRuleDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyRuleTypeDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyTierDomain.cs" />
+    <Compile Include="Domain\Loyalty\LoyaltyTriggerDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyTriggerTypeDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyValueTypeDomain.cs" />
     <Compile Include="Domain\Permissions\PermissionDomain.cs" />

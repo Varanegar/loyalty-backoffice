@@ -49,6 +49,8 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyCardSet, LoyaltyCardSetViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyCard, LoyaltyCardViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyTier, LoyaltyTierViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyTrigger, LoyaltyTriggerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyTriggerType, LoyaltyTriggerTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             #endregion
 
         }
@@ -77,6 +79,8 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyCardSetViewModel, LoyaltyCardSet>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyTierViewModel, LoyaltyTier>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyUserGroupViewModel, UserGroup>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyTriggerViewModel, LoyaltyTrigger>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyTriggerTypeViewModel, LoyaltyTriggerType>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             #endregion
         }
         private static Guid? ConvertNullableStringToGuid(string data)

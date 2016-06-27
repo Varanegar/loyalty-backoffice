@@ -28,6 +28,14 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyCardSet != null)
             {
+                currentLoyaltyCardSet.LoyaltyCardSetName = item.LoyaltyCardSetName;
+                currentLoyaltyCardSet.Seed = item.Seed;
+                currentLoyaltyCardSet.CurrentNo = item.CurrentNo;
+                currentLoyaltyCardSet.Initialtext = item.Initialtext;
+                currentLoyaltyCardSet.LoyaltyCardSetGenerateTypeId = item.LoyaltyCardSetGenerateTypeId;
+                MainRepository.Update(currentLoyaltyCardSet);
+            }
+            else{
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

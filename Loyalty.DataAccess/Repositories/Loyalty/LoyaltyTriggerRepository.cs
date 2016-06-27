@@ -10,18 +10,19 @@ using Anatoli.Common.DataAccess.Repositories;
 
 namespace Loyalty.DataAccess.Repositories
 {
-    public class LoyaltyTriggerTypeRepository : AnatoliRepository<LoyaltyTriggerType>, ILoyaltyTriggerTypeRepository
+    public class LoyaltyTriggerRepository : AnatoliRepository<LoyaltyTrigger>, ILoyaltyTriggerRepository
     {
         #region Ctors
-        public LoyaltyTriggerTypeRepository() : this(new AnatoliDbContext()) { }
-        public LoyaltyTriggerTypeRepository(AnatoliDbContext context)
+        public LoyaltyTriggerRepository() : this(new AnatoliDbContext()) { }
+        public LoyaltyTriggerRepository(AnatoliDbContext context)
             : base(context)
         {
         }
-        public LoyaltyTriggerTypeRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
+        public LoyaltyTriggerRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
             : base(context, OwnerInfo)
         {
         }
+
         #endregion
     }
 }

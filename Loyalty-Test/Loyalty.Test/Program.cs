@@ -35,7 +35,7 @@ namespace Loyalty.Test
                     #endregion
 
                     #region Card Set
-                    //CardManagement.SaveCardSets(client, servserURI);
+                    CardManagement.SaveCardSets(client, servserURI);
                     //CardManagement.GetCardSets(client, servserURI);
                     #endregion
 
@@ -68,7 +68,16 @@ namespace Loyalty.Test
                     //LoyaltyUserManagement.SaveUserGroups(client, servserURI);
                     //LoyaltyUserManagement.DeleteUserGroups(client, servserURI);
                     //LoyaltyUserManagement.GetUserGroups(client, servserURI);
-                    LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
+                    //LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
+                    #endregion
+
+                    #region trigger
+                    //LoyaltyTriggerManagement.SaveTriggerType(client, servserURI);
+                    //LoyaltyTriggerManagement.GetTriggerType(client, servserURI);
+                    //LoyaltyTriggerManagement.DeleteTriggerType(client, servserURI);
+                    //LoyaltyTriggerManagement.SaveTrigger(client, servserURI);
+                    //LoyaltyTriggerManagement.GetTrigger(client, servserURI);
+                    //LoyaltyTriggerManagement.DeleteTrigger(client, servserURI);
                     #endregion
                 }
 
