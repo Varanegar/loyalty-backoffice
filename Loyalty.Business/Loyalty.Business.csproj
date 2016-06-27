@@ -111,6 +111,7 @@
     <Compile Include="Domain\Base\CityRegionDomain.cs" />
     <Compile Include="Domain\Base\CurrencyTypeDomain.cs" />
     <Compile Include="Domain\Customer\CustomerDomain.cs" />
+    <Compile Include="Domain\Customer\CustomerTransactionHistoryDomain.cs" />
     <Compile Include="Domain\Customer\CustomerMonetaryHistoryDomain.cs" />
     <Compile Include="Domain\Customer\CustomerNonMonetaryHistoryDomain.cs" />
     <Compile Include="Domain\Customer\CustomerTagDomain.cs" />

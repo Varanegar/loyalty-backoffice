@@ -39,7 +39,7 @@ namespace Loyalty.WebApi.Controllers
         }
 
         [Authorize(Roles = "AuthorizedApp, User")]
-        [Route("customers/search/bycodeorcard")]
+        [Route("search/bycodeormobile")]
         [HttpPost]
         public async Task<IHttpActionResult> GetCustomerToFindReagent([FromBody]CustomerRequestModel data)
         {

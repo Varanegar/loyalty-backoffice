@@ -449,6 +449,14 @@ namespace Loyalty.DataAccess.Migrations
                     );
 
                 #endregion
+
+                #region LoyaltyValueType
+                context.LoyaltyValueTypes.AddOrUpdate(item => item.Id,
+                    new LoyaltyValueType { Id = Guid.Parse("F84E6BCC-10D0-49FC-A9D8-F6DC9E8F15A0"), LoyaltyValueTypeName = "امتیاز", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyValueType { Id = Guid.Parse("AF424BDA-8462-41FB-9119-D6EC7E158F7A"), LoyaltyValueTypeName = "ریال", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, }
+                    );
+                #endregion
+
             }
         }
     }

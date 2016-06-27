@@ -107,5 +107,17 @@ namespace Loyalty.Test
 
             Call(client, servserURI + "api/loyalty/customerhistory/loadnonmonetary", req);
         }
+
+        public static void GetCustomerTransactionHistory(HttpClient client, string servserURI)
+        {
+            var req = new CustomerHistoryRequestModel();
+            req.customerTransactionHistoryData = new CustomerTransactionHistoryViewModel()
+            {
+                CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594"),
+                LoyaltyValueTypeId = new Guid("F84E6BCC-10D0-49FC-A9D8-F6DC9E8F15A0")
+            };
+
+            Call(client, servserURI + "api/loyalty/customerhistory/loadtransaction", req);
+        }
     }
 }

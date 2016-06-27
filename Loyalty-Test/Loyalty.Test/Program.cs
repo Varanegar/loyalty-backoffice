@@ -18,7 +18,7 @@ namespace Loyalty.Test
 
 
                 string servserURI = "http://localhost:59824/";
-               // string servserURI = "http://217.218.53.71:4444/";
+                //string servserURI = "http://217.218.53.71:4444/";
 
                 var oauthClient = new OAuth2Client(new Uri(servserURI + "/oauth/token"));
                 var client = new HttpClient();
@@ -62,8 +62,9 @@ namespace Loyalty.Test
                     //CustomerManagement.GetCustomerById(client, servserURI);
                     //CustomerManagement.GetCustomerList(client, servserURI);
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);
-                    CustomerManagement.GetCustomerMonetaryHistory(client, servserURI);
+                    //CustomerManagement.GetCustomerMonetaryHistory(client, servserURI);
                     //CustomerManagement.GetCustomerNonMonetaryHistory(client, servserURI);
+                    CustomerManagement.GetCustomerTransactionHistory(client, servserURI);
                     #endregion
 
                     #region userGroup

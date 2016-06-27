@@ -143,5 +143,72 @@ namespace Loyalty.WebApi.Controllers
         }
 
         #endregion
+
+
+        #region CustomerTransactionHistory
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("loadtransaction")]
+        [HttpPost]
+        public async Task<IHttpActionResult> LoadCutomerTransactionHistory([FromBody]CustomerHistoryRequestModel data)
+        {
+            try
+            {
+                var result = await new CustomerTransactionHistoryDomain(OwnerInfo).GetAllAsync<CustomerTransactionHistoryViewModel>(x => x.CustomerId == data.customerTransactionHistoryData.CustomerId && 
+                    x.LoyaltyValueTypeId == data.customerTransactionHistoryData.LoyaltyValueTypeId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("savetransaction")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveCustomerTransactionHistory([FromBody]CustomerHistoryRequestModel data)
+        {
+            try
+            {                    
+                var domain = new CustomerTransactionHistoryDomain(OwnerInfo);
+
+                await domain.PublishAsync(AutoMapper.Mapper.Map<CustomerTransactionHistory>(data.customerTransactionHistoryData));
+
+                return Ok(data.customerTransactionHistoryData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("deletetransaction")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteCustomerTransactionHistory([FromBody]CustomerHistoryRequestModel data)
+        {
+            try
+            {
+                var domain = new CustomerTransactionHistoryDomain(OwnerInfo);
+
+                var group = new List<CustomerTransactionHistory> { AutoMapper.Mapper.Map<CustomerTransactionHistory>(data.customerTransactionHistoryData) };
+
+                await domain.DeleteHistory(group);
+
+                return Ok(true);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        #endregion
+
     }
 }

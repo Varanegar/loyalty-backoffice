@@ -42,6 +42,7 @@ namespace Loyalty.DataAccess
 
         public DbSet<CustomerMonetaryHistory> CustomerMonetaryHistories { get; set; }
         public DbSet<CustomerNonMonetaryHistory> CustomerNonMonetaryHistories { get; set; }
+        public DbSet<CustomerTransactionHistory> CustomerTransactionHistories { get; set; }
             
 
         #endregion

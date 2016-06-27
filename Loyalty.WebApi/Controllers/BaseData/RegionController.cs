@@ -45,6 +45,7 @@ namespace Loyalty.WebApi.Controllers
             {
                 var result = await new CityRegionDomain(OwnerInfo).GetAllAsync<CityRegionViewModel>(p => p.CityRegion2Id == data.parentUniqueId);
 
+
                 return Ok(result);
             }
             catch (Exception ex)
