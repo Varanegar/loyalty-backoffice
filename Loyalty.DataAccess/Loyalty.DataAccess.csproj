@@ -83,6 +83,7 @@
     <Compile Include="Interfaces\Account\IPrincipalPermissionCatalogRepository.cs" />
     <Compile Include="Interfaces\Account\IPrincipalPermissionRepository.cs" />
     <Compile Include="Interfaces\Account\IPrincipalRepository.cs" />
+    <Compile Include="Interfaces\Account\IUserGroupRepository.cs" />
     <Compile Include="Interfaces\Account\IUserRepository.cs" />
     <Compile Include="AnatoliDbContext.cs" />
     <Compile Include="Interfaces\Base\IBaseTypeRepository.cs" />
@@ -175,6 +176,14 @@
     <Compile Include="Migrations\201606241237006_Card-Migration-2.Designer.cs">
       <DependentUpon>201606241237006_Card-Migration-2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606270035564_UserGroup.cs" />
+    <Compile Include="Migrations\201606270035564_UserGroup.designer.cs">
+      <DependentUpon>201606270035564_UserGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606270101499_UserGroup1.cs" />
+    <Compile Include="Migrations\201606270101499_UserGroup1.Designer.cs">
+      <DependentUpon>201606270101499_UserGroup1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -187,6 +196,8 @@
     <Compile Include="Models\Account\CustomerLoyaltyTierHistory.cs" />
     <Compile Include="Models\Account\CustomerShipAddress.cs" />
     <Compile Include="Models\Account\CustomerType.cs" />
+    <Compile Include="Models\Account\UserGroup.cs" />
+    <Compile Include="Models\Account\UserGroupUser.cs" />
     <Compile Include="Models\LoyaltyBaseModel.cs" />
     <Compile Include="Models\BaseData\BaseType.cs" />
     <Compile Include="Models\BaseData\BaseValue.cs" />
@@ -213,6 +224,7 @@
     <Compile Include="Models\Product\ProductType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Account\AnatoliUserStore.cs" />
+    <Compile Include="Repositories\Account\UserGroupRepository.cs" />
     <Compile Include="Repositories\Account\PermissionCatalogRepository.cs" />
     <Compile Include="Repositories\Account\PermissionRepository.cs" />
     <Compile Include="Repositories\Account\PrincipalPermissionCatalogRepository.cs" />
@@ -323,6 +335,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606241237006_Card-Migration-2.resx">
       <DependentUpon>201606241237006_Card-Migration-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606270035564_UserGroup.resx">
+      <DependentUpon>201606270035564_UserGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606270101499_UserGroup1.resx">
+      <DependentUpon>201606270101499_UserGroup1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

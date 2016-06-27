@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -25,20 +27,18 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyTriggerType != null)
             {
-                if (currentLoyaltyTriggerType.IsRemoved != item.IsRemoved)
-                {
-                    currentLoyaltyTriggerType.LastUpdate = DateTime.Now;
-                    currentLoyaltyTriggerType.IsRemoved = item.IsRemoved;
-                    MainRepository.Update(currentLoyaltyTriggerType);
-                }
-            }
-            else
-            {
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
         }
 
+        public async Task DeleteLoyaltyTiers(List<LoyaltyTriggerType> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
+        }
+        
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;

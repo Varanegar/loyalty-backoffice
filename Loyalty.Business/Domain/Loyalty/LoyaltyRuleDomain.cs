@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -37,6 +39,13 @@ namespace Loyalty.Business.Domain.Loyalty
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
+        }
+
+        public async Task DeleteLoyaltyRules(List<LoyaltyRule> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
         }
 
         public override void SetConditionForFetchingData()

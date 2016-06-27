@@ -160,6 +160,65 @@ namespace Anatoli.Cloud.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("cards/changestatus")]
+        [HttpPost]
+        public async Task<IHttpActionResult> ChangeStatusLoyaltyCards([FromBody]LoyaltyRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyCardDomain(OwnerInfo);
+                await domain.ChangeStatusLoyaltyCard(data.uniqueId, data.loyaltyCardStatusId);
+
+                return Ok(data.loyaltyCardListData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("cards/allocate")]
+        [HttpPost]
+        public async Task<IHttpActionResult> AllocateLoyaltyCards([FromBody]LoyaltyRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyCardDomain(OwnerInfo);
+                await domain.AllocateLoyaltyCard(data.uniqueId, data.customerId);
+
+                return Ok(data.loyaltyCardListData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("cards/deallocate")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeAllocateLoyaltyCards([FromBody]LoyaltyRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyCardDomain(OwnerInfo);
+                await domain.DeAllocateLoyaltyCard(data.uniqueId);
+
+                return Ok(data.loyaltyCardListData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
         #endregion
     }
 }

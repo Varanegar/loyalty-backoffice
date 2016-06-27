@@ -14,7 +14,7 @@ namespace Loyalty.Test
         public static void GetCityregionByParentId(HttpClient client, string servserURI, Guid? ParentId)
         {
             var req = new BaseRequestModel();
-            req.parentUniqueId = ParentId;
+            req.parentUniqueId = ParentId ?? new Guid();
             Call(client, servserURI + "api/base/region/cityregions/byparentid", req);
         }
 

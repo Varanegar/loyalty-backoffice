@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -39,7 +41,13 @@ namespace Loyalty.Business.Domain
                 MainRepository.Add(item);
             }
         }
+       public async Task  DeleteCustomer(List<CustomerLoyaltyTierHistory> datas)
+        {
+            //Validate
 
+            await DeleteAsync(datas);
+        }
+ 
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;

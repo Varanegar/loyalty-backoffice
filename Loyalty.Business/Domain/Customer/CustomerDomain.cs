@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -93,6 +95,12 @@ namespace Loyalty.Business.Domain
             }
         }
 
+        public async Task  DeleteCustomer(List<Customer> customers)
+        {
+            //Validate
+
+            await DeleteAsync(customers);
+        }
         #endregion
     }
 }

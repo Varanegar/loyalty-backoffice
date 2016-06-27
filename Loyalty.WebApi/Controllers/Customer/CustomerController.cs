@@ -129,6 +129,29 @@ namespace Loyalty.WebApi.Controllers
         }
 
         [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("customer/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteCustomer([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerDomain = new CustomerDomain(OwnerInfo);
+                
+                var customers = new List<Customer> {AutoMapper.Mapper.Map<Customer>(data.customerData)};
+
+                await customerDomain.DeleteCustomer(customers);
+
+                return Ok(true);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
         [Route("savesinglequick")]
         [HttpPost]
         public async Task<IHttpActionResult> SaveSingleCustomerQuick([FromBody]CustomerRequestModel data)
@@ -443,7 +466,7 @@ namespace Loyalty.WebApi.Controllers
             try
             {
                 var customerGroupDomain = new CustomerGroupDomain(OwnerInfo);
-                await customerGroupDomain.DeleteAsync(AutoMapper.Mapper.Map<IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
+                await customerGroupDomain.DeleteCustomerGroups(AutoMapper.Mapper.Map<IEnumerable<CustomerGroup>>(data.customerGroupData).ToList());
                 return Ok(data.customerGroupData);
             }
             catch (Exception ex)
@@ -452,6 +475,7 @@ namespace Loyalty.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
+
         [Authorize(Roles = "DataSync, BaseDataAdmin")]
         [Route("customergroups/checkdeleted")]
         [HttpPost]

@@ -35,7 +35,7 @@ namespace Loyalty.Test
             var json8 = result8.Content.ReadAsStringAsync().Result;
             // var obj = new { message = "", ModelState = new Dictionary<string, string[]>() };
             //var x = JsonConvert.DeserializeAnonymousType(json8, obj);
-            //WriteToConsole(json8);
+            WriteToConsole(json8);
 
         }
     }

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -25,20 +27,19 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyRuleType != null)
             {
-                if (currentLoyaltyRuleType.IsRemoved != item.IsRemoved)
-                {
-                    currentLoyaltyRuleType.LastUpdate = DateTime.Now;
-                    currentLoyaltyRuleType.IsRemoved = item.IsRemoved;
-                    MainRepository.Update(currentLoyaltyRuleType);
-                }
-            }
-            else
-            {
+               
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
         }
 
+        public async Task DeleteLoyaltyRuleTypes(List<LoyaltyRuleType> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
+        }
+        
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;

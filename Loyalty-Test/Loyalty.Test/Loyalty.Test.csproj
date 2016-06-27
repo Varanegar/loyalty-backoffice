@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseTestManagment.cs" />
+    <Compile Include="LoyaltyUserManagement.cs" />
     <Compile Include="CardManagement.cs" />
     <Compile Include="CityRegionManagement.cs" />
     <Compile Include="CustomerManagement.cs" />

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
@@ -38,6 +40,13 @@ namespace Loyalty.Business.Domain.Loyalty
                 MainRepository.Add(item);
             }
         }
+        public async Task DeleteLoyaltyPrograms(List<LoyaltyProgram> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
+        }
+
 
         public override void SetConditionForFetchingData()
         {

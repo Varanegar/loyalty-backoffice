@@ -76,6 +76,7 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyCardViewModel, LoyaltyCard>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyCardSetViewModel, LoyaltyCardSet>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyTierViewModel, LoyaltyTier>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyUserGroupViewModel, UserGroup>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             #endregion
         }
         private static Guid? ConvertNullableStringToGuid(string data)

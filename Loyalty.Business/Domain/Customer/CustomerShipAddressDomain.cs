@@ -80,6 +80,15 @@ namespace Loyalty.Business.Domain
                 MainRepository.Add(item);
             }
         }
+
+        public async Task DeleteCustomerShipAddress(List<CustomerShipAddress> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
+        }
+
+
         #endregion
     }
 }

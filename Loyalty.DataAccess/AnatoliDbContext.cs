@@ -42,6 +42,9 @@ namespace Loyalty.DataAccess
         #endregion
 
         #region Loyalty
+        public DbSet<UserGroup> UserGroups { get; set; }
+        public DbSet<UserGroupUser> UserGroupUsers { get; set; }
+
         public DbSet<LoyaltyActionType> LoyaltyActionTypes { get; set; }
         public DbSet<LoyaltyCard> LoyaltyCards { get; set; }
         public DbSet<LoyaltyCardStatus> LoyaltyCardStatuses { get; set; }

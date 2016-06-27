@@ -63,6 +63,26 @@ namespace Anatoli.Cloud.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("tiers/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteLoyaltyTiers([FromBody]LoyaltyRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyTierDomain(OwnerInfo);
+                await domain.DeleteLoyaltyTiers(AutoMapper.Mapper.Map<IEnumerable<LoyaltyTier>>(data.loyaltyTierListData).ToList());
+
+                return Ok(data.loyaltyTierListData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
         #endregion
     }
 }

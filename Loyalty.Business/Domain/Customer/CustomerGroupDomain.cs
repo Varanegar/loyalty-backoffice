@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models;
 using Loyalty.DataAccess.Models.Account;
+using System.Collections.Generic;
 
 namespace Loyalty.Business.Domain
 {
@@ -48,6 +50,15 @@ namespace Loyalty.Business.Domain
             }
         }
 
+        public async Task DeleteCustomerGroups(List<CustomerGroup> customerGroups)
+        {
+            //Validate
+
+            await DeleteAsync(customerGroups);
+        }
+ 
+        
+        
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;
