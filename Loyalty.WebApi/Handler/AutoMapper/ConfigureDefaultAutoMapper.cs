@@ -1,4 +1,5 @@
 ﻿using Anatoli.DataAccess.Models;
+using Anatoli.DataAccess.Models.Identity;
 using Anatoli.ViewModels.BaseModels;
 using Anatoli.ViewModels.CustomerModels;
 using Anatoli.ViewModels.LoyaltyModels;
@@ -7,6 +8,7 @@ using Anatoli.ViewModels.PersonnelAcitvityModel;
 using Anatoli.ViewModels.ProductModels;
 using Anatoli.ViewModels.StockModels;
 using Anatoli.ViewModels.StoreModels;
+using Anatoli.ViewModels.User;
 using AutoMapper;
 using Loyalty.DataAccess.Models;
 using Loyalty.DataAccess.Models.Account;
@@ -28,6 +30,8 @@ namespace Loyalty.WebApi.Handler
         }
         private static void ConfigModelToViewModel()
         {
+            Mapper.CreateMap<User, UserProfileModel>();
+
             #region Base Data
             Mapper.CreateMap<CityRegion, CityRegionViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.CityRegion2Id.ToString())).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<BaseType, BaseTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());

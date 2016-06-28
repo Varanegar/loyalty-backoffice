@@ -64,10 +64,11 @@ namespace Loyalty.Test
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);
                     //CustomerManagement.GetCustomerMonetaryHistory(client, servserURI);
                     //CustomerManagement.GetCustomerNonMonetaryHistory(client, servserURI);
-                    CustomerManagement.GetCustomerTransactionHistory(client, servserURI);
+                    //CustomerManagement.GetCustomerTransactionHistory(client, servserURI);
                     #endregion
 
                     #region userGroup
+                    LoyaltyUserManagement.GetUserProfile(client, servserURI);
                     //LoyaltyUserManagement.SaveUserGroups(client, servserURI);
                     //LoyaltyUserManagement.DeleteUserGroups(client, servserURI);
                     //LoyaltyUserManagement.GetUserGroups(client, servserURI);
