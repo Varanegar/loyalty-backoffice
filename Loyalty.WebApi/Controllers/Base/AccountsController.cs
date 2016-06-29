@@ -396,6 +396,7 @@ namespace Anatoli.Cloud.WebApi.Controllers
                                          userId = s.Id,
                                          fullName = s.FullName,
                                          userName = s.UserName,
+                                         userNameStr = s.UserNameStr,
                                          email = s.Email,
                                          mobile = s.PhoneNumber,
                                      })
