@@ -275,7 +275,6 @@
     <Compile Include="Controllers\Loyalty\LoyaltyCardController.cs" />
     <Compile Include="Controllers\Loyalty\LoyaltyTriggerController.cs" />
     <Compile Include="Controllers\Product\ProductController.cs" />
-    <Compile Include="Controllers\User\UserController.cs" />
     <Compile Include="Controllers\User\UserGroupController.cs" />
     <Compile Include="Handler\ApiResponse.cs" />
     <Compile Include="Handler\WrappingHandler.cs" />

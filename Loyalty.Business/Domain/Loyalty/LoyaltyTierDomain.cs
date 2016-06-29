@@ -27,6 +27,12 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyTier != null)
             {
+                currentLoyaltyTier.LastUpdate = DateTime.Now;
+                currentLoyaltyTier.TierName = item.TierName;
+                MainRepository.Update(currentLoyaltyTier);
+            }
+            else
+            {
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

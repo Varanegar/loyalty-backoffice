@@ -30,7 +30,7 @@ namespace Loyalty.WebApi.Handler
         }
         private static void ConfigModelToViewModel()
         {
-            Mapper.CreateMap<User, UserProfileModel>();
+            Mapper.CreateMap<User, UserProfileModel>().ForMember(p => p.PhoneNumber, opt => opt.MapFrom(src => src.PhoneNumber ?? "")).ForMember(p => p.FullName, op => op.MapFrom(src => src.FullName ?? ""));
 
             #region Base Data
             Mapper.CreateMap<CityRegion, CityRegionViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.CityRegion2Id.ToString())).ForMember(p => p.ID, opt => opt.Ignore());
@@ -56,8 +56,9 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyCardSet, LoyaltyCardSetViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyCard, LoyaltyCardViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyTier, LoyaltyTierViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<UserGroup, LoyaltyUserGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyTrigger, LoyaltyTriggerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
-            Mapper.CreateMap<LoyaltyTriggerType, LoyaltyTriggerTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyTriggerType, LoyaltyTriggerTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());        
             #endregion
 
         }

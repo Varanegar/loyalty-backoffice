@@ -28,7 +28,8 @@ namespace Loyalty.WebApi.Controllers
         {
             try
             {
-                var result = await new CustomerDomain(OwnerInfo).GetByIdAsync<CustomerViewModel>(data.customerId);
+                var result = await new CustomerDomain(OwnerInfo).GetAllAsync<CustomerViewModel>(x => x.Id == data.customerId);
+                //var result = await new CustomerDomain(OwnerInfo).GetByIdAsync<CustomerViewModel>(data.customerId);
                 return Ok(result);
             }
             catch (Exception ex)

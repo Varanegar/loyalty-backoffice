@@ -8,6 +8,7 @@ using Anatoli.ViewModels;
 using Anatoli.ViewModels.CustomerModels;
 using Anatoli.ViewModels.LoyaltyModels;
 using Anatoli.ViewModels.RequestModel;
+using Anatoli.ViewModels.User;
 
 namespace Loyalty.Test
 {
@@ -16,11 +17,22 @@ namespace Loyalty.Test
 
 
         private static readonly Guid _userGroupId = new Guid("928CB38C-5AD7-4824-AE3B-87F131DB612F");
+
+
         #region User
         public static void GetUserProfile(HttpClient client, string servserURI)
         {
             var req = new BaseRequestModel();
-            Call(client, servserURI + "api/loyalty/user/profile", req);
+            Call(client, servserURI + "api/identityAccounts/profile", req);
+        }
+        public static void SaveUser(HttpClient client, string servserURI)
+        {
+            var req = new CreateUserBindingModel();
+            req.Username = "User1";
+            req.Password = "12as9696@hg";
+            req.Mobile = "09122387759";
+            req.Email = "test@gmail.com";
+            Call(client, servserURI + "api/identityAccounts/saveUser", req);
         }
         #endregion
 

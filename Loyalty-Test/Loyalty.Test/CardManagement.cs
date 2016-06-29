@@ -12,7 +12,7 @@ namespace Loyalty.Test
 {
     public class CardManagement : BaseTestManagment
     {
-        #region Card Set
+        #region Tier
         public static void GetTiers(HttpClient client, string servserURI)
         {
             var req = new BaseRequestModel();
@@ -23,10 +23,19 @@ namespace Loyalty.Test
         {
             var req = new LoyaltyRequestModel();
             List<LoyaltyTierViewModel> tierData = new List<LoyaltyTierViewModel>();
-            tierData.Add(new LoyaltyTierViewModel() { TierName = "لطایی", TierCode = "1--1" });
+            tierData.Add(new LoyaltyTierViewModel() { UniqueId = new Guid("95AF2EEF-FD42-4A8E-B2CD-B062D927DE7D"), TierName = "لطایی", TierCode = "1--1" });
             req.loyaltyTierListData = tierData;
             Call(client, servserURI + "api/loyalty/tiers/save", req);
         }
+
+        public static void GetTierById(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRequestModel();
+            req.uniqueId = Guid.Parse("95AF2EEF-FD42-4A8E-B2CD-B062D927DE7D");
+
+            Call(client, servserURI + "api/loyalty/tiers/byid", req);
+        }
+
         #endregion
 
 

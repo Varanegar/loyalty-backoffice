@@ -73,7 +73,7 @@ namespace Loyalty.Test
         public static void GetCustomerById(HttpClient client, string servserURI)
         {
             var req = new CustomerRequestModel();
-            req.customerId = Guid.Parse("6F89DD6D-5271-4C7A-BC9F-5CE342219914");
+            req.customerId = Guid.Parse("3C16F408-1366-48ED-BE6C-9223A0776594");
 
             Call(client, servserURI + "api/loyalty/customer/customers/byid", req);
         }

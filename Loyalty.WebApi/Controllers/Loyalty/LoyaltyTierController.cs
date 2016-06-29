@@ -26,7 +26,7 @@ namespace Anatoli.Cloud.WebApi.Controllers
     [RoutePrefix("api/loyalty")]
     public class LoyaltyTierController : AnatoliApiController
     {
-        #region Loyalty Card Set
+        #region Loyalty Tier
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("tiers")]
         [HttpPost]
@@ -35,6 +35,24 @@ namespace Anatoli.Cloud.WebApi.Controllers
             try
             {
                 var result = await new LoyaltyTierDomain(OwnerInfo).GetAllAsync<LoyaltyTierViewModel>();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("tiers/byid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetTierById([FromBody]LoyaltyRequestModel data)
+        {
+            try
+            {
+                var result = await new LoyaltyTierDomain(OwnerInfo).GetAllAsync<LoyaltyTierViewModel>(x => x.Id == data.uniqueId); 
+                //await new LoyaltyTierDomain(OwnerInfo).GetByIdAsync<LoyaltyTierViewModel>(data.uniqueId);
                 return Ok(result);
             }
             catch (Exception ex)
