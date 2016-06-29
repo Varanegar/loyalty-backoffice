@@ -9,7 +9,9 @@ namespace Loyalty.DataAccess.Models.Account
 {
     public class UserGroup : LoyaltyBaseModel
     {
-        public int UserGroupCode { get; set; }
+        [StringLength(20)]
+        public string UserGroupCode { get; set; }
+
         [StringLength(100)]
         public string UserGroupName { get; set; }
     }

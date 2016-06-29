@@ -31,6 +31,8 @@ namespace Anatoli.Business.Domain
                 if (currentUserGroup.UserGroupName != item.UserGroupName ||
                     currentUserGroup.UserGroupCode != item.UserGroupCode)
                 {
+                    currentUserGroup.UserGroupName = item.UserGroupName;
+                    currentUserGroup.UserGroupCode = item.UserGroupCode;
                     currentUserGroup.LastUpdate = DateTime.Now;
                     MainRepository.Update(currentUserGroup);
                 }

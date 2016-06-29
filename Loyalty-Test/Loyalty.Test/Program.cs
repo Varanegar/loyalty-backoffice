@@ -17,14 +17,14 @@ namespace Loyalty.Test
                 //JiraLogin();
 
 
-                //string servserURI = "http://localhost:59824/";
-                string servserURI = "http://217.218.53.71:4444/";
+                string servserURI = "http://localhost:59824/";
+                //string servserURI = "http://217.218.53.71:4444/";
 
                 var oauthClient = new OAuth2Client(new Uri(servserURI + "/oauth/token"));
                 var client = new HttpClient();
                 client.Timeout = TimeSpan.FromHours(1);
-               // var oauthresult = oauthClient.RequestResourceOwnerPasswordAsync("AnatoliMobileApp", "Anatoli@App@Vn", "79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240,3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C").Result; //, "foo bar"
-                var oauthresult = oauthClient.RequestResourceOwnerPasswordAsync("AnatoliMobileApp", "1", "79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240,3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C").Result; //, "foo bar"
+                var oauthresult = oauthClient.RequestResourceOwnerPasswordAsync("AnatoliMobileApp", "Anatoli@App@Vn", "79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240,3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C").Result; //, "foo bar"
+                //var oauthresult = oauthClient.RequestResourceOwnerPasswordAsync("AnatoliMobileApp", "1", "79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240,3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C").Result; //, "foo bar"
 
                 if (oauthresult.AccessToken != null)
                 {
@@ -70,11 +70,11 @@ namespace Loyalty.Test
 
                     #region userGroup
                     //LoyaltyUserManagement.SaveUser(client, servserURI);
-                    LoyaltyUserManagement.GetUserProfile(client, servserURI);
+                    //LoyaltyUserManagement.GetUserProfile(client, servserURI);
                     //LoyaltyUserManagement.SaveUserGroups(client, servserURI);
                     //LoyaltyUserManagement.DeleteUserGroups(client, servserURI);
                     //LoyaltyUserManagement.GetUserGroups(client, servserURI);
-                    //LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
+                    LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
                     #endregion
 
                     #region trigger

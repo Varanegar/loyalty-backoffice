@@ -47,7 +47,7 @@ namespace Loyalty.Test
         public static void SaveUserGroups(HttpClient client, string servserURI)
         {
             var req = new LoyaltyUserGroupRequestModel();
-            req.userGroupData = new LoyaltyUserGroupViewModel() { UniqueId = _userGroupId, UserGroupCode = 1, UserGroupName = "صندوق دارها" };
+            req.userGroupData = new LoyaltyUserGroupViewModel() { UniqueId = _userGroupId, UserGroupCode = "12", UserGroupName = "صندوق دارها2" };
             Call(client, servserURI + "api/loyalty/usergroup/save", req);
         }
         public static void DeleteUserGroups(HttpClient client, string servserURI)
@@ -61,7 +61,14 @@ namespace Loyalty.Test
         #region UserGroupUser
         public static void AddUserGroupsUser(HttpClient client, string servserURI)
         {
-            var req = new LoyaltyUserGroupRequestModel() { uniqueId = _userGroupId, userId = new Guid("E8724E69-0A81-4DC6-87FE-FDA91D1D2EC2") };
+            var req = new LoyaltyUserGroupRequestModel() { uniqueId = _userGroupId,
+                                                           users = new List<UserViewModel>()
+                                                           {
+                                                               new UserViewModel() { Id = "E8724E69-0A81-4DC6-87FE-FDA91D1D2EC2" } ,
+                                                               new UserViewModel() { Id = "D0BBD3F2-CF76-4C5B-9336-0D38F1B6DAAB" } ,
+                                                               
+                                                           } 
+            };
             Call(client, servserURI + "api/loyalty/usergroup/adduser", req);
         }
         #endregion

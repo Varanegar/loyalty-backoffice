@@ -3,6 +3,7 @@ using System.Linq;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
+using Anatoli.DataAccess.Models.Identity;
 using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models.Account;
 using System;
@@ -38,9 +39,24 @@ namespace Anatoli.Business.Domain
 
             await DeleteAsync(datas);
         }
-        public async Task RemoveFromGroup(Guid id, Guid userId)
+        public async Task AddUsersToGroup(Guid id, List<User> users)
         {
-            var userGroupUser = await GetAllAsync<UserGroupUser>(x => x.UserGroupId == id && x.UserId == userId.ToString());
+            //var oldUserGroupUser = await GetAllAsync<UserGroupUser>(x => x.UserGroupId == id);
+            //await DeleteAsync(oldUserGroupUser);
+            
+            foreach (var user in users)
+            {
+                var userGroupUser = new UserGroupUser() { Id= Guid.NewGuid(), UserGroupId = id, UserId = user.Id };
+                await PublishAsync(userGroupUser);
+               // AddDataToRepository(null,userGroupUser);
+            }
+          
+        }
+
+        public async Task RemoveFromGroup(Guid id, List<User> users)
+        {
+            var userids = users.Select(u => u.Id).ToList();
+            var userGroupUser = await GetAllAsync<UserGroupUser>(x => x.UserGroupId == id && userids.Contains(x.UserId));
             await DeleteAsync(userGroupUser);
         }
  

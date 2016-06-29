@@ -65,6 +65,10 @@ namespace Loyalty.WebApi.Handler
 
         private static void ConfigViewModelToModel()
         {
+            #region
+            Mapper.CreateMap<UserViewModel, User>();
+            #endregion
+
             #region Base Data
             Mapper.CreateMap<CityRegionViewModel, CityRegion>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.CityRegion2Id, opt => opt.ResolveUsing(src => ConvertNullableStringToGuid(src.ParentUniqueIdString))).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<BaseTypeViewModel, BaseType>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());

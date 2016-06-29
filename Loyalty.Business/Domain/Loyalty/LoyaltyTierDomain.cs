@@ -29,6 +29,7 @@ namespace Loyalty.Business.Domain.Loyalty
             {
                 currentLoyaltyTier.LastUpdate = DateTime.Now;
                 currentLoyaltyTier.TierName = item.TierName;
+                currentLoyaltyTier.TierCode = item.TierCode;                    
                 MainRepository.Update(currentLoyaltyTier);
             }
             else

@@ -201,6 +201,14 @@
     <Compile Include="Migrations\201606272321290_CustomerTransactionHistory.Designer.cs">
       <DependentUpon>201606272321290_CustomerTransactionHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606290648543_UserGroupCodeToString.cs" />
+    <Compile Include="Migrations\201606290648543_UserGroupCodeToString.Designer.cs">
+      <DependentUpon>201606290648543_UserGroupCodeToString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606290715139_TierCode.cs" />
+    <Compile Include="Migrations\201606290715139_TierCode.Designer.cs">
+      <DependentUpon>201606290715139_TierCode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -376,6 +384,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606272321290_CustomerTransactionHistory.resx">
       <DependentUpon>201606272321290_CustomerTransactionHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606290648543_UserGroupCodeToString.resx">
+      <DependentUpon>201606290648543_UserGroupCodeToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606290715139_TierCode.resx">
+      <DependentUpon>201606290715139_TierCode.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

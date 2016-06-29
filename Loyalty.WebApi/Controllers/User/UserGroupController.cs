@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.NetworkInformation;
 using System.Web.Http;
 using Anatoli.Business.Domain;
+using Anatoli.DataAccess.Models.Identity;
 using Anatoli.ViewModels.LoyaltyModels;
 using Anatoli.ViewModels.RequestModel;
 using Loyalty.DataAccess.Models.Account;
@@ -13,7 +14,7 @@ using Loyalty.WebApi.Classes;
 using System.Threading.Tasks;
 using Loyalty.DataAccess;
 
-namespace Loyalty.WebApi.Controllers.User
+namespace Loyalty.WebApi.Controllers
 {
     [RoutePrefix("api/loyalty/usergroup")]
     public class UserGroupController : AnatoliApiController
@@ -87,9 +88,8 @@ namespace Loyalty.WebApi.Controllers.User
             try
             {
                 var usergroupuserdomain = new UserGroupUserDomain(OwnerInfo);
-                await usergroupuserdomain.
-                    PublishAsync(new UserGroupUser(){UserGroupId = data.uniqueId, UserId = data.userId.ToString()});
-
+                await usergroupuserdomain.AddUsersToGroup(data.uniqueId, AutoMapper.Mapper.Map<IEnumerable<User>>(data.users).ToList());
+ //                   PublishAsync(new UserGroupUser(){UserGroupId = data.uniqueId, UserId = data.userId.ToString()});
                 return Ok(true);
 
             }
@@ -108,7 +108,7 @@ namespace Loyalty.WebApi.Controllers.User
             try
             {
                 var usergroupuserdomain = new UserGroupUserDomain(OwnerInfo);
-                await usergroupuserdomain.RemoveFromGroup(data.uniqueId, data.userId);
+                await usergroupuserdomain.RemoveFromGroup(data.uniqueId, AutoMapper.Mapper.Map<List<User>>(data.users));
 
                 return Ok(true);
 

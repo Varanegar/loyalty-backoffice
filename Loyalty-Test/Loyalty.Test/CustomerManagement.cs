@@ -95,7 +95,7 @@ namespace Loyalty.Test
         public static void GetCustomerMonetaryHistory(HttpClient client, string servserURI)
         {
             var req = new CustomerHistoryRequestModel();
-            req.customerMonetaryHistoryData = new CustomerMonetaryHistoryViewModel() { CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594") };
+            req.customerMonetaryHistoryData = new CustomerMonetaryHistoryViewModel() { CustomerId = new Guid("67637fc3-d57f-4a65-b46a-e3e33c410f7b") };
 
             Call(client, servserURI + "api/loyalty/customerhistory/loadmonetary", req);
         }
@@ -103,7 +103,7 @@ namespace Loyalty.Test
         public static void GetCustomerNonMonetaryHistory(HttpClient client, string servserURI)
         {
             var req = new CustomerHistoryRequestModel();
-            req.customerNonMonetaryHistoryData = new CustomerNonMonetaryHistoryViewModel() { CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594") };
+            req.customerNonMonetaryHistoryData = new CustomerNonMonetaryHistoryViewModel() { CustomerId = new Guid("67637fc3-d57f-4a65-b46a-e3e33c410f7b") };
 
             Call(client, servserURI + "api/loyalty/customerhistory/loadnonmonetary", req);
         }
@@ -113,8 +113,8 @@ namespace Loyalty.Test
             var req = new CustomerHistoryRequestModel();
             req.customerTransactionHistoryData = new CustomerTransactionHistoryViewModel()
             {
-                CustomerId = new Guid("3C16F408-1366-48ED-BE6C-9223A0776594"),
-                LoyaltyValueTypeId = new Guid("F84E6BCC-10D0-49FC-A9D8-F6DC9E8F15A0")
+                CustomerId = new Guid("67637fc3-d57f-4a65-b46a-e3e33c410f7b"),
+                LoyaltyValueTypeId = new Guid("af424bda-8462-41fb-9119-d6ec7e158f7a")
             };
 
             Call(client, servserURI + "api/loyalty/customerhistory/loadtransaction", req);
