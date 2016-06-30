@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.DataAccess.Models
 {
@@ -10,6 +11,6 @@ namespace Loyalty.DataAccess.Models
     {
         [StringLength(100)]
         public string LoyaltyValueTypeName { get; set; }
-        public virtual ICollection<LoyaltyRuleAction> LoyaltyRuleActions { get; set; }
+        public virtual ICollection<LoyaltyValueTypeAttribute> LoyaltyValueTypeAttributes { get; set; }
     }
 }

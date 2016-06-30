@@ -6,29 +6,33 @@ using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
 using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.Business.Domain.Loyalty
 {
-    public class LoyaltyValueTypeDomain : BusinessDomainV3<LoyaltyValueType>, IBusinessDomainV3<LoyaltyValueType>
+    public class LoyaltyProgramGroupDomain : BusinessDomainV3<LoyaltyProgramGroup>, IBusinessDomainV3<LoyaltyProgramGroup>
     {
         #region Ctors
-        public LoyaltyValueTypeDomain(OwnerInfo ownerInfo)
+        public LoyaltyProgramGroupDomain(OwnerInfo ownerInfo)
             : this(ownerInfo, new AnatoliDbContext())
         {
         }
-        public LoyaltyValueTypeDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
+        public LoyaltyProgramGroupDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
             : base(ownerInfo, dbc)
         {
         }
         #endregion
 
         #region Methods
-        public override void AddDataToRepository(LoyaltyValueType currentLoyaltyValueType, LoyaltyValueType item)
+        public override void AddDataToRepository(LoyaltyProgramGroup currentProgramGroup, LoyaltyProgramGroup item)
         {
-            if (currentLoyaltyValueType != null)
+            if (currentProgramGroup != null)
             {
-                currentLoyaltyValueType.LoyaltyValueTypeName = item.LoyaltyValueTypeName;
-                MainRepository.Update(currentLoyaltyValueType);
+                currentProgramGroup.LastUpdate = DateTime.Now;
+                currentProgramGroup.IsRemoved = item.IsRemoved;
+                currentProgramGroup.LoyaltyProgramGroupCode = item.LoyaltyProgramGroupCode;
+                currentProgramGroup.LoyaltyProgramGroupName = item.LoyaltyProgramGroupName;
+                MainRepository.Update(currentProgramGroup);
             }
             else
             {
@@ -36,14 +40,14 @@ namespace Loyalty.Business.Domain.Loyalty
                 MainRepository.Add(item);
             }
         }
-
-        public async Task DeleteLoyaltyValueType(List<LoyaltyValueType> datas)
+        public async Task DeleteLoyaltyProgramGroups(List<LoyaltyProgramGroup> datas)
         {
             //Validate
 
             await DeleteAsync(datas);
         }
-        
+
+
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;

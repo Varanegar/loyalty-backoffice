@@ -40,7 +40,7 @@ namespace Loyalty.Test
                     #endregion
 
                     #region Tier
-                    //CardManagement.SaveTiers(client, servserURI);
+                   // CardManagement.SaveTiers(client, servserURI);
                     //CardManagement.GetTiers(client, servserURI);
                     //CardManagement.GetTierById(client, servserURI);
                     #endregion
@@ -74,7 +74,7 @@ namespace Loyalty.Test
                     //LoyaltyUserManagement.SaveUserGroups(client, servserURI);
                     //LoyaltyUserManagement.DeleteUserGroups(client, servserURI);
                     //LoyaltyUserManagement.GetUserGroups(client, servserURI);
-                    LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
+                    //LoyaltyUserManagement.AddUserGroupsUser(client, servserURI);
                     #endregion
 
                     #region trigger
@@ -84,6 +84,18 @@ namespace Loyalty.Test
                     //LoyaltyTriggerManagement.SaveTrigger(client, servserURI);
                     //LoyaltyTriggerManagement.GetTrigger(client, servserURI);
                     //LoyaltyTriggerManagement.DeleteTrigger(client, servserURI);
+                    #endregion
+
+                    #region ProgramrGroups
+                    //LoyaltyProgramManagement.GetProgramGroups(client, servserURI);
+                    //LoyaltyProgramManagement.SaveProgramrGroups(client, servserURI);
+                    //LoyaltyProgramManagement.DeleteProgramGroups(client, servserURI);
+                    #endregion
+
+                    #region LoyaltyValueType
+                    //LoyaltyValueTypeManagement.GetValueTypeAttributs(client, servserURI);
+                    LoyaltyValueTypeManagement.SaveValueTypeAttributs(client, servserURI);
+                    //LoyaltyValueTypeManagement.DeleteValueTypeAttributs(client, servserURI);
                     #endregion
                 }
 

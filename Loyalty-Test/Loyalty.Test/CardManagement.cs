@@ -23,7 +23,7 @@ namespace Loyalty.Test
         {
             var req = new LoyaltyRequestModel();
             List<LoyaltyTierViewModel> tierData = new List<LoyaltyTierViewModel>();
-            tierData.Add(new LoyaltyTierViewModel() { UniqueId = new Guid("05AF2EEF-FD42-4A8E-B2CD-B062D927DE7D"), TierName = "نقره ای", TierCode = "1--2" });
+            tierData.Add(new LoyaltyTierViewModel() { UniqueId = new Guid("06BF2EEA-AD42-0A8E-B23D-B062D927DE70"), TierName = "برنز", TierCode = "1--3" });
             req.loyaltyTierListData = tierData;
             Call(client, servserURI + "api/loyalty/tiers/save", req);
         }

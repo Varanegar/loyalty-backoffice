@@ -103,6 +103,7 @@
     <Compile Include="Interfaces\Loyalty\ILoyaltyCardBatchRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyCardRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyCardSetRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyProgramGroupRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyProgramRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyProgramRuleRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleActionRepository.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Interfaces\Loyalty\ILoyaltyTierRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyTriggerRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyTriggerTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyValueTypeAttributeRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyValueTypeRepository.cs" />
     <Compile Include="Interfaces\Product\IProductGroupRepository.cs" />
     <Compile Include="Interfaces\Product\IProductRepository.cs" />
@@ -209,6 +211,10 @@
     <Compile Include="Migrations\201606290715139_TierCode.Designer.cs">
       <DependentUpon>201606290715139_TierCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201606301842031_ProgramGroup.cs" />
+    <Compile Include="Migrations\201606301842031_ProgramGroup.Designer.cs">
+      <DependentUpon>201606301842031_ProgramGroup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -237,6 +243,7 @@
     <Compile Include="Models\Loyalty\LoyaltyCardSet.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardSetGenerateType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgram.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyProgramGroup.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgramRule.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardStatus.cs" />
     <Compile Include="Models\Loyalty\LoyaltyRule.cs" />
@@ -248,6 +255,7 @@
     <Compile Include="Models\Loyalty\LoyaltyTrigger.cs" />
     <Compile Include="Models\Loyalty\LoyaltyTriggerType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyValueType.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyValueTypeAttribute.cs" />
     <Compile Include="Models\Product\Product.cs" />
     <Compile Include="Models\Product\ProductGroup.cs" />
     <Compile Include="Models\Product\ProductType.cs" />
@@ -277,6 +285,7 @@
     <Compile Include="Repositories\Loyalty\LoyaltyCardBatchRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyCardRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyCardSetRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyProgramGroupRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyProgramRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyProgramRuleRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyRuleActionRepository.cs" />
@@ -287,6 +296,7 @@
     <Compile Include="Repositories\Loyalty\LoyaltyTierRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyTriggerRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyTriggerTypeRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyValueTypeAttributeRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyValueTypeRepository.cs" />
     <Compile Include="Repositories\Product\ProductGroupRepository.cs" />
     <Compile Include="Repositories\Product\ProductRepository.cs" />
@@ -390,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606290715139_TierCode.resx">
       <DependentUpon>201606290715139_TierCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606301842031_ProgramGroup.resx">
+      <DependentUpon>201606301842031_ProgramGroup.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

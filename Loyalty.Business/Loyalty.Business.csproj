@@ -122,6 +122,7 @@
     <Compile Include="Domain\Loyalty\LoyaltyCardBatchDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyCardDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyCardSetDomain.cs" />
+    <Compile Include="Domain\Loyalty\LoyaltyProgramGroupDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyProgramDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyProgramRuleDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyRuleActionDomain.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Domain\Loyalty\LoyaltyTierDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyTriggerDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyTriggerTypeDomain.cs" />
+    <Compile Include="Domain\Loyalty\LoyaltyValueTypeAttributeDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyValueTypeDomain.cs" />
     <Compile Include="Domain\Permissions\PermissionDomain.cs" />
     <Compile Include="Domain\Product\ProductDomain.cs" />
