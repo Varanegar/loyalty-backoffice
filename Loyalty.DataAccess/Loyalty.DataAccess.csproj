@@ -220,6 +220,10 @@
     <Compile Include="Migrations\201607012351150_Rules1.Designer.cs">
       <DependentUpon>201607012351150_Rules1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607020721165_RuleActionNulable.cs" />
+    <Compile Include="Migrations\201607020721165_RuleActionNulable.Designer.cs">
+      <DependentUpon>201607020721165_RuleActionNulable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607012351150_Rules1.resx">
       <DependentUpon>201607012351150_Rules1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607020721165_RuleActionNulable.resx">
+      <DependentUpon>201607020721165_RuleActionNulable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

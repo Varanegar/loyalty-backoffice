@@ -54,6 +54,11 @@ namespace Loyalty.Test
             var req = new BaseRequestModel();
             Call(client, servserURI + "api/loyalty/rule/load", req);
         }
+        public static void GetRuleById(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel() { uniqueId = _ruleId };
+            Call(client, servserURI + "api/loyalty/rule/byid", req);
+        }
 
         public static void SaveRule(HttpClient client, string servserURI)
         {
@@ -75,6 +80,41 @@ namespace Loyalty.Test
             var req = new LoyaltyRuleRequestModel();
             req.ruleData = new LoyaltyRuleViewModel() { UniqueId = _ruleId };
             Call(client, servserURI + "api/loyalty/rule/delete", req);
+        }
+        #endregion
+
+        #region RuleAction
+        public static void GetRuleActions(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel();
+            req.uniqueId = _ruleId ;
+            Call(client, servserURI + "api/loyalty/rule/action/loadbyruleid", req);
+        }
+        public static void GetRuleActionById(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel() { uniqueId = _ruleId };
+            Call(client, servserURI + "api/loyalty/rule/load", req);
+        }
+
+        public static void SaveRuleAction(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel();
+            req.ruleActionData = new LoyaltyRuleActionViewModel()
+            {
+                UniqueId = Guid.NewGuid(),
+                LoyaltyRuleId = _ruleId,
+                LoyaltyActionTypeId = new Guid("512BC0E3-EC18-4FF0-A138-282A22A4E62D"),
+              //  LoyaltyTierId = new Guid("05AF2EEF-FD42-4A8E-B2CD-B062D927DE7D"),
+                LoyaltyValueTypeAttributeId = new Guid("a23cb32c-54d7-a824-ae3b-07f031db112f"),
+                ActionValue = 8000000
+            };
+            Call(client, servserURI + "api/loyalty/rule/action/save", req);
+        }
+        public static void DeleteRuleActions(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel();
+            req.ruleActionData = new LoyaltyRuleActionViewModel() { UniqueId = _ruleId };
+            Call(client, servserURI + "api/loyalty/rule/action/delete", req);
         }
         #endregion
 

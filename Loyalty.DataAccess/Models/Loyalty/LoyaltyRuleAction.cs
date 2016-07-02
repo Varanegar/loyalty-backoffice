@@ -15,14 +15,14 @@ namespace Loyalty.DataAccess.Models.Loyalty
 
         [ForeignKey("LoyaltyActionType")]
         public Guid LoyaltyActionTypeId { get; set; }
-        public virtual LoyaltyActionType LoyaltyActionType { get; set; }
+        public LoyaltyActionType LoyaltyActionType { get; set; }
 
         [ForeignKey("LoyaltyValueTypeAttribute")]
-        public Guid LoyaltyValueTypeAttributeId { get; set; }
+        public virtual Guid? LoyaltyValueTypeAttributeId { get; set; }
         public virtual LoyaltyValueTypeAttribute LoyaltyValueTypeAttribute { get; set; }
 
         [ForeignKey("LoyaltyTier")]
-        public Guid LoyaltyTierId { get; set; }
+        public virtual Guid? LoyaltyTierId { get; set; }
         public virtual LoyaltyTier LoyaltyTier { get; set; }
 
         public decimal ActionValue { get; set; }

@@ -55,8 +55,8 @@ namespace Loyalty.Test
         public static void SaveTrigger(HttpClient client, string servserURI)
         {
             var req = new LoyaltyTriggerRequestModel();
-            //req.loyaltyTriggerData = new LoyaltyTriggerViewModel() { UniqueId = _triggerId, LoyaltyTriggerCode = "1001", LoyaltyTriggerName = "Trigger1", LoyaltyTriggerTypeId = _triggerTypeId };
-            req.loyaltyTriggerData = new LoyaltyTriggerViewModel() { UniqueId = new Guid("A0C7BFCA-527E-4D53-BCA4-37838B325187"), LoyaltyTriggerCode = "1002", LoyaltyTriggerName = "Trigger2", LoyaltyTriggerTypeId = _triggerTypeId };
+            req.loyaltyTriggerData = new LoyaltyTriggerViewModel() { UniqueId = _triggerId, LoyaltyTriggerCode = "1001", LoyaltyTriggerName = "Trigger1", LoyaltyTriggerTypeId = _triggerTypeId };
+            //req.loyaltyTriggerData = new LoyaltyTriggerViewModel() { UniqueId = new Guid("A0C7BFCA-527E-4D53-BCA4-37838B325187"), LoyaltyTriggerCode = "1002", LoyaltyTriggerName = "Trigger2", LoyaltyTriggerTypeId = _triggerTypeId };
             Call(client, servserURI + "api/loyalty/triggers/save", req);
         }
         public static void DeleteTrigger(HttpClient client, string servserURI)

@@ -25,14 +25,30 @@ namespace Loyalty.Business.Domain.Loyalty
         #region Methods
         public override void AddDataToRepository(LoyaltyRuleAction currentLoyaltyRuleAction, LoyaltyRuleAction item)
         {
+
             if (currentLoyaltyRuleAction != null)
             {
+                currentLoyaltyRuleAction.LastUpdate = DateTime.Now;
+                currentLoyaltyRuleAction.LoyaltyActionTypeId = item.LoyaltyActionTypeId;
+                currentLoyaltyRuleAction.LoyaltyValueTypeAttributeId = item.LoyaltyValueTypeAttributeId;
+                currentLoyaltyRuleAction.LoyaltyTierId = item.LoyaltyTierId;
+                currentLoyaltyRuleAction.ActionValue = item.ActionValue;
+                currentLoyaltyRuleAction.ActionPercent = item.ActionPercent;
+                currentLoyaltyRuleAction.ActionNewValue = item.ActionNewValue;
+                currentLoyaltyRuleAction.CreditDay = item.CreditDay;
+                MainRepository.Add(item);
+            }
+            else
+            {
+                if (item.Id == Guid.Empty)
+                    item.Id = Guid.NewGuid();
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
+
             }
         }
 
-        public async Task DeleteLoyaltyProgramRules(List<LoyaltyRuleAction> datas)
+        public async Task DeleteRuleActions(List<LoyaltyRuleAction> datas)
         {
             //Validate
 

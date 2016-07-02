@@ -16,7 +16,7 @@ namespace Loyalty.WebApi.Controllers.Loyalty
     [RoutePrefix("api/loyalty/rule")]
     public class LoyaltyRuleController : AnatoliApiController
     {
-        
+        #region Rule
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("load")]
         [HttpPost]
@@ -25,6 +25,23 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             try
             {
                 var result = await new LoyaltyRuleDomain(OwnerInfo).GetAllAsync<LoyaltyRuleViewModel>();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("byid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetRuleById([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var result = await new LoyaltyRuleDomain(OwnerInfo).GetAllAsync<LoyaltyRuleViewModel>(x => x.Id == data.uniqueId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -75,6 +92,65 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             }
         }
 
+        #endregion
 
+        #region RuleAction
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("action/save")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveActionRule([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyRuleActionDomain(OwnerInfo);
+                await domain.PublishAsync(AutoMapper.Mapper.Map<LoyaltyRuleAction>(data.ruleActionData));
+                return Ok(data.ruleActionData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("action/loadbyruleid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetRuleActionsByRuleId([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var result = await new LoyaltyRuleActionDomain(OwnerInfo).GetAllAsync<LoyaltyRuleActionViewModel>(x => x.LoyaltyRuleId == data.uniqueId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("action/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteRuleActions([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyRuleActionDomain(OwnerInfo);
+                var list = new List<LoyaltyRuleAction>() { AutoMapper.Mapper.Map<LoyaltyRuleAction>(data.ruleActionData) };
+                await domain.DeleteRuleActions(list);
+
+                return Ok(data.ruleData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        #endregion
     }
 }
