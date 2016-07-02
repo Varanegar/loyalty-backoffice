@@ -272,6 +272,8 @@
     <Compile Include="Controllers\Customer\CustomerController.cs" />
     <Compile Include="Controllers\Customer\CustomerHistoryController.cs" />
     <Compile Include="Controllers\Loyalty\LoyaltyActionTypeController.cs" />
+    <Compile Include="Controllers\Loyalty\LoyaltyRuleTypeController.cs" />
+    <Compile Include="Controllers\Loyalty\LoyaltyRuleController.cs" />
     <Compile Include="Controllers\Loyalty\LoyaltyRuleGroupController.cs" />
     <Compile Include="Controllers\Loyalty\LoyaltyProgramGroupController.cs" />
     <Compile Include="Controllers\Loyalty\LoyaltyTierController.cs" />

@@ -22,8 +22,8 @@ namespace Loyalty.DataAccess.Migrations
 
         protected override void Seed(Loyalty.DataAccess.AnatoliDbContext context)
         {
-          //if (_pendingMigrations)
-            if (true)
+         if (_pendingMigrations)
+          //  if (true)
             {
                 #region Permission Info
                 context.Applications.AddOrUpdate(item => item.Id,
@@ -458,7 +458,16 @@ namespace Loyalty.DataAccess.Migrations
                     );
                 #endregion
 
-                #region ActionType
+                #region LoyaltyRuleType
+                context.LoyaltyRuleTypes.AddOrUpdate(item => item.Id,
+                    new LoyaltyRuleType { Id = Guid.Parse("E91AC283-0C89-4C2A-B9B9-32A6CF2B78C5"), LoyaltyRuleTypeName = "به ازای هر عملیات", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyRuleType { Id = Guid.Parse("52D256DB-21ED-40CE-9273-5CA26C5A030B"), LoyaltyRuleTypeName = "در پایان هر روز", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyRuleType { Id = Guid.Parse("1A667AED-6DA9-4EBD-A381-F6F3721094B3"), LoyaltyRuleTypeName = "در پایان هر هفته", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyRuleType { Id = Guid.Parse("BBC61E0A-2CEF-479D-93FA-B0CCBDE5AD88"), LoyaltyRuleTypeName = "در پایان هر ماه", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, }
+                    );
+                #endregion
+
+              #region ActionType
                 context.LoyaltyActionTypes.AddOrUpdate(item => item.Id,
                     new LoyaltyActionType { Id = Guid.Parse("D326DF7E-44BD-441E-8BFF-7044826703DB"), LoyaltyActionTypeCode = "1", LoyaltyActionTypeName = "افزودن مقدار ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
                     new LoyaltyActionType { Id = Guid.Parse("64559DCC-9151-477D-9F5A-9B4EF9F157BC"), LoyaltyActionTypeCode = "2", LoyaltyActionTypeName = "کاهش مقدار ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },

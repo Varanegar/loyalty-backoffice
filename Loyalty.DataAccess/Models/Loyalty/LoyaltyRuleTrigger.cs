@@ -14,6 +14,6 @@ namespace Loyalty.DataAccess.Models.Loyalty
 
         [ForeignKey("LoyaltyTrigger")]
         public Guid LoyaltyTriggerId { get; set; }
-        public virtual LoyaltyTrigger LoyaltyTrigger { get; set; }
+        public LoyaltyTrigger LoyaltyTrigger { get; set; }
     }
 }

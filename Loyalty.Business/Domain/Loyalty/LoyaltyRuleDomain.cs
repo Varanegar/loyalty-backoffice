@@ -25,17 +25,34 @@ namespace Loyalty.Business.Domain.Loyalty
         #region Methods
         public override void AddDataToRepository(LoyaltyRule currentLoyaltyRule, LoyaltyRule item)
         {
+            foreach (var trigger in item.LoyaltyRuleTriggers)
+            {
+                if (trigger.Id == Guid.Empty)
+                    trigger.Id = Guid.NewGuid();
+                trigger.CreatedDate = trigger.LastUpdate = DateTime.Now;
+                trigger.DataOwnerId = item.DataOwnerId;
+                trigger.DataOwnerCenterId = item.DataOwnerCenterId;
+                trigger.ApplicationOwnerId = item.ApplicationOwnerId;
+
+            }
+
             if (currentLoyaltyRule != null)
             {
-                if (currentLoyaltyRule.IsRemoved != item.IsRemoved)
-                {
-                    currentLoyaltyRule.LastUpdate = DateTime.Now;
-                    currentLoyaltyRule.IsRemoved = item.IsRemoved;
-                    MainRepository.Update(currentLoyaltyRule);
-                }
+                currentLoyaltyRule.LastUpdate = DateTime.Now;
+                currentLoyaltyRule.LoyaltyRuleCode = item.LoyaltyRuleCode;
+                currentLoyaltyRule.LoyaltyRuleName = item.LoyaltyRuleName;
+                currentLoyaltyRule.Description = item.Description;
+                currentLoyaltyRule.HasCondition = item.HasCondition;
+                currentLoyaltyRule.LoyaltyRuleGroupId = item.LoyaltyRuleGroupId;
+                currentLoyaltyRule.LoyaltyRuleTypeId = item.LoyaltyRuleTypeId;
+                currentLoyaltyRule.LoyaltyRuleTriggers = item.LoyaltyRuleTriggers;
+
+                MainRepository.Update(currentLoyaltyRule);
             }
             else
             {
+                if (item.Id == Guid.Empty)
+                    item.Id = Guid.NewGuid();
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }

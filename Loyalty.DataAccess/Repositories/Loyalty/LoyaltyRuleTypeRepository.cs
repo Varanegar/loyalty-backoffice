@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
+using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess.Interfaces.Loyalty;
 using Loyalty.DataAccess.Models;
 using System.Collections.Generic;
@@ -15,6 +16,10 @@ namespace Loyalty.DataAccess.Repositories
         public LoyaltyRuleTypeRepository() : this(new AnatoliDbContext()) { }
         public LoyaltyRuleTypeRepository(AnatoliDbContext context)
             : base(context)
+        {
+        }
+        public LoyaltyRuleTypeRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
+            : base(context, OwnerInfo)
         {
         }
         #endregion

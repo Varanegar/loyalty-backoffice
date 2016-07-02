@@ -34,6 +34,24 @@ namespace Loyalty.WebApi.Controllers.Loyalty
                 return GetErrorResult(ex);
             }
         }
+        
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("loadbytypeid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetTierByTypeId([FromBody]LoyaltyTriggerRequestModel data)
+        {
+            try
+            {
+                var result = await new LoyaltyTriggerDomain(OwnerInfo).GetAllAsync<LoyaltyTriggerViewModel>(x => x.LoyaltyTriggerTypeId == data.loyaltyTriggerTypeData.UniqueId);
+                //await new LoyaltyTierDomain(OwnerInfo).GetByIdAsync<LoyaltyTierViewModel>(data.uniqueId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
 
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("save")]

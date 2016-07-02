@@ -83,6 +83,7 @@ namespace Loyalty.Test
                     //LoyaltyTriggerManagement.DeleteTriggerType(client, servserURI);
                     //LoyaltyTriggerManagement.SaveTrigger(client, servserURI);
                     //LoyaltyTriggerManagement.GetTrigger(client, servserURI);
+                    LoyaltyTriggerManagement.GetTriggerByType(client, servserURI);
                     //LoyaltyTriggerManagement.DeleteTrigger(client, servserURI);
                     #endregion
 
@@ -98,10 +99,18 @@ namespace Loyalty.Test
                     //LoyaltyRuleManagement.DeleteRuleGroups(client, servserURI);
                     #endregion
 
+                    #region Rule
+                    //LoyaltyRuleManagement.GetRuleTypes(client, servserURI);
+
+                    //LoyaltyRuleManagement.GetRules(client, servserURI);
+                    //LoyaltyRuleManagement.SaveRule(client, servserURI);
+                    //LoyaltyRuleManagement.DeleteRules(client, servserURI);
+                    #endregion
+
                     #region LoyaltyActionType
                     //LoyaltyActionTypeManagement.GetActionTypes(client, servserURI);
                     //LoyaltyActionTypeManagement.SaveActionTypes(client, servserURI);
-                    LoyaltyActionTypeManagement.DeleteActionTypes(client, servserURI);
+                    //LoyaltyActionTypeManagement.DeleteActionTypes(client, servserURI);
                     #endregion
 
                     #region LoyaltyValueType
