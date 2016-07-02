@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="BaseTestManagment.cs" />
     <Compile Include="LoyaltyActionTypeManagement.cs" />
+    <Compile Include="ProductManagement.cs" />
     <Compile Include="LoyaltyRuleManagement.cs" />
     <Compile Include="LoyaltyValueTypeManagement.cs" />
     <Compile Include="LoyaltyTriggerManagement.cs" />

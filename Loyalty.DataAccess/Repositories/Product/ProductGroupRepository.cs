@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess.Interfaces.Product;
 using Loyalty.DataAccess.Models;
 using Anatoli.DataAccess.Interfaces;
@@ -13,6 +14,10 @@ namespace Loyalty.DataAccess.Repositories
         public ProductGroupRepository() : this(new AnatoliDbContext()) { }
         public ProductGroupRepository(AnatoliDbContext context)
             : base(context)
+        {
+        }
+        public ProductGroupRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
+            : base(context, OwnerInfo)
         {
         }
         #endregion

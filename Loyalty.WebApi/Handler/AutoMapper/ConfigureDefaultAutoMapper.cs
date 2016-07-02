@@ -39,6 +39,7 @@ namespace Loyalty.WebApi.Handler
             #endregion
 
             #region Product
+            Mapper.CreateMap<Product, ProductViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id));
             Mapper.CreateMap<ProductGroup, ProductGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.ProductGroup2Id.ToString())).ForMember(p => p.ParentUniqueId, opt => opt.MapFrom(src => src.ProductGroup2Id)).ForMember(p => p.ID, opt => opt.Ignore());
             #endregion
 
@@ -67,6 +68,10 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyRuleType, LoyaltyRuleTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyRuleTrigger, LoyaltyRuleTriggerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.LoyaltyTriggerName, op => op.MapFrom(src => src.LoyaltyTrigger.LoyaltyTriggerName));
             Mapper.CreateMap<LoyaltyRuleAction, LoyaltyRuleActionViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.LoyaltyActionTypeName, op => op.MapFrom(src => src.LoyaltyActionType.LoyaltyActionTypeName)).ForMember(p => p.LoyaltyTierName, op => op.MapFrom(src => src.LoyaltyTier.TierName)).ForMember(p => p.LoyaltyValueTypeAttributeName, op => op.MapFrom(src => src.LoyaltyValueTypeAttribute.LoyaltyValueTypeAttributeName));
+            Mapper.CreateMap<LoyaltyRuleCondition, LoyaltyRuleConditionViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyRuleConditionProduct, LoyaltyRuleConditionProductViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.ProductName, op => op.MapFrom(src => src.Product.ProductName));
+            Mapper.CreateMap<LoyaltyRuleConditionProductGroup, LoyaltyRuleConditionProductGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.ProductGroupName, op => op.MapFrom(src => src.ProductGroup.GroupName));
+            Mapper.CreateMap<LoyaltyRuleConditionValue, LoyaltyRuleConditionValueViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyActionType, LoyaltyActionTypeViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
             #endregion
 
@@ -112,6 +117,11 @@ namespace Loyalty.WebApi.Handler
             Mapper.CreateMap<LoyaltyRuleViewModel, LoyaltyRule>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyRuleActionViewModel, LoyaltyRuleAction>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
             Mapper.CreateMap<LoyaltyRuleTriggerViewModel, LoyaltyRuleTrigger>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyRuleConditionViewModel, LoyaltyRuleCondition>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyRuleConditionProductViewModel, LoyaltyRuleConditionProduct>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyRuleConditionProductGroupViewModel, LoyaltyRuleConditionProductGroup>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+            Mapper.CreateMap<LoyaltyRuleConditionValueViewModel, LoyaltyRuleConditionValue>().ForMember(p => p.Id, opt => opt.MapFrom(src => src.UniqueId)).ForMember(p => p.Number_ID, opt => opt.Ignore());
+
             #endregion
         }
         private static Guid? ConvertNullableStringToGuid(string data)

@@ -118,6 +118,31 @@ namespace Loyalty.Test
         }
         #endregion
 
+        #region RuleCondition
+        public static void GetRuleConditionById(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel() { uniqueId = _ruleId };
+            Call(client, servserURI + "api/loyalty/rule/condition/load", req);
+        }
 
+        public static void SaveRuleCondition(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel();
+            req.ruleConditionData = new LoyaltyRuleConditionViewModel()
+            {
+                UniqueId = Guid.NewGuid(),
+                LoyaltyRuleId = _ruleId,
+                LoyaltyValueTypeAttributeId = new Guid("a23cb32c-54d7-a824-ae3b-07f031db112f"),
+                LoyaltyRuleConditionValues = new List<LoyaltyRuleConditionValueViewModel>() { new LoyaltyRuleConditionValueViewModel(){ MaxValue = 10,MinValue = 1,StepValue = 2}}
+            };
+            Call(client, servserURI + "api/loyalty/rule/condition/save", req);
+        }
+        public static void DeleteRuleConditions(HttpClient client, string servserURI)
+        {
+            var req = new LoyaltyRuleRequestModel();
+            req.ruleConditionData = new LoyaltyRuleConditionViewModel() { UniqueId = _ruleId };
+            Call(client, servserURI + "api/loyalty/rule/condition/delete", req);
+        }
+        #endregion
     }
 }

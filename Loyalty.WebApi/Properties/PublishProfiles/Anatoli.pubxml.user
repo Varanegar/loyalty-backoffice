@@ -136,7 +136,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/27/2016 21:02:01</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.dll">
-      <publishTime>07/01/2016 23:50:25</publishTime>
+      <publishTime>07/02/2016 01:07:15</publishTime>
     </File>
     <File Include="bin/Anatoli.ViewModels.pdb">
       <publishTime>05/29/2016 11:04:29</publishTime>
@@ -181,22 +181,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/29/2015 17:36:54</publishTime>
     </File>
     <File Include="bin/Loyalty.Business.dll">
-      <publishTime>07/01/2016 23:51:09</publishTime>
+      <publishTime>07/02/2016 01:28:28</publishTime>
     </File>
     <File Include="bin/Loyalty.Business.pdb">
-      <publishTime>07/01/2016 23:51:09</publishTime>
+      <publishTime>07/02/2016 01:28:28</publishTime>
     </File>
     <File Include="bin/Loyalty.DataAccess.dll">
-      <publishTime>07/01/2016 23:51:06</publishTime>
+      <publishTime>07/02/2016 01:28:26</publishTime>
     </File>
     <File Include="bin/Loyalty.DataAccess.pdb">
-      <publishTime>07/01/2016 23:51:06</publishTime>
+      <publishTime>07/02/2016 01:28:26</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.dll">
-      <publishTime>07/01/2016 23:51:13</publishTime>
+      <publishTime>07/02/2016 01:34:16</publishTime>
     </File>
     <File Include="bin/Loyalty.WebApi.pdb">
-      <publishTime>07/01/2016 23:51:13</publishTime>
+      <publishTime>07/02/2016 01:34:16</publishTime>
     </File>
     <File Include="bin/Magick.NET-Q16-AnyCPU.dll">
       <publishTime>06/19/2016 13:11:24</publishTime>

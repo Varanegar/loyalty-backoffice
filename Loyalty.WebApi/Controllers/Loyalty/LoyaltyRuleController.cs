@@ -152,5 +152,64 @@ namespace Loyalty.WebApi.Controllers.Loyalty
             }
         }
         #endregion
+       
+        #region RuleCondition
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("condition/save")]
+        [HttpPost]
+        public async Task<IHttpActionResult> SaveConditionRule([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyRuleConditionDomain(OwnerInfo);
+                await domain.PublishAsync(AutoMapper.Mapper.Map<LoyaltyRuleCondition>(data.ruleConditionData));
+                return Ok(data.ruleConditionData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("condition/loadbyruleid")]
+        [HttpPost]
+        public async Task<IHttpActionResult> GetRuleConditionByRuleId([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var result = await new LoyaltyRuleConditionDomain(OwnerInfo).GetAllAsync<LoyaltyRuleConditionViewModel>(x => x.LoyaltyRuleId == data.uniqueId);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("condition/delete")]
+        [HttpPost]
+        public async Task<IHttpActionResult> DeleteRuleConditions([FromBody]LoyaltyRuleRequestModel data)
+        {
+            try
+            {
+                var domain = new LoyaltyRuleConditionDomain(OwnerInfo);
+                var list = new List<LoyaltyRuleCondition>() { AutoMapper.Mapper.Map<LoyaltyRuleCondition>(data.ruleConditionData) };
+                await domain.DeleteRuleConditions(list);
+
+                return Ok(data.ruleConditionData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+        #endregion
     }
 }

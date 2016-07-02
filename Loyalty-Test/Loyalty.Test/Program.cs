@@ -29,6 +29,11 @@ namespace Loyalty.Test
                 if (oauthresult.AccessToken != null)
                 {
                     client.SetBearerToken(oauthresult.AccessToken);
+                    #region Product
+                    //ProductManagement.GetProduct(client, servserURI);
+                    ProductManagement.GetProductGroup(client, servserURI);
+                    #endregion
+
                     #region City Region
                     //CityRegionManagement.GetCityregionByParentId(client, servserURI, null);
                     //CityRegionManagement.GetCityregionByParentId(client, servserURI, Guid.Parse("f9cab010-1978-4144-a83d-bc4c057f45c5"));
@@ -103,12 +108,17 @@ namespace Loyalty.Test
                     //LoyaltyRuleManagement.GetRuleTypes(client, servserURI);
 
                     //LoyaltyRuleManagement.GetRules(client, servserURI);
-                    LoyaltyRuleManagement.GetRuleById(client, servserURI);
+                    //LoyaltyRuleManagement.GetRuleById(client, servserURI);
                     //LoyaltyRuleManagement.SaveRule(client, servserURI);
                     //LoyaltyRuleManagement.DeleteRules(client, servserURI);
+
+                    //Action
                     //LoyaltyRuleManagement.GetRuleActions(client, servserURI);
                     //LoyaltyRuleManagement.SaveRuleAction(client, servserURI);
 
+                    //Condition
+                    //LoyaltyRuleManagement.GetRuleConditions(client, servserURI);
+                    //LoyaltyRuleManagement.SaveRuleCondition(client, servserURI);
 
                     #endregion
 
