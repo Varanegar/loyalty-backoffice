@@ -9,6 +9,7 @@ using Anatoli.ViewModels.RequestModel;
 using Loyalty.Business.Domain.Loyalty;
 using System.Threading.Tasks;
 using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 using Loyalty.WebApi.Classes;
 
 namespace Loyalty.WebApi.Controllers.Loyalty

@@ -59,10 +59,20 @@ namespace Loyalty.DataAccess
         public DbSet<LoyaltyCardSet> LoyaltyCardSets { get; set; }
         public DbSet<LoyaltyProgram> LoyaltyPrograms { get; set; }
         public DbSet<LoyaltyProgramRule> LoyaltyProgramRules { get; set; }
+
+        public DbSet<LoyaltyRuleGroup> LoyaltyRuleGroups { get; set; }
         public DbSet<LoyaltyRule> LoyaltyRules { get; set; }
+        public DbSet<LoyaltyRuleTrigger> LoyaltyRuleTriggers { get; set; }
+        
         public DbSet<LoyaltyRuleAction> LoyaltyRuleActions { get; set; }
         public DbSet<LoyaltyRuleCondition> LoyaltyRuleConditions { get; set; }
         public DbSet<LoyaltyRuleConditionType> LoyaltyRuleConditionTypes { get; set; }
+        
+        public DbSet<LoyaltyRuleConditionValue> LoyaltyRuleConditionValues { get; set; }
+        public DbSet<LoyaltyRuleConditionProductGroup> LoyaltyRuleConditionProductGroups { get; set; }
+        public DbSet<LoyaltyRuleConditionProduct> LoyaltyRuleConditionProducts { get; set; }
+        
+
         public DbSet<LoyaltyRuleType> LoyaltyRuleTypes { get; set; }
         public DbSet<LoyaltyTier> LoyaltyTiers { get; set; }
         public DbSet<LoyaltyTriggerType> LoyaltyTriggerTypes { get; set; }

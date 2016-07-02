@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;
 using Anatoli.Common.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.DataAccess.Repositories
 {

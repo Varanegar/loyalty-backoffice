@@ -5,48 +5,47 @@ using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
-using Loyalty.DataAccess.Models;
 using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.Business.Domain.Loyalty
 {
-    public class LoyaltyTriggerDomain : BusinessDomainV3<LoyaltyTrigger>, IBusinessDomainV3<LoyaltyTrigger>
+    public class LoyaltyRuleGroupDomain : BusinessDomainV3<LoyaltyRuleGroup>, IBusinessDomainV3<LoyaltyRuleGroup>
     {
         #region Ctors
-        public LoyaltyTriggerDomain(OwnerInfo ownerInfo)
+        public LoyaltyRuleGroupDomain(OwnerInfo ownerInfo)
             : this(ownerInfo, new AnatoliDbContext())
         {
         }
-        public LoyaltyTriggerDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
+        public LoyaltyRuleGroupDomain(OwnerInfo ownerInfo, AnatoliDbContext dbc)
             : base(ownerInfo, dbc)
         {
         }
         #endregion
 
         #region Methods
-        public override void AddDataToRepository(LoyaltyTrigger currentLoyaltyTrigger, LoyaltyTrigger item)
+        public override void AddDataToRepository(LoyaltyRuleGroup current, LoyaltyRuleGroup item)
         {
-            if (currentLoyaltyTrigger != null)
+            if (current != null)
             {
-                currentLoyaltyTrigger.LastUpdate = item.LastUpdate;
-                currentLoyaltyTrigger.LoyaltyTriggerCode = item.LoyaltyTriggerCode;
-                currentLoyaltyTrigger.LoyaltyTriggerName = item.LoyaltyTriggerName;
-                currentLoyaltyTrigger.LoyaltyTriggerTypeId = item.LoyaltyTriggerTypeId;
-                MainRepository.Update(currentLoyaltyTrigger);
+                current.LastUpdate = DateTime.Now;
+                current.LoyaltyRuleGroupName = item.LoyaltyRuleGroupName;
+                current.LoyaltyRuleGroupCode = item.LoyaltyRuleGroupCode;
+                MainRepository.Update(current);
             }
-            else{
+            else
+            {
                 item.CreatedDate = item.LastUpdate = DateTime.Now;
                 MainRepository.Add(item);
             }
         }
-
-        public async Task DeleteLoyaltyTrigger(List<LoyaltyTrigger> datas)
+        public async Task Delete(List<LoyaltyRuleGroup> datas)
         {
             //Validate
 
             await DeleteAsync(datas);
         }
-        
+
+
         public override void SetConditionForFetchingData()
         {
             MainRepository.ExtraPredicate = p => true;

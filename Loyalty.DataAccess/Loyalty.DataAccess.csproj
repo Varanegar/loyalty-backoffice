@@ -109,6 +109,7 @@
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleActionRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleConditionRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleConditionTypeRepository.cs" />
+    <Compile Include="Interfaces\Loyalty\ILoyaltyRuleGroupRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyRuleTypeRepository.cs" />
     <Compile Include="Interfaces\Loyalty\ILoyaltyTierRepository.cs" />
@@ -215,6 +216,10 @@
     <Compile Include="Migrations\201606301842031_ProgramGroup.Designer.cs">
       <DependentUpon>201606301842031_ProgramGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607012351150_Rules1.cs" />
+    <Compile Include="Migrations\201607012351150_Rules1.Designer.cs">
+      <DependentUpon>201607012351150_Rules1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Account\Company.cs" />
     <Compile Include="Models\Account\CompanyCenter.cs" />
@@ -243,6 +248,10 @@
     <Compile Include="Models\Loyalty\LoyaltyCardSet.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardSetGenerateType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgram.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleConditionProduct.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleConditionProductGroup.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleConditionValue.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleGroup.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgramGroup.cs" />
     <Compile Include="Models\Loyalty\LoyaltyProgramRule.cs" />
     <Compile Include="Models\Loyalty\LoyaltyCardStatus.cs" />
@@ -256,6 +265,7 @@
     <Compile Include="Models\Loyalty\LoyaltyTriggerType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyValueType.cs" />
     <Compile Include="Models\Loyalty\LoyaltyValueTypeAttribute.cs" />
+    <Compile Include="Models\Loyalty\LoyaltyRuleTrigger.cs" />
     <Compile Include="Models\Product\Product.cs" />
     <Compile Include="Models\Product\ProductGroup.cs" />
     <Compile Include="Models\Product\ProductType.cs" />
@@ -281,6 +291,7 @@
     <Compile Include="Repositories\Customer\CustomerLoyaltyTierHistoryRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerRepository.cs" />
     <Compile Include="Repositories\Customer\CustomerShipAddressRepository.cs" />
+    <Compile Include="Repositories\Loyalty\LoyaltyRuleGroupRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyActionTypeRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyCardBatchRepository.cs" />
     <Compile Include="Repositories\Loyalty\LoyaltyCardRepository.cs" />
@@ -403,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606301842031_ProgramGroup.resx">
       <DependentUpon>201606301842031_ProgramGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607012351150_Rules1.resx">
+      <DependentUpon>201607012351150_Rules1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

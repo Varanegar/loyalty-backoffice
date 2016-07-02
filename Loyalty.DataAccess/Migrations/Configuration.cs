@@ -1,5 +1,6 @@
 ﻿using Anatoli.DataAccess.Models;
 using Anatoli.DataAccess.Models.Identity;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.DataAccess.Migrations
 {
@@ -21,8 +22,8 @@ namespace Loyalty.DataAccess.Migrations
 
         protected override void Seed(Loyalty.DataAccess.AnatoliDbContext context)
         {
-          if (_pendingMigrations)
-  //          if (true)
+          //if (_pendingMigrations)
+            if (true)
             {
                 #region Permission Info
                 context.Applications.AddOrUpdate(item => item.Id,
@@ -457,6 +458,16 @@ namespace Loyalty.DataAccess.Migrations
                     );
                 #endregion
 
+                #region ActionType
+                context.LoyaltyActionTypes.AddOrUpdate(item => item.Id,
+                    new LoyaltyActionType { Id = Guid.Parse("D326DF7E-44BD-441E-8BFF-7044826703DB"), LoyaltyActionTypeCode = "1", LoyaltyActionTypeName = "افزودن مقدار ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyActionType { Id = Guid.Parse("64559DCC-9151-477D-9F5A-9B4EF9F157BC"), LoyaltyActionTypeCode = "2", LoyaltyActionTypeName = "کاهش مقدار ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyActionType { Id = Guid.Parse("84FB68AC-5AAD-4AA6-8A3A-A80F198E56C1"), LoyaltyActionTypeCode = "3", LoyaltyActionTypeName = "افزودن درصد ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyActionType { Id = Guid.Parse("512BC0E3-EC18-4FF0-A138-282A22A4E62D"), LoyaltyActionTypeCode = "4", LoyaltyActionTypeName = "کاهش درصد ثابت", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyActionType { Id = Guid.Parse("FE5ABA26-98D3-463D-9C30-4C1921263EB9"), LoyaltyActionTypeCode = "5", LoyaltyActionTypeName = "تغیر سطح مشتری", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, },
+                    new LoyaltyActionType { Id = Guid.Parse("AF07136C-CAA4-4E6B-85B3-92AE3B896393"), LoyaltyActionTypeCode = "6", LoyaltyActionTypeName = "تنظیم مجدد", IsRemoved = false, ApplicationOwnerId = Guid.Parse("79A0D598-0BD2-45B1-BAAA-0A9CF9EFF240"), DataOwnerId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), DataOwnerCenterId = Guid.Parse("3EEE33CE-E2FD-4A5D-A71C-103CC5046D0C"), CreatedDate = DateTime.Now, LastUpdate = DateTime.Now, }
+                    );
+                #endregion
             }
         }
     }

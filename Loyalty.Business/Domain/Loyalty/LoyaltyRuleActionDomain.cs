@@ -5,7 +5,7 @@ using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
-using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.Business.Domain.Loyalty
 {

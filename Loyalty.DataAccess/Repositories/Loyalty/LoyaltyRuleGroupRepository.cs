@@ -8,17 +8,17 @@ using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;
 using Anatoli.Common.DataAccess.Models;
 
-namespace Loyalty.DataAccess.Repositories
+namespace Loyalty.DataAccess.Repositories.Loyalty
 {
-    public class LoyaltyRuleActionRepository : AnatoliRepository<LoyaltyRuleAction>, ILoyaltyRuleActionRepository
+    public class LoyaltyRuleGroupRepository : AnatoliRepository<LoyaltyRuleGroup>, ILoyaltyRuleGroupRepository
     {
         #region Ctors
-        public LoyaltyRuleActionRepository() : this(new AnatoliDbContext()) { }
-        public LoyaltyRuleActionRepository(AnatoliDbContext context)
+        public LoyaltyRuleGroupRepository() : this(new AnatoliDbContext()) { }
+        public LoyaltyRuleGroupRepository(AnatoliDbContext context)
             : base(context)
         {
         }
-        public LoyaltyRuleActionRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
+        public LoyaltyRuleGroupRepository(AnatoliDbContext context, OwnerInfo OwnerInfo)
             : base(context, OwnerInfo)
         {
         }

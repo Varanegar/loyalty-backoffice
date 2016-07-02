@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Anatoli.Common.Business;
 using Anatoli.Common.Business.Interfaces;
 using Anatoli.Common.DataAccess.Models;
 using Loyalty.DataAccess;
-using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 
 namespace Loyalty.Business.Domain.Loyalty
 {
@@ -25,12 +27,10 @@ namespace Loyalty.Business.Domain.Loyalty
         {
             if (currentLoyaltyActionType != null)
             {
-                if (currentLoyaltyActionType.IsRemoved != item.IsRemoved)
-                {
-                    currentLoyaltyActionType.LastUpdate = DateTime.Now;
-                    currentLoyaltyActionType.IsRemoved = item.IsRemoved;
-                    MainRepository.Update(currentLoyaltyActionType);
-                }
+                currentLoyaltyActionType.LastUpdate = DateTime.Now;
+                currentLoyaltyActionType.LoyaltyActionTypeName = item.LoyaltyActionTypeName;
+                currentLoyaltyActionType.LoyaltyActionTypeCode = item.LoyaltyActionTypeCode;
+                MainRepository.Update(currentLoyaltyActionType);
             }
             else
             {
@@ -38,6 +38,13 @@ namespace Loyalty.Business.Domain.Loyalty
                 MainRepository.Add(item);
             }
         }
+        public async Task Delete(List<LoyaltyActionType> datas)
+        {
+            //Validate
+
+            await DeleteAsync(datas);
+        }
+
 
         public override void SetConditionForFetchingData()
         {

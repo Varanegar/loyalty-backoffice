@@ -118,6 +118,7 @@
     <Compile Include="Domain\Customer\CustomerGroupDomain.cs" />
     <Compile Include="Domain\Customer\CustomerLoyaltyTierHistoryDomain.cs" />
     <Compile Include="Domain\Customer\CustomerShipAddressDomain.cs" />
+    <Compile Include="Domain\Loyalty\LoyaltyRuleGroupDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyActionTypeDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyCardBatchDomain.cs" />
     <Compile Include="Domain\Loyalty\LoyaltyCardDomain.cs" />

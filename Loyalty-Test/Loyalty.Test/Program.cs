@@ -92,9 +92,21 @@ namespace Loyalty.Test
                     //LoyaltyProgramManagement.DeleteProgramGroups(client, servserURI);
                     #endregion
 
+                    #region RuleGroups
+                    //LoyaltyRuleManagement.GetRuleGroups(client, servserURI);
+                    //LoyaltyRuleManagement.SaveRuleGroups(client, servserURI);
+                    //LoyaltyRuleManagement.DeleteRuleGroups(client, servserURI);
+                    #endregion
+
+                    #region LoyaltyActionType
+                    //LoyaltyActionTypeManagement.GetActionTypes(client, servserURI);
+                    //LoyaltyActionTypeManagement.SaveActionTypes(client, servserURI);
+                    LoyaltyActionTypeManagement.DeleteActionTypes(client, servserURI);
+                    #endregion
+
                     #region LoyaltyValueType
                     //LoyaltyValueTypeManagement.GetValueTypeAttributs(client, servserURI);
-                    LoyaltyValueTypeManagement.SaveValueTypeAttributs(client, servserURI);
+                    //LoyaltyValueTypeManagement.SaveValueTypeAttributs(client, servserURI);
                     //LoyaltyValueTypeManagement.DeleteValueTypeAttributs(client, servserURI);
                     #endregion
                 }

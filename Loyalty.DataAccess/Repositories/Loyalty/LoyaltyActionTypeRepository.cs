@@ -2,13 +2,13 @@
 using System.Linq;
 using System.Data.Entity;
 using Loyalty.DataAccess.Interfaces.Loyalty;
-using Loyalty.DataAccess.Models;
+using Loyalty.DataAccess.Models.Loyalty;
 using System.Collections.Generic;
 using Anatoli.DataAccess.Interfaces;
 using Anatoli.Common.DataAccess.Repositories;
 using Anatoli.Common.DataAccess.Models;
 
-namespace Loyalty.DataAccess.Repositories
+namespace Loyalty.DataAccess.Repositories.Loyalty
 {
     public class LoyaltyActionTypeRepository : AnatoliRepository<LoyaltyActionType>, ILoyaltyActionTypeRepository
     {
