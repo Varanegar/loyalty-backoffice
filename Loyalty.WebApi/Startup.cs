@@ -20,7 +20,6 @@ using Microsoft.Owin.Security.DataHandler.Encoder;
 using Loyalty.DataAccess;
 using Loyalty.WebApi.Infrastructure;
 
-[assembly: OwinStartup(typeof(Loyalty.WebApi.Startup))]
 namespace Loyalty.WebApi
 {
     public class Startup
