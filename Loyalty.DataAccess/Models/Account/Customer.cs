@@ -68,7 +68,7 @@ namespace Loyalty.DataAccess.Models.Account
         public virtual CityRegion RegionLevel4 { get; set; }
         public virtual LoyaltyTier LoyaltyTier { get; set; }
         public virtual CustomerGroup CustomerGroup { get; set; }
-        public virtual CustomerType CustomerType { get; set; }
+        public CustomerType CustomerType { get; set; }
 
         public Nullable<DateTime> BirthDay { get; set; }
         public string PBirthDay { get; set; }

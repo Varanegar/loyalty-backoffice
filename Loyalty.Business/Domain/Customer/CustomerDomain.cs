@@ -101,6 +101,19 @@ namespace Loyalty.Business.Domain
 
             await DeleteAsync(customers);
         }
+
+        public async Task ChangeStatusCustomer(Guid id, int status)
+        {
+            var currentCustomer = await GetAllAsync<Customer>(x => x.Id == id);
+            var customer = currentCustomer[0];
+
+            customer.LastUpdate = DateTime.Now;
+            customer.Status = status;
+            MainRepository.Update(customer);
+
+         }
+
+
         #endregion
     }
 }

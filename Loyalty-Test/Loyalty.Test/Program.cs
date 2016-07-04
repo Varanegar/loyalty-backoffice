@@ -31,7 +31,7 @@ namespace Loyalty.Test
                     client.SetBearerToken(oauthresult.AccessToken);
                     #region Product
                     //ProductManagement.GetProduct(client, servserURI);
-                    ProductManagement.GetProductGroup(client, servserURI);
+                    //ProductManagement.GetProductGroup(client, servserURI);
                     #endregion
 
                     #region City Region
@@ -65,6 +65,8 @@ namespace Loyalty.Test
 
                     #region Customer
                     //CustomerManagement.CreateCustomer(client, servserURI);
+                    CustomerManagement.CustomerActive(client, servserURI);
+                    //CustomerManagement.CustomerInactive(client, servserURI);
                     //CustomerManagement.GetCustomerById(client, servserURI);
                     //CustomerManagement.GetCustomerList(client, servserURI);
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);

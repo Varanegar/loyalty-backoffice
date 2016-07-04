@@ -28,8 +28,8 @@ namespace Loyalty.WebApi.Controllers
         {
             try
             {
-                var result = await new CustomerDomain(OwnerInfo).GetAllAsync<CustomerViewModel>(x => x.Id == data.customerId);
-                //var result = await new CustomerDomain(OwnerInfo).GetByIdAsync<CustomerViewModel>(data.customerId);
+                //var result = await new CustomerDomain(OwnerInfo).GetAllAsync<CustomerViewModel>(x => x.Id == data.customerId);
+                var result = await new CustomerDomain(OwnerInfo).GetByIdAsync<CustomerViewModel>(data.customerId);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -55,6 +55,7 @@ namespace Loyalty.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
+
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("customers/compress")]
         [HttpPost, GzipCompression]
@@ -129,6 +130,49 @@ namespace Loyalty.WebApi.Controllers
             }
         }
 
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("active")]
+        [HttpPost]
+        public async Task<IHttpActionResult> ActiveCustomer([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerDomain = new CustomerDomain(OwnerInfo);
+                await customerDomain.ChangeStatusCustomer(data.customerData.UniqueId, 1);
+
+                return Ok(data.customerData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+        [Authorize(Roles = "AuthorizedApp, User")]
+        [Route("inactive")]
+        [HttpPost]
+        public async Task<IHttpActionResult> InActiveCustomer([FromBody]CustomerRequestModel data)
+        {
+            try
+            {
+                var customerDomain = new CustomerDomain(OwnerInfo);
+
+                await customerDomain.ChangeStatusCustomer(data.customerData.UniqueId, 0);
+
+                return Ok(data.customerData);
+
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex, "Web API Call Error");
+                return GetErrorResult(ex);
+            }
+        }
+
+
         [Authorize(Roles = "AuthorizedApp, User")]
         [Route("customer/delete")]
         [HttpPost]
@@ -183,6 +227,7 @@ namespace Loyalty.WebApi.Controllers
                 return GetErrorResult(ex);
             }
         }
+
         #endregion
 
         #region Customer Ship Address

@@ -45,7 +45,7 @@ namespace Loyalty.WebApi.Handler
 
             #region Customer
             Mapper.CreateMap<CustomerShipAddress, CustomerShipAddressViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
-            Mapper.CreateMap<Customer, CustomerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());
+            Mapper.CreateMap<Customer, CustomerViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.CustomerTypeName, opt => opt.MapFrom(src => src.CustomerType.CustomerTypeName));
             Mapper.CreateMap<CustomerTag, CustomerTagViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.ParentId.ToString())).ForMember(p => p.ParentId, opt => opt.Ignore());
             Mapper.CreateMap<CustomerGroup, CustomerGroupViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore()).ForMember(p => p.ParentUniqueIdString, opt => opt.MapFrom(src => src.ParentId.ToString())).ForMember(p => p.ParentId, opt => opt.Ignore());
             Mapper.CreateMap<CustomerMonetaryHistory, CustomerMonetaryHistoryViewModel>().ForMember(p => p.UniqueId, opt => opt.MapFrom(src => src.Id)).ForMember(p => p.ID, opt => opt.Ignore());

@@ -12,15 +12,16 @@ namespace Loyalty.Test
 {
     public class CustomerManagement : BaseTestManagment
     {
+        private static Guid _customerId = new Guid("BCA615FD-68A1-422E-B065-9ECA5C991F9F");
         public static void CreateCustomer(HttpClient client, string servserURI)
         {
             var req = new CustomerRequestModel();
             req.customerData = new CustomerViewModel()
             {
-               
-                FirstName = "test",
+               UniqueId = _customerId,
+                FirstName = "testtttt",
                 LastName = "testian",
-                Email = "jsdfh jkasfh",
+                Email = "oijsdfh jkasfh",
                 MainStreet = "sdkh jhdsf",
                 OtherStreet = "jsdv sdj",
                 BirthDay = DateTime.Now,
@@ -33,7 +34,7 @@ namespace Loyalty.Test
                 PostalCode = "987464",
                 NationalCode = "" ,
                 //CustomerType = 0,
-                CompanyId = Guid.Parse("cf7c4810-9da0-433c-8639-21bdbd889c85"),
+               CompanyId = Guid.Parse("c7fa54cc-75ec-4c02-b31c-1c81cbca4ca4"),
                 
                 //MarriageDate = DateTime.Now,
                 //GraduateDate = DateTime.Now,
@@ -68,6 +69,19 @@ namespace Loyalty.Test
             var req = new CustomerRequestModel();
 
             Call(client, servserURI + "api/loyalty/customer/customers/compress", req);
+        }
+        public static void CustomerActive(HttpClient client, string servserURI)
+        {
+            var req = new CustomerRequestModel(){customerData = new CustomerViewModel(){UniqueId = _customerId}};
+
+            Call(client, servserURI + "api/loyalty/customer/active", req);
+        }
+
+        public static void CustomerInactive(HttpClient client, string servserURI)
+        {
+            var req = new CustomerRequestModel() { customerData = new CustomerViewModel() { UniqueId = _customerId } };
+
+            Call(client, servserURI + "api/loyalty/customer/inactive", req);
         }
 
         public static void GetCustomerById(HttpClient client, string servserURI)
