@@ -67,20 +67,20 @@ namespace Loyalty.Business.Domain
                     currentCustomer.Mobile = item.Mobile;
                     currentCustomer.PostalCode = item.PostalCode;
                     currentCustomer.NationalCode = item.NationalCode;
-                    currentCustomer.LastUpdate = DateTime.Now;
                     currentCustomer.RegionInfoId = item.RegionInfoId;
                     currentCustomer.RegionLevel1Id = item.RegionLevel1Id;
                     currentCustomer.RegionLevel2Id = item.RegionLevel2Id;
                     currentCustomer.RegionLevel3Id = item.RegionLevel3Id;
                     currentCustomer.RegionLevel4Id = item.RegionLevel4Id;
-                    currentCustomer.CustomerType = item.CustomerType;
+                    currentCustomer.CustomerTypeId = item.CustomerTypeId;
+                    currentCustomer.CustomerGroupId = item.CustomerGroupId;
                     currentCustomer.CompanyId = item.CompanyId;
                     currentCustomer.MarriageDate = item.MarriageDate;
                     currentCustomer.GraduateDate = item.GraduateDate;
                     currentCustomer.ReagentId = item.ReagentId;
                     currentCustomer.GetNews = item.GetNews;
                     currentCustomer.GetMessage = item.GetMessage;
-                    currentCustomer.CompanyId = item.CompanyId;
+                    currentCustomer.CustomerTags = item.CustomerTags;
                     currentCustomer.LastUpdate = DateTime.Now;
 
                     MainRepository.Update(currentCustomer);

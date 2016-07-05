@@ -64,10 +64,10 @@ namespace Loyalty.Test
                     #endregion
 
                     #region Customer
-                    //CustomerManagement.CreateCustomer(client, servserURI);
-                    CustomerManagement.CustomerActive(client, servserURI);
+                   // CustomerManagement.CreateCustomer(client, servserURI);
+                    //CustomerManagement.CustomerActive(client, servserURI);
                     //CustomerManagement.CustomerInactive(client, servserURI);
-                    //CustomerManagement.GetCustomerById(client, servserURI);
+                    CustomerManagement.GetCustomerById(client, servserURI);
                     //CustomerManagement.GetCustomerList(client, servserURI);
                     //CustomerManagement.GetCustomerToFindReagent(client, servserURI);
                     //CustomerManagement.GetCustomerMonetaryHistory(client, servserURI);

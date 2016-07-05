@@ -33,7 +33,7 @@ namespace Loyalty.Test
                 RegionLevel4Id = null,
                 PostalCode = "987464",
                 NationalCode = "" ,
-                //CustomerType = 0,
+               CustomerTypeId = Guid.Parse("770803A2-3F46-48D1-98D2-2D656F6297DD"),
                CompanyId = Guid.Parse("c7fa54cc-75ec-4c02-b31c-1c81cbca4ca4"),
                 
                 //MarriageDate = DateTime.Now,
@@ -87,7 +87,7 @@ namespace Loyalty.Test
         public static void GetCustomerById(HttpClient client, string servserURI)
         {
             var req = new CustomerRequestModel();
-            req.customerId = Guid.Parse("3C16F408-1366-48ED-BE6C-9223A0776594");
+            req.customerId = _customerId; //Guid.Parse("3C16F408-1366-48ED-BE6C-9223A0776594");
 
             Call(client, servserURI + "api/loyalty/customer/customers/byid", req);
         }
